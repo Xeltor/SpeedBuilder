@@ -1,5 +1,5 @@
 ; Define controls.
-#HotIf TargetGui != "" and WinActive(WarcraftApplicationName)
+#HotIf TargetGui != "" and WinActive(Warcraft)
 LButton:: {
     global TargetGui
     global xCoord
