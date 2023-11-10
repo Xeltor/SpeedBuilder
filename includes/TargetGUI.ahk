@@ -1,5 +1,5 @@
 ; Define controls.
-#HotIf TargetGui != ""
+#HotIf TargetGui != "" and WinActive(WarcraftApplicationName)
 LButton:: {
     global TargetGui
     global xCoord
@@ -89,18 +89,6 @@ Down:: {
     yCoord := yCoord + 1
     IniWrite(yCoord, "config.ini", "Hekili", "yCoord")
     TargetGui := DrawTargetGui(xCoord, yCoord, BoxWidth, TargetGui)
-}
-
-; Show help.
-F1:: {
-    global SupportGui
-
-    if (SupportGui = "") {
-        SupportGui := DrawSupportGui()
-    } else {
-        SupportGui.Destroy()
-        SupportGui := ""
-    }
 }
 #HotIf
 
