@@ -1,0 +1,20 @@
+-- Items.
+healthstone,538745
+
+-- Trinkets.
+mydas talisman,134543
+mirror of fractured tomorrows,254116
+bandolier of twisted blades,4227435
+darkmoon deck box: dance,4554973
+witherbark's branch,133749
+fyrakk's tainted rageheart,5415954
+darkmoon deck box: inferno,4554993
+darkmoon deck box: rime,4555003
+ashes of the embersoul,1357807
+obsidian gladiator's badge of ferocity,135884
+algeth'ar puzzle box,133876
+beacon to the beyond,4914670
+ward of faceless ire,4638535
+obsidian gladiator's emblem,132344
+obsidian gladiator's medallion,1322720
+balefire branch,135163

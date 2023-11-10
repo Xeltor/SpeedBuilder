@@ -1,0 +1,10 @@
+-- Racial traits.
+shadowmeld,132089
+lights judgment,1724000
+fireblood,1786406
+combat analysis,3192685
+arcane torrent,136222
+blood fury,135726
+berserking,135727
+ancestral call,2021574
+bag of tricks,3193416
