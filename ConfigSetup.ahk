@@ -7,6 +7,12 @@ global SupportGui := ""
 global AppName := "Speed Builder Setup"
 #Include speedbuilder\includes\Globals.ahk
 
+; Stop if warcraft isnt running.
+if !WinExist(Warcraft) {
+    MsgBox("Please make sure World of Warcraft is running.", AppName)
+    ExitApp()
+}
+
 ; Setup base ini config if it doesnt exist.
 if !FileExist("config.ini"){
     IniWrite("100", "config.ini", "Hekili", "xCoord")

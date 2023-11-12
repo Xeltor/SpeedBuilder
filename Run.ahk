@@ -33,9 +33,11 @@ SpecSelection()
     }
 }
 
+#HotIf WinActive(Warcraft)
 #F12:: {
     SpecSelection()
 }
+#HotIf
 
 Rotation() {
     if WinActive(Warcraft) {
