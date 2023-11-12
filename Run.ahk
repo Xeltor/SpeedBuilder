@@ -2,7 +2,7 @@
 
 AppName := "Run"
 if !FileExist("config.ini") {
-    MsgBox("Config file not created, please run SpeedBuilderSetup.", AppName)
+    MsgBox("Config file not created, please run ConfigSetup.ahk.", AppName)
     ExitApp()
 }
 
