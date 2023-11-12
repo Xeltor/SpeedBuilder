@@ -1,15 +1,14 @@
 ; Safety escape
 Escape::ExitApp()
 
-#Include includes\Globals.ahk
-#Include includes\SpellBook.ahk
 global AppName := "Class Setup"
+#Include speedbuilder\includes\Globals.ahk
+#Include speedbuilder\gui\SpecSelectSetup.ahk
 
 if !FileExist("config.ini") {
-    MsgBox("Config file not created, please run SpeedBuilderSetup.", AppName)
+    MsgBox("Config file not created, please run ConfigSetup.ahk.", AppName)
     ExitApp()
 }
 
-Spellbooks := GetSpellbooks()
-
-; TODO: The whole damned thing.
+; Start class spec selection.
+SpecSetupSelection()

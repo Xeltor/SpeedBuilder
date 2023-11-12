@@ -5,7 +5,7 @@ Escape::ExitApp()
 global TargetGui := ""
 global SupportGui := ""
 global AppName := "Speed Builder Setup"
-#Include includes\Globals.ahk
+#Include speedbuilder\includes\Globals.ahk
 
 ; Setup base ini config if it doesnt exist.
 if !FileExist("config.ini"){
@@ -14,8 +14,8 @@ if !FileExist("config.ini"){
     IniWrite("50", "config.ini", "Hekili", "BoxWidth")
 }
 
-#include gui\Support.ahk
-#include gui\Target.ahk
+#include speedbuilder\gui\Support.ahk
+#include speedbuilder\gui\Target.ahk
 
 ; Draw GUI.
 TargetGui := DrawTargetGui(Hekili)

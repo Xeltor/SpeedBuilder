@@ -94,7 +94,7 @@ DrawTargetGui(Hekili, TargetGui := "", Destroy := False) {
 
     if (TargetGui = "") {
         TargetGui := Gui("+E0x20 +ToolWindow +LastFound +AlwaysOnTop")
-        TargetGui.AddPicture("h" Hekili.Width " w-1 X-0 Y-0", "resources\bullseye.gif")
+        TargetGui.AddPicture("h" Hekili.Width " w-1 X-0 Y-0", "speedbuilder\resources\bullseye.gif")
         WinSetTransColor("0xFF00FF", TargetGui)
         TargetGui.Opt("-Caption +Disabled")
 
