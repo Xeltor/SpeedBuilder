@@ -32,7 +32,7 @@ GetClassSpells(ClassSpec, Spellbook) {
         if split.Length = 2 {
             Spell := Object()
 
-            Spell.Name := Trim(split[1])
+            Spell.Name := StrLower(Trim(split[1]))
             Spell.IconID := Trim(split[2])
             Spell.Colors := ""
             Spell.Keybind := ""
@@ -56,7 +56,7 @@ GetCommonItems(Items) {
         if split.Length = 2 {
             Item := Object()
 
-            Item.Name := Trim(split[1])
+            Item.Name := StrLower(Trim(split[1]))
             Item.IconID := Trim(split[2])
             Item.Colors := ""
             Item.Keybind := ""
@@ -80,7 +80,7 @@ GetCommonSpells(Spellbook) {
         if split.Length = 2 {
             Spell := Object()
 
-            Spell.Name := Trim(split[1])
+            Spell.Name := StrLower(Trim(split[1]))
             Spell.IconID := Trim(split[2])
             Spell.Colors := ""
             Spell.Keybind := ""
@@ -107,7 +107,7 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
         if split.Length = 4 {
             Spell := Object()
 
-            Spell.Name := Trim(split[1])
+            Spell.Name := StrLower(Trim(split[1]))
             Spell.IconID := Trim(split[2])
             Spell.Colors := Trim(split[3])
             Spell.Keybind := Trim(split[4])
