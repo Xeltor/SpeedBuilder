@@ -112,6 +112,7 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
 
             ; Don't set icon id, in case it changed down the line.
             Spell.Name := StrLower(Trim(split[1]))
+            Spell.IconID := Trim(split[2])
             Spell.Colors := Trim(split[3])
             Spell.Keybind := Trim(split[4])
 
@@ -120,13 +121,14 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
                 try {
                     if Spellbook[Spell.Name] {
                         ; Check if the IconID is different from the keybind file.
-                        if Spellbook[Spell.Name].IconID != Trim(split[2]) {
-                            Spell.Updated := true
+                        if Spellbook[Spell.Name].IconID != Spell.IconID {
+                            Spellbook[Spell.Name].Updated := true
                         } else {
-                            Spell.Updated := false
+                            Spellbook[Spell.Name].Updated := false
                         }
 
-                        Spellbook[Spell.Name] := Spell
+                        Spellbook[Spell.Name].Colors := Spell.Colors
+                        Spellbook[Spell.Name].Keybind := Spell.Keybind
                     }
                 }
             } else {
