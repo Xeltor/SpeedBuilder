@@ -42,5 +42,4 @@ Rampage,132352
 Ravager,970854
 Recklessness,458972
 
---Fury Specialization Skills
-
+-- Fury Specialization Skills

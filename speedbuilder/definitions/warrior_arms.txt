@@ -31,6 +31,7 @@ Thunder Clap,136105
 Thunderous Roar,642418
 Titanic Throw,132453
 Wrecking Throw,460959
+
 -- Arms Talents
 Bladestorm,236303
 Cleave,132338
@@ -43,5 +44,4 @@ Rend,132155
 Skullsplitter,2065621
 Warbreaker,2065633
 
---Arms Specialization Skills
-
+-- Arms Specialization Skills
