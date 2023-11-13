@@ -31,6 +31,7 @@ Thunder Clap,136105
 Thunderous Roar,642418
 Titanic Throw,132453
 Wrecking Throw,460959
+
 -- Protection Talents
 Challenging Shout,132091
 Demoralizing Shout,132366
@@ -43,5 +44,5 @@ Shield Charge,4667427
 Shield Wall,132362
 Spell Block,132358
 
---Protection Specialization Skills
+-- Protection Specialization Skills
 Devastate,135291
