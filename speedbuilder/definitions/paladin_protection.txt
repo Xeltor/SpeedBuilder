@@ -4,10 +4,8 @@ Divine Shield,524354
 Flash of Light,135907
 Hammer of Justice,135963
 Judgment,135959
-Rebuke,
 Shield of the Righteous,236265
 Word of Glory,133192
-
 
 -- Paladin Talents
 Avenging Wrath,135875
@@ -16,7 +14,7 @@ Blessing of Protection,135964
 Blessing of Sacrifice,135966
 Blinding Light,571553
 Cleanse Toxins,135953
-Concentration Aura,
+Concentration Aura,135933
 Crusader Aura,135890
 Devotion Aura,135893
 Divine Steed,1360759
@@ -40,4 +38,3 @@ Hammer of the Righteous,236253
 Moment of Glory,237537
 Sanctified Wrath,236259
 Sentinel,135922
-
