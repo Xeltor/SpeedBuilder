@@ -1,7 +1,7 @@
 #Include SpellBook.ahk
 #Include ColorPicker.ahk
 
-AutomaticClassSetup(SetupData) {
+AutomaticClassSetup(SetupData, RedoAllIcons) {
     Spellbook := Map()
 
     ; Get class spec data.
@@ -18,8 +18,10 @@ AutomaticClassSetup(SetupData) {
 
     ; Get color combo for each icon.
     for IconID, Spell in Spellbook {
-        SetIconReplacement(Spell.IconID, SetupData.xCoord, SetupData.yCoord)
-        Spell.Colors := GetPixelColors(true)
+        if Spell.Updated or RedoAllIcons {
+            SetIconReplacement(Spell.IconID, SetupData.xCoord, SetupData.yCoord)
+            Spell.Colors := GetPixelColors(true)
+        }
     }
     ResetIconReplacement(SetupData.xCoord, SetupData.yCoord)
 
@@ -27,6 +29,6 @@ AutomaticClassSetup(SetupData) {
     SetClassKeybinds(SetupData.ClassSpecChoice, Spellbook)
 
     ; Notify user that the process has completed.
-    MsgBox("The automatic process has completed, you can now open the Keybinds folder and setup/update your keybinds.", AppName)
+    MsgBox("The automatic process has completed, you can now open the Keybinds folder and setup/update your keybinds.", AppName, "0x40")
     ExitApp()
 }

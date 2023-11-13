@@ -21,11 +21,16 @@ CTRL & LButton:: {
         IconReplacementGui.Destroy()
         IconReplacementGui := ""
 
-        MsgBox("The manual part of the setup is completed. After pressing OK please don't use the keyboard and mouse while automatic setup works.`n`nYou will be notified when this process is completed.", AppName)
+        RedoAllIcons := false
+        if MsgBox("Would you like to redo all icon colors?", AppName, "0x24") = "Yes" {
+            RedoAllIcons := true
+        }
 
-        AutomaticClassSetup(SetupData)
+        MsgBox("The manual part of the setup is completed. After pressing OK please don't use the keyboard and mouse while automatic setup works.`n`nYou will be notified when the process has completed.", AppName, "0x20")
+
+        AutomaticClassSetup(SetupData, RedoAllIcons)
     } else {
-        MsgBox("Could not find the Icon Replacement box, please try again or escape to cancel.", AppName)
+        MsgBox("Could not find the Icon Replacement box, please try again or escape to cancel.", AppName, "0x30")
     }
 }
 #HotIf

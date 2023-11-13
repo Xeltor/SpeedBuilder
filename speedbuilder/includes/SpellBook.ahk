@@ -36,6 +36,7 @@ GetClassSpells(ClassSpec, Spellbook) {
             Spell.IconID := Trim(split[2])
             Spell.Colors := ""
             Spell.Keybind := ""
+            Spell.Updated := true
 
             Spellbook[Spell.Name] := Spell
         }
@@ -60,6 +61,7 @@ GetCommonItems(Items) {
             Item.IconID := Trim(split[2])
             Item.Colors := ""
             Item.Keybind := ""
+            Item.Updated := true
 
             Items[Item.Name] := Item
         }
@@ -84,6 +86,7 @@ GetCommonSpells(Spellbook) {
             Spell.IconID := Trim(split[2])
             Spell.Colors := ""
             Spell.Keybind := ""
+            Spell.Updated := true
 
             Spellbook[Spell.Name] := Spell
         }
@@ -107,8 +110,8 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
         if split.Length = 4 {
             Spell := Object()
 
+            ; Don't set icon id, in case it changed down the line.
             Spell.Name := StrLower(Trim(split[1]))
-            Spell.IconID := Trim(split[2])
             Spell.Colors := Trim(split[3])
             Spell.Keybind := Trim(split[4])
 
@@ -116,6 +119,13 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
                 ; Remove spells no longer in the definition.
                 try {
                     if Spellbook[Spell.Name] {
+                        ; Check if the IconID is different from the keybind file.
+                        if Spellbook[Spell.Name].IconID != Trim(split[2]) {
+                            Spell.Updated := true
+                        } else {
+                            Spell.Updated := false
+                        }
+
                         Spellbook[Spell.Name] := Spell
                     }
                 }

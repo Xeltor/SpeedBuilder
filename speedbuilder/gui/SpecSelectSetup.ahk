@@ -26,7 +26,7 @@ ContinueButton_Click(GuiCtrlObj, Info) {
     GuiCtrlObj.Gui.Destroy()
 
     if !ClassSpecChoice {
-        MsgBox("No class spec selected, exiting.", AppName)
+        MsgBox("No class spec selected, exiting.", AppName, "0x30")
         ExitApp()
     }
 
