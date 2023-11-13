@@ -22,7 +22,7 @@ CTRL & LButton:: {
         IconReplacementGui := ""
 
         RedoAllIcons := false
-        if MsgBox("Would you like to redo all icon colors?", AppName, "0x24") = "Yes" {
+        if MsgBox("Would you like to redo all icon colors?", AppName, "0x124") = "Yes" {
             RedoAllIcons := true
         }
 

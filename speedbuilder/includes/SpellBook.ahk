@@ -23,7 +23,7 @@ GetClassSpecs(Setup := false) {
 ; Name, IconID
 GetClassSpells(ClassSpec, Spellbook) {
     loop read, "speedbuilder\definitions\" ClassSpec ".txt" {
-        if InStr(A_LoopReadLine, "-- ") or Trim(A_LoopReadLine) = "" {
+        if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
             continue
         }
 
@@ -48,7 +48,7 @@ GetClassSpells(ClassSpec, Spellbook) {
 ; Name, IconID
 GetCommonItems(Items) {
     loop read, "speedbuilder\definitions\common_items.txt" {
-        if InStr(A_LoopReadLine, "-- ") or Trim(A_LoopReadLine) = "" {
+        if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
             continue
         }
 
@@ -73,7 +73,7 @@ GetCommonItems(Items) {
 ; Name, IconID
 GetCommonSpells(Spellbook) {
     loop read, "speedbuilder\definitions\common_spells.txt" {
-        if InStr(A_LoopReadLine, "-- ") or Trim(A_LoopReadLine) = "" {
+        if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
             continue
         }
 
@@ -101,7 +101,7 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
         return Spellbook
 
     loop read, "Keybinds\" ClassSpec ".txt" {
-        if InStr(A_LoopReadLine, "-- ") or Trim(A_LoopReadLine) = "" {
+        if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
             continue
         }
 
@@ -110,7 +110,6 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
         if split.Length = 4 {
             Spell := Object()
 
-            ; Don't set icon id, in case it changed down the line.
             Spell.Name := StrLower(Trim(split[1]))
             Spell.IconID := Trim(split[2])
             Spell.Colors := Trim(split[3])
