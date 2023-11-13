@@ -1,0 +1,46 @@
+-- Paladin Spells
+Consecration,135926
+Divine Shield,524354
+Flash of Light,135907
+Hammer of Justice,135963
+Judgment,135959
+Rebuke,
+Shield of the Righteous,236265
+Word of Glory,133192
+
+
+-- Paladin Talents
+Avenging Wrath,135875
+Blessing of Freedom,135968
+Blessing of Protection,135964
+Blessing of Sacrifice,135966
+Blinding Light,571553
+Cleanse Toxins,135953
+Concentration Aura,
+Crusader Aura,135890
+Devotion Aura,135893
+Divine Steed,1360759
+Divine Toll,3565448
+Hammer of Wrath,613533
+Lay on hands,135928
+Rebuke,523893
+Repentance,135942
+Retribution Aura,135889
+Turn Evil,571559
+
+-- Retribution Talents
+Blade of Justice,1360757
+Crusade,236262
+Divine Hammer,626003
+Divine Storm,236250
+Execution Sentence,613954
+Final Reckoning,135878
+Final Verdict,461860
+Justicar's Vengeance,135957
+Shield of Vengeance,236264
+Templar Strike,1109508
+Templar Slash,1112940
+Wake of Ashes,1112939
+
+-- Retribution Specialization Skills
+Crusader Strike,135891
