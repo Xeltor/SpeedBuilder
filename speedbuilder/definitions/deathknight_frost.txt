@@ -28,3 +28,6 @@ horn of winter,134228
 howling blast,135833
 obliterate,135771
 pillar of frost,458718
+
+-- Frost Specialization Spells
+remorseless winter,538770
