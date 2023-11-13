@@ -37,6 +37,7 @@ GetClassSpells(ClassSpec, Spellbook) {
             Spell.Colors := ""
             Spell.Keybind := ""
             Spell.Updated := true
+            Spell.Type := "Class"
 
             Spellbook[Spell.Name] := Spell
         }
@@ -62,6 +63,7 @@ GetCommonItems(Items) {
             Item.Colors := ""
             Item.Keybind := ""
             Item.Updated := true
+            Item.Type := "Item"
 
             Items[Item.Name] := Item
         }
@@ -87,6 +89,7 @@ GetCommonSpells(Spellbook) {
             Spell.Colors := ""
             Spell.Keybind := ""
             Spell.Updated := true
+            Spell.Type := "Common"
 
             Spellbook[Spell.Name] := Spell
         }
@@ -145,8 +148,9 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     }
 
     KeybindFile := "Keybinds\" ClassSpec ".txt"
+    BackupFile := "Keybinds\" ClassSpec "_backup.txt"
     if FileExist(KeybindFile){
-        FileDelete(KeybindFile)
+        FileMove(KeybindFile, BackupFile)
     }
 
     Explanation := [
@@ -163,8 +167,7 @@ SetClassKeybinds(ClassSpec, Keybinds) {
         "-- Alt: !",
         "-- ",
         "-- Example1: Control + Shift + F10 = ^+{F10}",
-        "-- Example2: Control + Alt + 1 = ^!1",
-        ""
+        "-- Example2: Control + Alt + 1 = ^!1"
     ]
 
     ; Write explanation.
@@ -173,7 +176,29 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     }
 
     ; Write keybinds.
-    for IconID, Spell in Keybinds {
-        FileAppend(Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n", KeybindFile)
+    FileAppend("`n-- Class spells and talents.`n", KeybindFile)
+    for Name, Spell in Keybinds {
+        if Spell.Type = "Class" {
+            FileAppend(Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n", KeybindFile)
+        }
+    }
+
+    FileAppend("`n-- Racial spells.`n", KeybindFile)
+    for Name, Spell in Keybinds {
+        if Spell.Type = "Common" {
+            FileAppend(Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n", KeybindFile)
+        }
+    }
+
+    FileAppend("`n-- Items.`n", KeybindFile)
+    for Name, Spell in Keybinds {
+        if Spell.Type = "Item" {
+            FileAppend(Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n", KeybindFile)
+        }
+    }
+
+    ; Remove backup.
+    if FileExist(BackupFile) {
+        FileDelete(BackupFile)
     }
 }
