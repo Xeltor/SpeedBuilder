@@ -1,0 +1,38 @@
+-- Mage Spells
+Arcane Explosion,136116
+Arcane Intellect,135932
+Cone of Cold,135852
+Counterspell,135856
+Fire Blast,135807
+Frostbolt,135846
+Frost Nova,135848
+
+-- Mage Talents
+Alter Time,609811
+Blast Wave,135903
+Displacement,Displacement
+Dragon's Breath,134153
+Ice Floes,610877
+Ice Nova,1033909
+Mass Barrier,1723997
+Mass Polymorph,575585
+Mirror Image,135994
+Prismatic Barrier,135991
+Remove Curse,136082
+Ring of Frost,464484
+Shifting Power,3636841
+Slow,136091
+Spellsteal,135729
+
+-- Fire Talents
+Combustion,135824
+Fire Blast,135807
+Living Bomb,236220
+Meteor,1033911
+Phoenix Flames,1392549
+Pyroblast,135808
+Scorch,135827
+
+-- Fire Specialization
+Fireball,135812
+Flamestrike,135826
