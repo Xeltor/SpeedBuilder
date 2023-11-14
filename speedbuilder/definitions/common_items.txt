@@ -1,18 +1,46 @@
 -- Items.
-healthstone,538745
+Healthstone,538745
 
--- Trinkets.
-algethar puzzle box,133876
-ashes of the embersoul,1357807
-balefire branch,135163
-bandolier of twisted blades,4227435
-beacon to the beyond,4914670
-darkmoon deck box dance,4554973
-darkmoon deck box inferno,4554993
-darkmoon deck box rime,4555003
-fyrakks tainted rageheart,5415954
-mirror of fractured tomorrows,254116
-mydas talisman,134543
-ward of faceless ire,4638535
-witherbarks branch,133749
-irideus fragment,4638427
+-- Amirdrassil Trinkets (10.2)
+Ashes of the Embersoul,1357807
+Bandolier of Twisted Blades,4227435
+Belor'relos the Suncaller,516743
+Branch of the Tormented Ancient,959798
+Coiled Serpent Idol,133262
+Nymue's Unraveling Spindle,5177651
+Smoldering Seedling,3731812
+Fyrakk's Tainted Rageheart,5415954
+
+-- Aberrus Trinkets (10.1)
+Beacon to the Beyond,4914670
+Dragonfire Bomb Dispenser,4624639
+Elementium Pocket Anvil,2356069
+Enduring Dreadplate,4622283
+Ward of Faceless Ire,4638535
+Zaqali Chaos Grapnel,1269444
+Screaming Black Dragonscale,377271
+
+-- Mythic+ Season 3 (10.2)
+Balefire Branch,135163
+Might of the Ocean,135228
+Sea Star,132779
+Soul's Anguish,136212
+Bottled Lightning,465875
+Witherbark's Branch,133749
+Leaf of the Ancient Protectors,237424
+Spores of Alacrity,132371
+My'das Talisman,134543
+Revitalizing Voodoo Totem,538571
+'Bygone Bee' Almanac,133738
+Mirror of Fractured Tomorrows,254116
+Echoing Tyrstone,1360762
+Time-Thief's Gambit,922527
+
+-- Mythic+ Season 2 (10.1)
+Irideus Fragment,4638427
+
+-- Crafting Trinkets
+Darkmoon Deck Box: Dance,4554973
+Darkmoon Deck Box: Inferno,4554993
+Darkmoon Deck Box: Rime,4555003
+Darkmoon Deck Box: Watcher,4554983
