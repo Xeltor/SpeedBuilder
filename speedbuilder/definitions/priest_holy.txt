@@ -1,0 +1,56 @@
+-- Priest Spells
+Desperate Prayer,237550
+Fade,135994
+Flash Heal,135907
+Mind Blast,136224
+Mind Soothe,135933
+Power Word: Fortitude,135987
+Power Word: Shield,135940
+Psychic Scream,136184
+Shadow Word: Pain,136207
+Smite,135924
+Void Bolt,1035040
+Voidform,1386550
+
+-- Priest Talents
+Angelic Feather,642580
+Dispel Magic,136066
+Divine Star,537026
+Divine Star Shadow,631519
+Dominate Mind,
+Halo,632352
+Halo Shadow,632353
+Holy Nova,135922
+Mass Dispel,135739
+Mindgames,3565723
+Power Infusion,135939
+Power Word: Life,4667420
+Prayer of Mending,135944
+Purify Disease,135935
+Renew,135953
+Shackle Undead,136091
+Shadow Word: Death,136149
+Shadowfiend,136199
+Vampiric Embrace,136230
+Void Shift,537079
+Void Tendrils,537022
+
+-- Holy Talents
+Apotheosis,1060983
+Circle of Healing,135887
+Divine Hymn,237540
+Divine Word,521584
+Empyreal Blaze,4667419
+Guardian Spirit,237542
+Holy Word: Chastise,135886
+Holy Word: Salvation,458225
+Holy Word: Sanctify,237541
+Holy Word: Serenity,135937
+Lightwell,135980
+Prayer of Healing,135943
+Symbol of Hope,135982
+
+-- Holy Specialization
+Heal,135913
+Holy Fire,135972
+Purify,135894
