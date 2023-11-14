@@ -32,14 +32,14 @@ GetClassSpells(ClassSpec, Spellbook) {
         if split.Length = 2 {
             Spell := Object()
 
-            Spell.Name := StrLower(Trim(split[1]))
+            Spell.Name := Trim(split[1])
             Spell.IconID := Trim(split[2])
             Spell.Colors := ""
             Spell.Keybind := ""
             Spell.Updated := true
             Spell.Type := "Class"
 
-            Spellbook[Spell.Name] := Spell
+            Spellbook[StrLower(Spell.Name)] := Spell
         }
     }
 
@@ -58,14 +58,14 @@ GetCommonItems(Items) {
         if split.Length = 2 {
             Item := Object()
 
-            Item.Name := StrLower(Trim(split[1]))
+            Item.Name := Trim(split[1])
             Item.IconID := Trim(split[2])
             Item.Colors := ""
             Item.Keybind := ""
             Item.Updated := true
             Item.Type := "Item"
 
-            Items[Item.Name] := Item
+            Items[StrLower(Item.Name)] := Item
         }
     }
 
@@ -84,14 +84,14 @@ GetCommonSpells(Spellbook) {
         if split.Length = 2 {
             Spell := Object()
 
-            Spell.Name := StrLower(Trim(split[1]))
+            Spell.Name := Trim(split[1])
             Spell.IconID := Trim(split[2])
             Spell.Colors := ""
             Spell.Keybind := ""
             Spell.Updated := true
             Spell.Type := "Common"
 
-            Spellbook[Spell.Name] := Spell
+            Spellbook[StrLower(Spell.Name)] := Spell
         }
     }
 
@@ -113,7 +113,7 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
         if split.Length = 4 {
             Spell := Object()
 
-            Spell.Name := StrLower(Trim(split[1]))
+            Spell.Name := Trim(split[1])
             Spell.IconID := Trim(split[2])
             Spell.Colors := Trim(split[3])
             Spell.Keybind := Trim(split[4])
@@ -121,16 +121,16 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
             if ByName {
                 ; Remove spells no longer in the definition.
                 try {
-                    if Spellbook[Spell.Name] {
+                    if Spellbook[StrLower(Spell.Name)] {
                         ; Check if the IconID is different from the keybind file.
-                        if Spellbook[Spell.Name].IconID != Spell.IconID {
-                            Spellbook[Spell.Name].Updated := true
+                        if Spellbook[StrLower(Spell.Name)].IconID != Spell.IconID {
+                            Spellbook[StrLower(Spell.Name)].Updated := true
                         } else {
-                            Spellbook[Spell.Name].Updated := false
+                            Spellbook[StrLower(Spell.Name)].Updated := false
                         }
 
-                        Spellbook[Spell.Name].Colors := Spell.Colors
-                        Spellbook[Spell.Name].Keybind := Spell.Keybind
+                        Spellbook[StrLower(Spell.Name)].Colors := Spell.Colors
+                        Spellbook[StrLower(Spell.Name)].Keybind := Spell.Keybind
                     }
                 }
             } else {
