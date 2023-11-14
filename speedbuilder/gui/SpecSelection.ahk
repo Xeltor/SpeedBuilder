@@ -13,6 +13,7 @@ SpecSelection() {
     SpecGui.AddDropDownList("vClassSpecChoice", ClassSpecs)
     LoadButton := SpecGui.AddButton("Default", "Load")
     LoadButton.OnEvent("Click", LoadButton_Click)
+    SpecGui.AddText(,"WindowsKey + F12: To open this menu again for spec switching.")
     SpecGui.OnEvent("Close", SpecSelectGui_Close)
 
     SpecGui.Show()
