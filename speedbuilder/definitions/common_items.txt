@@ -7,34 +7,34 @@ Bandolier of Twisted Blades,4227435
 Belor'relos the Suncaller,516743
 Branch of the Tormented Ancient,959798
 Coiled Serpent Idol,133262
+Fyrakk's Tainted Rageheart,5415954
 Nymue's Unraveling Spindle,5177651
 Smoldering Seedling,3731812
-Fyrakk's Tainted Rageheart,5415954
 
 -- Aberrus Trinkets (10.1)
 Beacon to the Beyond,4914670
 Dragonfire Bomb Dispenser,4624639
 Elementium Pocket Anvil,2356069
 Enduring Dreadplate,4622283
+Screaming Black Dragonscale,377271
 Ward of Faceless Ire,4638535
 Zaqali Chaos Grapnel,1269444
-Screaming Black Dragonscale,377271
 
 -- Mythic+ Season 3 (10.2)
+'Bygone Bee' Almanac,133738
 Balefire Branch,135163
-Might of the Ocean,135228
-Sea Star,132779
-Soul's Anguish,136212
 Bottled Lightning,465875
-Witherbark's Branch,133749
+Echoing Tyrstone,1360762
 Leaf of the Ancient Protectors,237424
-Spores of Alacrity,132371
+Might of the Ocean,135228
+Mirror of Fractured Tomorrows,254116
 My'das Talisman,134543
 Revitalizing Voodoo Totem,538571
-'Bygone Bee' Almanac,133738
-Mirror of Fractured Tomorrows,254116
-Echoing Tyrstone,1360762
+Sea Star,132779
+Soul's Anguish,136212
+Spores of Alacrity,132371
 Time-Thief's Gambit,922527
+Witherbark's Branch,133749
 
 -- Mythic+ Season 2 (10.1)
 Irideus Fragment,4638427
