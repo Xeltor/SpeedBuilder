@@ -1,0 +1,48 @@
+-- Rogue Spells
+Ambush,132282
+Cheap Shot,132092
+Crimson Vial,1373904
+Crippling Poison,132274
+Eviscerate,132292
+Feint,132294
+Instant Poison,132273
+Kick,132219
+Kidney Shot,132298
+Sap,132310
+Sinister Strike,136189
+Slice and Dice,132306
+Stealth,132320
+Vanish,132331
+Wound Poison,134197
+
+-- Rogue Talents
+Atrophic Poison,132300
+Blind,136175
+Cloak of Shadows,136177
+Cold Blood,135988
+Echoing Reprimand,3565450
+Evasion,136205
+Gouge,132155
+Numbing Poison,136066
+Shadow Dance,236279
+Shadowstep,132303
+Shiv,135428
+Thistle Tea,132819
+Tricks of the Trade,236283
+
+-- Subtlety Talents
+Flagellation,3565724
+Gloomblade,1035040
+Goremaw's Bite,1120132
+Secret Technique,132305
+Sepsis,3636848
+Shadow Blades,376022
+Shuriken Tornado,236282
+
+-- Subtlety Specialization
+Backstab,132090
+Black Powder,608955
+Rupture,132302
+Shadowstrike,1373912
+Shuriken Storm,1375677
+Symbols of Death,252272

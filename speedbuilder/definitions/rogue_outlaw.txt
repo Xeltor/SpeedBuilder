@@ -1,0 +1,46 @@
+-- Rogue Spells
+Ambush,132282
+Cheap Shot,132092
+Crimson Vial,1373904
+Crippling Poison,132274
+Eviscerate,132292
+Feint,132294
+Instant Poison,132273
+Kick,132219
+Kidney Shot,132298
+Sap,132310
+Sinister Strike,136189
+Slice and Dice,132306
+Stealth,132320
+Vanish,132331
+Wound Poison,134197
+
+-- Rogue Talents
+Atrophic Poison,132300
+Blind,136175
+Cloak of Shadows,136177
+Cold Blood,135988
+Echoing Reprimand,3565450
+Evasion,136205
+Gouge,132155
+Numbing Poison,136066
+Shadow Dance,236279
+Shadowstep,132303
+Shiv,135428
+Thistle Tea,132819
+Tricks of the Trade,236283
+
+-- Outlaw Talents
+Adrenaline Rush,136206
+Blade Rush,1016243
+Ghostly Strike,132094
+Keep It Rolling,4667423
+Killing Spree,236277
+Sepsis,3636848
+
+-- Outlaw Specialization
+Between the Eyes,135610
+Blade Flurry,132350
+Dispatch,236286
+Pistol Shot,1373908
+Roll the Bones,1373910
