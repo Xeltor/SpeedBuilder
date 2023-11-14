@@ -1,0 +1,42 @@
+-- Warlock Spells
+Corruption,136118
+Curse of Weakness,136138
+Drain Life,136169
+Fear,136183
+Health Funnel,136168
+Subjugate Demon,136154
+Summon Felhunter,136217
+Summon Imp,136218
+Summon Sayaad,4352493
+Summon Voidwalker,136221
+Unending Resolve,136150
+
+-- Warlock Talents
+Amplify Curse,136132
+Banish,136135
+Curse of Exhaustion,136162
+Curse of Tongues,136140
+Dark Pact,136146
+Fel Domination,237564
+Howl of Terror,607852
+Mortal Coil,607853
+Shadowfury,607865
+Soulburn,463286
+Summon Soulkeeper,841219
+
+-- Affliction Talents
+Drain Soul,136163
+Grimoire of Sacrifice,538443
+Haunt,236298
+Malefic Rapture,236296
+Phantom Singularity,132886
+Seed of Corruption,136193
+Siphon Life,136188
+Soul Rot,3636850
+Soul Swap,460857
+Summon Darkglare,1416161
+Unstable Affliction,136228
+Vile Taint,1391774
+
+-- Affliction Specialization
+Agony,136139

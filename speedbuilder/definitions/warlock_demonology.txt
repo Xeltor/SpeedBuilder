@@ -1,0 +1,44 @@
+-- Warlock Spells
+Corruption,136118
+Curse of Weakness,136138
+Drain Life,136169
+Fear,136183
+Health Funnel,136168
+Subjugate Demon,136154
+Summon Felhunter,136217
+Summon Imp,136218
+Summon Sayaad,4352493
+Summon Voidwalker,136221
+Unending Resolve,136150
+
+-- Warlock Talents
+Amplify Curse,136132
+Banish,136135
+Curse of Exhaustion,136162
+Curse of Tongues,136140
+Dark Pact,136146
+Fel Domination,237564
+Howl of Terror,607852
+Mortal Coil,607853
+Shadowfury,607865
+Soulburn,463286
+Summon Soulkeeper,841219
+
+-- Demonology Talents
+Bilescourge Bombers,132182
+Call Dreadstalkers,1378282
+Demonbolt,2032588
+Demonic Strength,236292
+Doom,136122
+Grimoire: Felguard,615025
+Guillotine,1109118
+Implosion,2065588
+Nether Portal,2065615
+Power Siphon,236290
+Soul Strike,1452864
+Summon Demonic Tyrant,2065628
+Summon Vilefiend,1616211
+
+-- Demonology Specialization
+Hand of Gul'dan,535592
+Summon Felguard,136216
