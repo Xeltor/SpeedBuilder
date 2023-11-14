@@ -1,27 +1,27 @@
 -- Demon Hunter Spells
-disrupt,1305153
-immolation aura,1344649
-metamorphosis,1247262
-throw glaive,1305159
+Disrupt,1305153
+Immolation Aura,1344649
+Metamorphosis,1247262
+Throw Glaive,1305159
 
 -- Demon Hunter Talents
-chaos nova,135795
-consume magic,828455
-darkness,1305154
-felblade,1344646
-imprison,1380368
-sigil of misery,1418287
-the hunt,3636838
+Chaos Nova,135795
+Consume Magic,828455
+Darkness,1305154
+Felblade,1344646
+Imprison,1380368
+Sigil Of Misery,1418287
+The Hunt,3636838
 
 -- Havoc Talents
-essence break,136189
-eye beam,1305156
-fel barrage,2065580
-glaive tempest,1455916
+Essence Break,136189
+Eye Beam,1305156
+Fel Barrage,2065580
+Glaive Tempest,1455916
 
 -- Havoc Specialization Spells
-blade dance,1305149
-blur,1305150
-chaos strike,1305152
-demon's bite,135561
-sigil of flame,1344652
+Blade Dance,1305149
+Blur,1305150
+Chaos Strike,1305152
+Demon's Bite,135561
+Sigil Of Flame,1344652

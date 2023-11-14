@@ -1,34 +1,34 @@
 -- Demon Hunter Spells
-disrupt,1305153
-immolation aura,1344649
-metamorphosis,1247262
-throw glaive,1305159
+Disrupt,1305153
+Immolation Aura,1344649
+Metamorphosis,1247262
+Throw Glaive,1305159
 
 -- Demon Hunter Talents
-chaos nova,135795
-consume magic,828455
-darkness,1305154
-felblade,1344646
-imprison,1380368
-sigil of misery,1418287
-the hunt,3636838
+Chaos Nova,135795
+Consume Magic,828455
+Darkness,1305154
+Felblade,1344646
+Imprison,1380368
+Sigil Of Misery,1418287
+The Hunt,3636838
 
 -- Vengeance Talents
-bulk extraction,136194
-fel devastation,1450143
-fiery brand,1344647
-fracture,1388065
-sigil of chains,1418286
-sigil of silence,1418288
-soul barrier,2065625
-soul carver,1309072
-spirit bomb,1097742
+Bulk Extraction,136194
+Fel Devastation,1450143
+Fiery Brand,1344647
+Fracture,1388065
+Sigil Of Chains,1418286
+Sigil Of Silence,1418288
+Soul Barrier,2065625
+Soul Carver,1309072
+Spirit Bomb,1097742
 
 -- Vengeance Specialization Spells
-demon spikes,1344645
-infernal strike,1344650
-metamorphosis vengeance,1247263
-shear,1344648
-sigil of flame,1344652
-soul cleave,1344653
-throw glaive,1305159
+Demon Spikes,1344645
+Infernal Strike,1344650
+Metamorphosis Vengeance,1247263
+Shear,1344648
+Sigil Of Flame,1344652
+Soul Cleave,1344653
+Throw Glaive,1305159

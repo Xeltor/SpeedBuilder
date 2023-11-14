@@ -1,33 +1,33 @@
-ancestral guidance,538564
-ascendance,135791
-astral shift,538565
-capacitor totem,136013
-chain heal,136042
-chain lightning,136015
-crash lightning,1370984
-doom winds,1035054
-earth elemental,136024
-elemental blast,651244
-feral spirit,237577
-fire nova,459027
-flame shock,135813
-flametongue weapon,135814
-frost shock,135849
-greater purge,451166
-healing stream totem,135127
-healing surge,136044
-ice strike,135845
-lava burst,237582
-lava lash,236289
-lightning bolt,136048
-lightning shield,136051
-primordial wave,3578231
-purge,136075
-stormstrike,132314
-sundering,524794
-thunderstorm,237589
-totemic projection,538574
-wind shear,136018
-windfury totem,136114
-windfury weapon,462329
-windstrike,1029585
+Ancestral Guidance,538564
+Ascendance,135791
+Astral Shift,538565
+Capacitor Totem,136013
+Chain Heal,136042
+Chain Lightning,136015
+Crash Lightning,1370984
+Doom Winds,1035054
+Earth Elemental,136024
+Elemental Blast,651244
+Feral Spirit,237577
+Fire Nova,459027
+Flame Shock,135813
+Flametongue Weapon,135814
+Frost Shock,135849
+Greater Purge,451166
+Healing Stream Totem,135127
+Healing Surge,136044
+Ice Strike,135845
+Lava Burst,237582
+Lava Lash,236289
+Lightning Bolt,136048
+Lightning Shield,136051
+Primordial Wave,3578231
+Purge,136075
+Stormstrike,132314
+Sundering,524794
+Thunderstorm,237589
+Totemic Projection,538574
+Wind Shear,136018
+Windfury Totem,136114
+Windfury Weapon,462329
+Windstrike,1029585

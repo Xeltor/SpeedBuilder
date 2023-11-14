@@ -1,32 +1,32 @@
 -- Death Knight Spells
-death and decay,136144
-death coil,136145
-lichborne,136187
+Death And Decay,136144
+Death Coil,136145
+Lichborne,136187
 
 -- Death Knight Talents
-abomination limb,3578196
-asphyxiate,538558
-blinding sleet,135836
-chains of ice,135834
-death pact,136146
-death strike,237517
-empower rune weapon,135372
-icebound fortitude,237525
-mind freeze,237527
-raise dead,1100170
-sacrificial pact,136133
-soul reaper,636333
+Abomination Limb,3578196
+Asphyxiate,538558
+Blinding Sleet,135836
+Chains Of Ice,135834
+Death Pact,136146
+Death Strike,237517
+Empower Rune Weapon,135372
+Icebound Fortitude,237525
+Mind Freeze,237527
+Raise Dead,1100170
+Sacrificial Pact,136133
+Soul Reaper,636333
 
 -- Unholy Talents
-apocalypse,1392565
-army of the dead,237511
-dark transformation,342913
-defile,1029008
-epidemic,136066
-festering strike,879926
-outbreak,348565
-scourge strike,237530
-summon gargoyle,458967
-unholy assault,136224
-unholy blight,136132
-vile contagion,136182
+Apocalypse,1392565
+Army Of The Dead,237511
+Dark Transformation,342913
+Defile,1029008
+Epidemic,136066
+Festering Strike,879926
+Outbreak,348565
+Scourge Strike,237530
+Summon Gargoyle,458967
+Unholy Assault,136224
+Unholy Blight,136132
+Vile Contagion,136182
