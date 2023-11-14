@@ -34,19 +34,15 @@ Tranquil Air Totem,538575
 Tremor Totem,136108
 Wind Shear,136018
 
--- Enhancement Talents
+-- Elemental Talents
 Ascendance,135791
-Crash Lightning,1370984
-Doom Winds,1035054
+Earth Shock,136026
+Earthquake,451165
 Elemental Blast,651244
-Feral Spirit,237577
-Fire Nova,459027
-Flametongue Weapon,135814
-Ice Strike,135845
-Lava Lash,236289
+Fire Elemental,135790
+Icefury,135855
+Lava Beam,236216
+Liquid Magma Totem,971079
 Primordial Wave,3578231
-Stormstrike,132314
-Sundering,524794
-Windfury Totem,136114
-Windfury Weapon,462329
-Windstrike,1029585
+Storm Elemental,2065626
+Stormkeeper,839977

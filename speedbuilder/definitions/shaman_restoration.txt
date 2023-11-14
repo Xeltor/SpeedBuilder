@@ -34,19 +34,20 @@ Tranquil Air Totem,538575
 Tremor Totem,136108
 Wind Shear,136018
 
--- Enhancement Talents
+-- Restoration Talents
+Ancestral Protection Totem,136080
 Ascendance,135791
-Crash Lightning,1370984
-Doom Winds,1035054
-Elemental Blast,651244
-Feral Spirit,237577
-Fire Nova,459027
-Flametongue Weapon,135814
-Ice Strike,135845
-Lava Lash,236289
+Cloudburst Totem,971076
+Downpour,1698701
+Earthen Wall Totem,136098
+Earthliving Weapon,237578
+Healing Rain,136037
+Healing Tide Totem,538569
+Healing Wave,136043
+Mana Tide Totem,4667424
 Primordial Wave,3578231
-Stormstrike,132314
-Sundering,524794
-Windfury Totem,136114
-Windfury Weapon,462329
-Windstrike,1029585
+Riptide,252995
+Spirit Link Totem,237586
+Stormkeeper,839977
+Unleash Life,462328
+Wellspring,893778
