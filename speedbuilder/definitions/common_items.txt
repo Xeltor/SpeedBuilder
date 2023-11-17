@@ -35,6 +35,7 @@ Soul's Anguish,136212
 Spores of Alacrity,132371
 Time-Thief's Gambit,922527
 Witherbark's Branch,133749
+Iridal the Earth's Master,5001160
 
 -- Mythic+ Season 2 (10.1)
 Irideus Fragment,4638427
