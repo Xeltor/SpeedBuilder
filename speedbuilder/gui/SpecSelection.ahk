@@ -9,8 +9,9 @@ SpecSelection() {
     }
 
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
+    SpecGui.SetFont("s11")
     SpecGui.AddText(,"Please select the class spec you wish to play.")
-    SpecGui.AddDropDownList("vClassSpecChoice", ClassSpecs)
+    SpecGui.AddDropDownList("vClassSpecChoice r10 w360", ClassSpecs)
     LoadButton := SpecGui.AddButton("Default", "Load")
     LoadButton.OnEvent("Click", LoadButton_Click)
     SpecGui.AddText(,"WindowsKey + F12: To open this menu again for spec switching.")

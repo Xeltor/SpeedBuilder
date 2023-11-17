@@ -4,6 +4,8 @@ Curse of Weakness,136138
 Drain Life,136169
 Fear,136183
 Health Funnel,136168
+Shadow Bolt,136197
+Spell Lock,136174
 Subjugate Demon,136154
 Summon Felhunter,136217
 Summon Imp,136218
@@ -42,3 +44,4 @@ Summon Vilefiend,1616211
 -- Demonology Specialization
 Hand of Gul'dan,535592
 Summon Felguard,136216
+Axe Toss,236316

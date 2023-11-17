@@ -42,8 +42,9 @@ IconReplacementSelection(ClassSpecChoice) {
     SetupData.ClassSpecChoice := ClassSpecChoice
 
     IconReplacementGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
+    IconReplacementGui.SetFont("s11")
     IconReplacementGui.AddText("Section", "Icon replacement setup. (Don't close this window)")
-    IconReplacementGui.AddText("", "- Open Hekili. (/hekili)`n- Go to Abilities in the left side row.`n- In the top right select the ability Hekili is showing.`n- CTRL + Click inside the Icon Replacement box.")
+    IconReplacementGui.AddText("", "1. Open Hekili. ( /hekili )`n2. Make the primary box visible. (Displays -> Primary -> Visibility)`n3. Go to Abilities in the left side row.`n4. In the top right select the ability Hekili is showing.`n5. CTRL + Click inside the Icon Replacement box.")
     IconReplacementGui.OnEvent("Close", IconReplacementGui_Close)
 
     IconReplacementGui.Show()
