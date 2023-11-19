@@ -3,6 +3,7 @@ Arcane Shot,132218
 Call Pet,132161
 Exhilaration,461117
 Freezing Trap,135834
+Hunter's Mark,236188
 Mend Pet,132179
 Revive Pet,132163
 Steady Shot,132213
