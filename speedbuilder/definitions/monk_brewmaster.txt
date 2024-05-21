@@ -19,6 +19,7 @@ Fortifying Brew,615341
 Paralysis,629534
 Ring of Peace,839107
 Rising Sun Kick,642415
+Rushing Jade Wind,606549
 Song of Chi-Ji,332402
 Soothing Mist,606550
 Spear Hand Strike,608940
