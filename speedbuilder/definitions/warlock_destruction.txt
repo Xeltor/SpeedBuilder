@@ -1,5 +1,6 @@
 -- Warlock Spells
 Corruption,136118
+Conflagrate,135807
 Curse of Weakness,136138
 Drain Life,136169
 Fear,136183
