@@ -6,7 +6,7 @@ if !FileExist("config.ini") {
     ExitApp()
 }
 
-#Include speedbuilder\includes\Globals.ahk
+#Include speedbuilder\includes\ConfigManager.ahk
 #Include speedbuilder\includes\SpellBook.ahk
 #Include speedbuilder\includes\ColorPicker.ahk
 #Include speedbuilder\gui\SpecSelection.ahk
@@ -16,11 +16,18 @@ global TickRate := 1000 / 60
 global SelectedClassSpec := ""
 global Keybinds := ""
 
+; Load config.
+global Config := LoadConfig()
+
+; Set hotkeys.
+Hotkey(Config.ToggleOnOffKeyBind, ToggleSpeedBuilder)
+Hotkey(Config.SpecSelectionKeyBind, SpecSelectionHotkey)
+
 ; Select spec gui on startup.
-SpecSelection()
+SpecSelection(Config)
 
 ; Change this to change te button to toggle the rotation on and off.
-`:: {
+ToggleSpeedBuilder(PressedHotKey) {
     global Toggle
     global Keybinds
 
@@ -33,14 +40,12 @@ SpecSelection()
     }
 }
 
-#HotIf WinActive(Warcraft)
-#F12:: {
-    SpecSelection()
+SpecSelectionHotkey(PressedHotKey) {
+    SpecSelection(Config)
 }
-#HotIf
 
 Rotation() {
-    if WinActive(Warcraft) {
+    if WinActive(Config.Warcraft) {
         try {
             colors := GetPixelColors()
     

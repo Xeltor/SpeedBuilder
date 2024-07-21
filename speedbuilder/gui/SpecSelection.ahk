@@ -1,11 +1,35 @@
 #Include ..\includes\SpellBook.ahk
 
-SpecSelection() {
+SpecSelection(Config) {
     ClassSpecs := GetClassSpecs()
 
     if !ClassSpecs.Length {
         MsgBox("No classes have been setup, please run ClassSetup.ahk", AppName)
         ExitApp()
+    }
+
+    ReOpenMessage := ""
+    TrimCount := 0
+    if (Config.SpecSelectionKeyBind ~= "\#") {
+        ReOpenMessage .= "WindowsKey + "
+        TrimCount++
+    }
+    if Config.SpecSelectionKeyBind ~= "\!" {
+        ReOpenMessage .= "Alt + "
+        TrimCount++
+    }
+    if Config.SpecSelectionKeyBind ~= "\^" {
+        ReOpenMessage .= "Ctrl + "
+        TrimCount++
+    }
+    if (Config.SpecSelectionKeyBind ~= "\+") {
+        ReOpenMessage .= "Shift + "
+        TrimCount++
+    }
+    if TrimCount {
+        ReOpenMessage .= SubStr(Config.SpecSelectionKeyBind, TrimCount + 1)
+    } else {
+        ReOpenMessage .= Config.SpecSelectionKeyBind
     }
 
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
@@ -14,7 +38,7 @@ SpecSelection() {
     SpecGui.AddDropDownList("vClassSpecChoice r10 w360", ClassSpecs)
     LoadButton := SpecGui.AddButton("Default", "Load")
     LoadButton.OnEvent("Click", LoadButton_Click)
-    SpecGui.AddText(,"WindowsKey + F12: To open this menu again for spec switching.")
+    SpecGui.AddText(,ReOpenMessage ": To open this menu again for spec switching.")
     SpecGui.OnEvent("Close", SpecSelectGui_Close)
 
     SpecGui.Show()

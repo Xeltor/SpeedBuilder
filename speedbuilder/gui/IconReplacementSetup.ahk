@@ -4,7 +4,7 @@
 global IconReplacementGui := ""
 global SetupData := Object()
 
-#HotIf IconReplacementGui != "" and WinActive(Warcraft)
+#HotIf IconReplacementGui != "" and WinActive(Config.Warcraft)
 CTRL & LButton:: {
     global IconReplacementGui
     global SetupData

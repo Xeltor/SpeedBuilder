@@ -1,87 +1,87 @@
 ; Define controls.
-#HotIf TargetGui != "" and WinActive(Warcraft)
+#HotIf TargetGui != "" and WinActive(Config.Warcraft)
 Ctrl & LButton:: {
     global TargetGui
-    global Hekili
+    global Config
 
 	MouseClick
 	MouseGetPos(&xCoord, &yCoord)
 
-    Hekili.xCoord := xCoord
-    Hekili.yCoord := yCoord
+    Config.Hekili.xCoord := xCoord
+    Config.Hekili.yCoord := yCoord
 
-    IniWrite(xCoord, "config.ini", "Hekili", "xCoord")
-    IniWrite(yCoord, "config.ini", "Hekili", "yCoord")
+    IniWrite(Config.Hekili.xCoord, "config.ini", "Hekili", "xCoord")
+    IniWrite(Config.Hekili.yCoord, "config.ini", "Hekili", "yCoord")
 
-	TargetGui := DrawTargetGui(Hekili, TargetGui)
+	TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
 
 ; Increase box size.
 NumpadAdd:: {
     global TargetGui
-    global Hekili
+    global Config
 
-    if (Hekili.Width + 1 <= 100) {
-        Hekili.Width := Hekili.Width + 1
-        IniWrite(Hekili.Width, "config.ini", "Hekili", "BoxWidth")
-        TargetGui := DrawTargetGui(Hekili, TargetGui, True)
+    if (Config.Hekili.BoxWidth + 1 <= 100) {
+        Config.Hekili.BoxWidth := Config.Hekili.BoxWidth + 1
+        IniWrite(Config.Hekili.BoxWidth, "config.ini", "Hekili", "BoxWidth")
+        TargetGui := DrawTargetGui(Config.Hekili, TargetGui, True)
 
-        WinActivate(Warcraft)
+        WinActivate(Config.Warcraft)
     }
 }
 
 ; Decrease box size.
 NumpadSub:: {
     global TargetGui
-    global Hekili
+    global Config
 
-    if (Hekili.Width + 1 > 25) {
-        Hekili.Width := Hekili.Width - 1
-        IniWrite(Hekili.Width, "config.ini", "Hekili", "BoxWidth")
-        TargetGui := DrawTargetGui(Hekili, TargetGui, True)
+    if (Config.Hekili.BoxWidth + 1 > 25) {
+        Config.Hekili.BoxWidth := Config.Hekili.BoxWidth - 1
+        IniWrite(Config.Hekili.BoxWidth, "config.ini", "Hekili", "BoxWidth")
+        TargetGui := DrawTargetGui(Config.Hekili, TargetGui, True)
 
-        WinActivate(Warcraft)
+        WinActivate(Config.Warcraft)
     }
 }
 
 ; Move left.
 Left:: {
     global TargetGui
-    global Hekili
+    global Config
 
-    Hekili.xCoord := Hekili.xCoord - 1
-    IniWrite(Hekili.xCoord, "config.ini", "Hekili", "xCoord")
-    TargetGui := DrawTargetGui(Hekili, TargetGui)
+    Config.Hekili.xCoord := Config.Hekili.xCoord - 1
+    IniWrite(Config.Hekili.xCoord, "config.ini", "Hekili", "xCoord")
+    TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
 
 ; Move right.
 Right:: {
     global TargetGui
-    global Hekili
+    global Config
 
-    Hekili.xCoord := Hekili.xCoord + 1
-    IniWrite(Hekili.xCoord, "config.ini", "Hekili", "xCoord")
-    TargetGui := DrawTargetGui(Hekili, TargetGui)
+    Config.Hekili.xCoord := Config.Hekili.xCoord + 1
+    IniWrite(Config.Hekili.xCoord, "config.ini", "Hekili", "xCoord")
+    TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
 
 ; Move up.
 Up:: {
     global TargetGui
-    global Hekili
+    global Config
 
-    Hekili.yCoord := Hekili.yCoord - 1
-    IniWrite(Hekili.yCoord, "config.ini", "Hekili", "yCoord")
-    TargetGui := DrawTargetGui(Hekili, TargetGui)
+    Config.Hekili.yCoord := Config.Hekili.yCoord - 1
+    IniWrite(Config.Hekili.yCoord, "config.ini", "Hekili", "yCoord")
+    TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
 
 ; Move down.
 Down:: {
     global TargetGui
-    global Hekili
+    global Config
 
-    Hekili.yCoord := Hekili.yCoord + 1
-    IniWrite(Hekili.yCoord, "config.ini", "Hekili", "yCoord")
-    TargetGui := DrawTargetGui(Hekili, TargetGui)
+    Config.Hekili.yCoord := Config.Hekili.yCoord + 1
+    IniWrite(Config.Hekili.yCoord, "config.ini", "Hekili", "yCoord")
+    TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
 #HotIf
 
@@ -94,13 +94,13 @@ DrawTargetGui(Hekili, TargetGui := "", Destroy := False) {
 
     if (TargetGui = "") {
         TargetGui := Gui("+E0x20 +ToolWindow +LastFound +AlwaysOnTop")
-        TargetGui.AddPicture("h" Hekili.Width " w-1 X-0 Y-0", "speedbuilder\resources\bullseye.gif")
+        TargetGui.AddPicture("h" Hekili.BoxWidth " w-1 X-0 Y-0", "speedbuilder\resources\bullseye.gif")
         WinSetTransColor("0xFF00FF", TargetGui)
         TargetGui.Opt("-Caption +Disabled")
 
-        TargetGui.Show("x" (Hekili.xCoord - (Hekili.Width / 2)) " y" (Hekili.yCoord - (Hekili.Width / 2)) " w" Hekili.Width " h" Hekili.Width)
+        TargetGui.Show("x" (Hekili.xCoord - (Hekili.BoxWidth / 2)) " y" (Hekili.yCoord - (Hekili.BoxWidth / 2)) " w" Hekili.BoxWidth " h" Hekili.BoxWidth)
     } else {
-        TargetGui.Move((Hekili.xCoord - (Hekili.Width / 2)), (Hekili.yCoord - (Hekili.Width / 2)))
+        TargetGui.Move((Hekili.xCoord - (Hekili.BoxWidth / 2)), (Hekili.yCoord - (Hekili.BoxWidth / 2)))
     }
 
     return TargetGui

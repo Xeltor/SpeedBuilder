@@ -2,11 +2,13 @@
 Escape::ExitApp()
 
 global AppName := "Class Setup"
-#Include speedbuilder\includes\Globals.ahk
+#Include speedbuilder\includes\ConfigManager.ahk
 #Include speedbuilder\gui\SpecSelectSetup.ahk
 
+global Config := LoadConfig()
+
 ; Stop if warcraft isnt running.
-if !WinExist(Warcraft) {
+if !WinExist(Config.Warcraft) {
     MsgBox("Please make sure World of Warcraft is running.", AppName)
     ExitApp()
 }

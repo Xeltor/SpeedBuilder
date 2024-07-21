@@ -14,10 +14,10 @@ Voidform,1386550
 
 -- Priest Talents
 Angelic Feather,642580
+Dark Ascension,1445237
 Dispel Magic,136066
 Divine Star,537026
 Divine Star Shadow,631519
-Dominate Mind,
 Halo,632352
 Halo Shadow,632353
 Holy Nova,135922
@@ -32,11 +32,12 @@ Shackle Undead,136091
 Shadow Word: Death,136149
 Shadowfiend,136199
 Vampiric Embrace,136230
+Void Eruption,1386548
 Void Shift,537079
 Void Tendrils,537022
 
 -- Shadow Talents
-Devouring Plague,252996
+Devouring Plague,252997
 Dispersion,237563
 Mind Spike,457655
 Mindbender,136214

@@ -5,27 +5,23 @@ Escape::ExitApp()
 global TargetGui := ""
 global SupportGui := ""
 global AppName := "Speed Builder Setup"
-#Include speedbuilder\includes\Globals.ahk
+#Include speedbuilder\includes\ConfigManager.ahk
+
+; Load config.
+global Config := LoadConfig()
 
 ; Stop if warcraft isnt running.
-if !WinExist(Warcraft) {
+if !WinExist(Config.Warcraft) {
     MsgBox("Please make sure World of Warcraft is running.", AppName)
     ExitApp()
-}
-
-; Setup base ini config if it doesnt exist.
-if !FileExist("config.ini"){
-    IniWrite("100", "config.ini", "Hekili", "xCoord")
-    IniWrite("100", "config.ini", "Hekili", "yCoord")
-    IniWrite("50", "config.ini", "Hekili", "BoxWidth")
 }
 
 #include speedbuilder\gui\Support.ahk
 #include speedbuilder\gui\Target.ahk
 
 ; Draw GUI.
-TargetGui := DrawTargetGui(Hekili)
+TargetGui := DrawTargetGui(Config.Hekili)
 SupportGui := DrawSupportGui()
 
 ; Activate WoW.
-WinActivate(Warcraft)
+WinActivate(Config.Warcraft)
