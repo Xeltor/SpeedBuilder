@@ -1,6 +1,7 @@
 -- Racial traits.
 Ancestral Call,2021574
 Arcane Torrent,136222
+Azerite Surge,5788297
 Bag of Tricks,3193416
 Berserking,135727
 Blood Fury,135726
