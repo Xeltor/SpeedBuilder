@@ -14,6 +14,6 @@ This utility will run through all the class spell icons and turn them into a key
 ## Run.ahk
 This utility runs with the previously stated keybinds files to automatically press the keybinds you have specified.
 
-### Default keybinds:
-- ` (Tilde): This starts and stops the rotation. (You can change this in Run.ahk on line 23)
+### Default keybinds:  (You can change this in config.ini)
+- ` (Tilde): This starts and stops the rotation.
 - WindowsKey + F12: Opens up the spec selection screen.
