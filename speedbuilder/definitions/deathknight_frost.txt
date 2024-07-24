@@ -5,9 +5,11 @@ Lichborne,136187
 
 -- Death Knight Talents
 Abomination Limb,3578196
+Anti-Magic Zone,237510
 Asphyxiate,538558
 Blinding Sleet,135836
 Chains Of Ice,135834
+Control Undead,237273
 Death Pact,136146
 Death Strike,237517
 Empower Rune Weapon,135372
@@ -16,6 +18,7 @@ Mind Freeze,237527
 Raise Dead,1100170
 Sacrificial Pact,136133
 Soul Reaper,636333
+Wraith Walk,1100041
 
 -- Frost Talents
 Breath Of Sindragosa,1029007
@@ -31,3 +34,8 @@ Pillar Of Frost,458718
 
 -- Frost Specialization Spells
 Remorseless Winter,538770
+
+-- Deathbringer Talents
+Reaper's Mark,5927621
+
+-- Rider of the Apocalypse Talents
