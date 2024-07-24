@@ -2,7 +2,7 @@ LoadConfig() {
     Config := {}
 
     ; Set warcraft window.
-    Config.Warcraft := "ahk_class GxWindowClass"
+    Config.Warcraft := "ahk_class waApplication Window"
 
     ; Toggle on keybind.
     try {
