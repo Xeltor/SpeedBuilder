@@ -1,47 +1,46 @@
 -- Items.
 Healthstone,538745
 
--- Amirdrassil Trinkets (10.2)
-Ashes of the Embersoul,1357807
-Bandolier of Twisted Blades,4227435
-Belor'relos the Suncaller,516743
-Branch of the Tormented Ancient,959798
-Coiled Serpent Idol,133262
-Fyrakk's Tainted Rageheart,5415954
-Nymue's Unraveling Spindle,5177651
-Smoldering Seedling,3731812
-
--- Aberrus Trinkets (10.1)
-Beacon to the Beyond,4914670
-Dragonfire Bomb Dispenser,4624639
-Elementium Pocket Anvil,2356069
-Enduring Dreadplate,4622283
-Screaming Black Dragonscale,377271
-Ward of Faceless Ire,4638535
-Zaqali Chaos Grapnel,1269444
-
--- Mythic+ Season 3 (10.2)
-'Bygone Bee' Almanac,133738
-Balefire Branch,135163
-Bottled Lightning,465875
-Echoing Tyrstone,1360762
-Leaf of the Ancient Protectors,237424
-Might of the Ocean,135228
-Mirror of Fractured Tomorrows,254116
-My'das Talisman,134543
-Revitalizing Voodoo Totem,538571
-Sea Star,132779
-Soul's Anguish,136212
-Spores of Alacrity,132371
-Time-Thief's Gambit,922527
-Witherbark's Branch,133749
-Iridal the Earth's Master,5001160
-
--- Mythic+ Season 2 (10.1)
-Irideus Fragment,4638427
-
--- Crafting Trinkets
-Darkmoon Deck Box: Dance,4554973
-Darkmoon Deck Box: Inferno,4554993
-Darkmoon Deck Box: Rime,4555003
-Darkmoon Deck Box: Watcher,4554983
+-- Trinkets (11.0) (https://www.wowhead.com/items/slot:12/group-by:level?filter=82:195:62;2:1:1;110000:0:0)
+Abyssal Trap,893778
+Algari Competitor's Emblem,132344
+Arathi Demolition Charge,252176
+Bronzebeard Family Compass,4635200
+Burin of the Candle King,1379201
+Bursting Lightshard,5948040
+Charged Stormrook Plume,5899332
+Concoction: Kiss of Death,4497603
+Creeping Coagulum,5948205
+Delve Ring,463567
+Fearbreaker's Echo,1892681
+Forged Aspirant's Badge of Ferocity,135884
+Forged Aspirant's Emblem,132344
+Forged Gladiator's Badge of Ferocity,135884
+Forged Gladiator's Emblem,132344
+Foul Behemoth's Chelicera,5948209
+Goldenglow Censer,4626288
+High Speaker's Accretion,5929586
+Horn of Declaration,134229
+Imperfect Ascendancy Serum,967529
+Kaheti Shadeweaver's Emblem,3853942
+Mad Queen's Mandate,5948202
+Mereldar's Toll,5948032
+Message-Imprinted Silken Square,629936
+Nizrek's Holographic Manipulator,5502817
+Oppressive Orator's Larynx,136202
+Overclocked Gear-A-Rang Launcher,4569826
+Ovinax's Mercurial Egg,5948240
+Quickwick Candlestick,454044
+Ravenous Honey Buzzer,4548852
+Shriveled Ancient Tentacle,133574
+Signet of the Priory,5948043
+Sikran's Endless Arsenal,5948249
+Silken Chain Weaver,4549275
+Skarmorak Shard,5948038
+Skyterror's Corrosive Organ,5948243
+Spymaster's Web,5545567
+Swarmlord's Authority,5948252
+Tome of Light's Devotion,1495827
+Treacherous Transmitter,5948071
+Twin Fang Instruments,1786422
+Viscous Coaglam,5948203

@@ -13,6 +13,8 @@ Shred,136231
 Swipe,134296
 Wrath,535045
 
+-- Restoration Specialization Spells
+
 -- Druid Talents
 Frenzied Regeneration,132091
 Heart of the Wild,135879
@@ -56,3 +58,5 @@ Nature's Swiftness,136076
 Nourish,236162
 Overgrowth,1408836
 Tranquility,136107
+
+-- Hero Talents

@@ -7,6 +7,10 @@ Fire Blast,135807
 Frostbolt,135846
 Frost Nova,135848
 
+-- Fire Specialization Spells
+Fireball,135812
+Flamestrike,135826
+
 -- Mage Talents
 Alter Time,609811
 Blast Wave,135903
@@ -33,6 +37,4 @@ Phoenix Flames,1392549
 Pyroblast,135808
 Scorch,135827
 
--- Fire Specialization
-Fireball,135812
-Flamestrike,135826
+-- Hero Talents

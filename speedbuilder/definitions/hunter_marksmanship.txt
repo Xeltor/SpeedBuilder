@@ -8,6 +8,8 @@ Mend Pet,132179
 Revive Pet,132163
 Steady Shot,132213
 
+-- Marksmanship Specialization Spells
+
 -- Hunter Talents
 Barrage,236201
 Binding Shot,462650
@@ -41,3 +43,5 @@ Salvo,1033904
 Trueshot,132329
 Volley,132205
 Wailing Arrow,132323
+
+-- Hero Talents

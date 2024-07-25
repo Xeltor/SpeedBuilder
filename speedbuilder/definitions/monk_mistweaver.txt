@@ -42,3 +42,5 @@ Revival,1020466
 Sheilun's Gift,1242282
 Thunder Focus Tea,611418
 Zen Pulse,613397
+
+-- Hero Talents

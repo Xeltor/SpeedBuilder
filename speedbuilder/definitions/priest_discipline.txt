@@ -12,6 +12,10 @@ Smite,135924
 Void Bolt,1035040
 Voidform,1386550
 
+-- Discipline Specialization Spells
+Penance,237545
+Purify,135894
+
 -- Priest Talents
 Angelic Feather,642580
 Dispel Magic,136066
@@ -46,6 +50,4 @@ Purge the Wicked,236216
 Rapture,237548
 Ultimate Penitence,1060982
 
--- Discipline Specialization
-Penance,237545
-Purify,135894
+-- Hero Talents

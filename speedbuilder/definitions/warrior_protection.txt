@@ -12,6 +12,9 @@ Taunt,136080
 Victory Rush,132342
 Whirlwind,132369
 
+-- Protection Specialization Spells
+Devastate,135291
+
 -- Warrior Talents
 Avatar,613534
 Battle Stance,132349
@@ -44,5 +47,4 @@ Shield Charge,4667427
 Shield Wall,132362
 Spell Block,132358
 
--- Protection Specialization Skills
-Devastate,135291
+-- Hero Talents

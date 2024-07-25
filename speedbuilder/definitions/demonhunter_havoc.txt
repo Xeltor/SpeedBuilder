@@ -4,6 +4,13 @@ Immolation Aura,1344649
 Metamorphosis,1247262
 Throw Glaive,1305159
 
+-- Havoc Specialization Spells
+Blade Dance,1305149
+Blur,1305150
+Chaos Strike,1305152
+Demon's Bite,135561
+Sigil Of Flame,1344652
+
 -- Demon Hunter Talents
 Chaos Nova,135795
 Consume Magic,828455
@@ -19,9 +26,4 @@ Eye Beam,1305156
 Fel Barrage,2065580
 Glaive Tempest,1455916
 
--- Havoc Specialization Spells
-Blade Dance,1305149
-Blur,1305150
-Chaos Strike,1305152
-Demon's Bite,135561
-Sigil Of Flame,1344652
+-- Hero Talents

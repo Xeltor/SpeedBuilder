@@ -14,6 +14,10 @@ Summon Sayaad,4352493
 Summon Voidwalker,136221
 Unending Resolve,136150
 
+-- Destruction Specialization Spells
+Immolate,135817
+Incinerate,135789
+
 -- Warlock Talents
 Amplify Curse,136132
 Banish,136135
@@ -38,6 +42,4 @@ Grimoire of Sacrifice,538443
 Summon Infernal,136219
 Dimensional Rift,607513
 
--- Destruction Specialization
-Immolate,135817
-Incinerate,135789
+-- Hero Talents

@@ -15,6 +15,14 @@ Stealth,132320
 Vanish,132331
 Wound Poison,134197
 
+-- Subtlety Specialization Spells
+Backstab,132090
+Black Powder,608955
+Rupture,132302
+Shadowstrike,1373912
+Shuriken Storm,1375677
+Symbols of Death,252272
+
 -- Rogue Talents
 Atrophic Poison,132300
 Blind,136175
@@ -39,10 +47,4 @@ Sepsis,3636848
 Shadow Blades,376022
 Shuriken Tornado,236282
 
--- Subtlety Specialization
-Backstab,132090
-Black Powder,608955
-Rupture,132302
-Shadowstrike,1373912
-Shuriken Storm,1375677
-Symbols of Death,252272
+-- Hero Talents

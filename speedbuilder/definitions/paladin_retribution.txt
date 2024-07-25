@@ -7,6 +7,9 @@ Judgment,135959
 Shield of the Righteous,236265
 Word of Glory,133192
 
+-- Retribution Specialization Spells
+Crusader Strike,135891
+
 -- Paladin Talents
 Avenging Wrath,135875
 Blessing of Freedom,135968
@@ -40,5 +43,4 @@ Templar Strike,1109508
 Templar Slash,1112940
 Wake of Ashes,1112939
 
--- Retribution Specialization Skills
-Crusader Strike,135891
+-- Hero Talents

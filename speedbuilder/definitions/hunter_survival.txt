@@ -8,6 +8,8 @@ Mend Pet,132179
 Revive Pet,132163
 Steady Shot,132213
 
+-- Survival Specialization Spells
+
 -- Hunter Talents
 Barrage,236201
 Binding Shot,462650
@@ -46,3 +48,5 @@ Shrapnel Bomb,2065637
 Spearhead,4667416
 Volatile Bomb,2065636
 Wildfire Bomb,2065634
+
+-- Hero Talents

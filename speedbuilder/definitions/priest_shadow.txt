@@ -2,27 +2,31 @@
 Desperate Prayer,237550
 Fade,135994
 Flash Heal,135907
+Levitate,135928
 Mind Blast,136224
 Mind Soothe,135933
 Power Word: Fortitude,135987
 Power Word: Shield,135940
 Psychic Scream,136184
+Resurrection,135955
 Shadow Word: Pain,136207
 Smite,135924
-Void Bolt,1035040
 Voidform,1386550
+
+-- Shadow Specialization Spells
+Mind Flay,136208
+Shadowform,136200
+Vampiric Touch,135978
 
 -- Priest Talents
 Angelic Feather,642580
-Dark Ascension,1445237
 Dispel Magic,136066
-Divine Star,537026
 Divine Star Shadow,631519
-Halo,632352
+Divine Star,537026
 Halo Shadow,632353
+Halo,632352
 Holy Nova,135922
 Mass Dispel,135739
-Mindgames,3565723
 Power Infusion,135939
 Power Word: Life,4667420
 Prayer of Mending,135944
@@ -32,11 +36,11 @@ Shackle Undead,136091
 Shadow Word: Death,136149
 Shadowfiend,136199
 Vampiric Embrace,136230
-Void Eruption,1386548
 Void Shift,537079
 Void Tendrils,537022
 
 -- Shadow Talents
+Dark Ascension,1445237
 Devouring Plague,252997
 Dispersion,237563
 Mind Spike,457655
@@ -44,9 +48,8 @@ Mindbender,136214
 Psychic Horror,237568
 Shadow Crash,136201
 Silence,458230
+Void Bolt,1035040
+Void Eruption,1386548
 Void Torrent,1386551
 
--- Shadow Specialization
-Mind Flay,136208
-Shadowform,136200
-Vampiric Touch,135978
+-- Hero Talents

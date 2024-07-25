@@ -3,6 +3,9 @@ Death And Decay,136144
 Death Coil,136145
 Lichborne,136187
 
+-- Frost Specialization Spells
+Remorseless Winter,538770
+
 -- Death Knight Talents
 Abomination Limb,3578196
 Anti-Magic Zone,237510
@@ -32,10 +35,5 @@ Howling Blast,135833
 Obliterate,135771
 Pillar Of Frost,458718
 
--- Frost Specialization Spells
-Remorseless Winter,538770
-
--- Deathbringer Talents
+-- Hero Talents
 Reaper's Mark,5927621
-
--- Rider of the Apocalypse Talents

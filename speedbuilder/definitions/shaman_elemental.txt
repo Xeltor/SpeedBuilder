@@ -46,3 +46,5 @@ Liquid Magma Totem,971079
 Primordial Wave,3578231
 Storm Elemental,2065626
 Stormkeeper,839977
+
+-- Hero Talents

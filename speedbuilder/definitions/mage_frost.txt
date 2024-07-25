@@ -7,6 +7,10 @@ Fire Blast,135807
 Frostbolt,135846
 Frost Nova,135848
 
+-- Frost Specialization Spells
+Blizzard,135857
+Cold Snap,135865
+
 -- Mage Talents
 Alter Time,609811
 Blast Wave,135903
@@ -33,6 +37,4 @@ Ice Lance,135844
 Icy Veins,135838
 Ray of Frost,1698700
 
--- Frost Specialization
-Blizzard,135857
-Cold Snap,135865
+-- Hero Talents

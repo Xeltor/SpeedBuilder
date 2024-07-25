@@ -50,3 +50,5 @@ Sundering,524794
 Windfury Totem,136114
 Windfury Weapon,462329
 Windstrike,1029585
+
+-- Hero Talents

@@ -7,6 +7,12 @@ Judgment,135959
 Shield of the Righteous,236265
 Word of Glory,133192
 
+-- Holy Specialization Spells
+Beacon of Light,236247
+Cleanse,135949
+Divine Protection,524353
+Holy Light,135981
+
 -- Paladin Talents
 Avenging Wrath,135875
 Blessing of Freedom,135968
@@ -42,8 +48,4 @@ Light of the Martyr,1360762
 Light's Hammer,613955
 Tyr's Deliverance,1122562
 
--- Holy Specialization
-Beacon of Light,236247
-Cleanse,135949
-Divine Protection,524353
-Holy Light,135981
+-- Hero Talents

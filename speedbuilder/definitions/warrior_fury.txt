@@ -12,6 +12,8 @@ Taunt,136080
 Victory Rush,132342
 Whirlwind,132369
 
+-- Fury Specialization Spells
+
 -- Warrior Talents
 Avatar,613534
 Berserker Stance,132275
@@ -42,4 +44,4 @@ Rampage,132352
 Ravager,970854
 Recklessness,458972
 
--- Fury Specialization Skills
+-- Hero Talents

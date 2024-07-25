@@ -38,3 +38,5 @@ Hammer of the Righteous,236253
 Moment of Glory,237537
 Sanctified Wrath,236259
 Sentinel,135922
+
+-- Hero Talents

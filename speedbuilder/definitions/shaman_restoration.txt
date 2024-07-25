@@ -51,3 +51,5 @@ Spirit Link Totem,237586
 Stormkeeper,839977
 Unleash Life,462328
 Wellspring,893778
+
+-- Hero Talents

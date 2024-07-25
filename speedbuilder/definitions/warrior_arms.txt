@@ -12,6 +12,8 @@ Taunt,136080
 Victory Rush,132342
 Whirlwind,132369
 
+-- Arms Specialization Spells
+
 -- Warrior Talents
 Avatar,613534
 Battle Stance,132349
@@ -44,4 +46,4 @@ Rend,132155
 Skullsplitter,2065621
 Warbreaker,2065633
 
--- Arms Specialization Skills
+-- Hero Talents

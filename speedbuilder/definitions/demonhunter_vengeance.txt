@@ -4,6 +4,15 @@ Immolation Aura,1344649
 Metamorphosis,1247262
 Throw Glaive,1305159
 
+-- Vengeance Specialization Spells
+Demon Spikes,1344645
+Infernal Strike,1344650
+Metamorphosis Vengeance,1247263
+Shear,1344648
+Sigil Of Flame,1344652
+Soul Cleave,1344653
+Throw Glaive,1305159
+
 -- Demon Hunter Talents
 Chaos Nova,135795
 Consume Magic,828455
@@ -24,11 +33,4 @@ Soul Barrier,2065625
 Soul Carver,1309072
 Spirit Bomb,1097742
 
--- Vengeance Specialization Spells
-Demon Spikes,1344645
-Infernal Strike,1344650
-Metamorphosis Vengeance,1247263
-Shear,1344648
-Sigil Of Flame,1344652
-Soul Cleave,1344653
-Throw Glaive,1305159
+-- Hero Talents

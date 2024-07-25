@@ -36,7 +36,5 @@ Rune Tap,237529
 Tombstone,132151
 Vampiric Blood,136168
 
--- Death Bringer Talents
+-- Hero Talents
 Reaper's Mark,5927621
-
--- San'layn Talents

@@ -40,3 +40,5 @@ Keg Smash,594274
 Purifying Brew,133701
 Weapons of Order,3565447
 Zen Meditation,642417
+
+-- Hero Talents

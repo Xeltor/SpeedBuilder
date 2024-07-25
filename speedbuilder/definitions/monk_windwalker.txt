@@ -39,3 +39,5 @@ Storm Earth and Fire,136038
 Strike of the Windlord,1282595
 Touch of Karma,651728
 Whirling Dragon Punch,988194
+
+-- Hero Talents

@@ -13,6 +13,11 @@ Summon Sayaad,4352493
 Summon Voidwalker,136221
 Unending Resolve,136150
 
+-- Demonology Specialization Spells
+Hand of Gul'dan,535592
+Summon Felguard,136216
+Axe Toss,236316
+
 -- Warlock Talents
 Amplify Curse,136132
 Banish,136135
@@ -41,7 +46,4 @@ Soul Strike,1452864
 Summon Demonic Tyrant,2065628
 Summon Vilefiend,1616211
 
--- Demonology Specialization
-Hand of Gul'dan,535592
-Summon Felguard,136216
-Axe Toss,236316
+-- Hero Talents

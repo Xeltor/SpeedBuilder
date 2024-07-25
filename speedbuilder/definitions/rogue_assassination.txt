@@ -15,6 +15,13 @@ Stealth,132320
 Vanish,132331
 Wound Poison,134197
 
+-- Assassination Specialization Spells
+Envenom,132287
+Fan of Knives,236273
+Garrote,132297
+Mutilate,132304
+Rupture,132302
+
 -- Rogue Talents
 Atrophic Poison,132300
 Blind,136175
@@ -39,9 +46,4 @@ Kingsbane,1259291
 Sepsis,3636848
 Serrated Bone Spike,3578230
 
--- Assassination Specialization
-Envenom,132287
-Fan of Knives,236273
-Garrote,132297
-Mutilate,132304
-Rupture,132302
+-- Hero Talents

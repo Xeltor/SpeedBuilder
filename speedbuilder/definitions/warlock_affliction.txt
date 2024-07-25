@@ -13,6 +13,9 @@ Summon Sayaad,4352493
 Summon Voidwalker,136221
 Unending Resolve,136150
 
+-- Affliction Specialization Spells
+Agony,136139
+
 -- Warlock Talents
 Amplify Curse,136132
 Banish,136135
@@ -40,5 +43,4 @@ Summon Darkglare,1416161
 Unstable Affliction,136228
 Vile Taint,1391774
 
--- Affliction Specialization
-Agony,136139
+-- Hero Talents

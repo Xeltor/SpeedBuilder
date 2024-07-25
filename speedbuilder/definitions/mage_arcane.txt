@@ -7,6 +7,10 @@ Fire Blast,135807
 Frostbolt,135846
 Frost Nova,135848
 
+-- Arcane Specialization Spells
+Arcane Barrage,236205
+Arcane Blast,135735
+
 -- Mage Talents
 Alter Time,609811
 Blast Wave,135903
@@ -38,6 +42,4 @@ Radiant Spark,3565446
 Supernova,1033912
 Touch of the Magi,236222
 
--- Arcane Specialization
-Arcane Barrage,236205
-Arcane Blast,135735
+-- Hero Talents

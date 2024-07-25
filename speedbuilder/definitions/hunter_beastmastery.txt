@@ -8,6 +8,8 @@ Mend Pet,132179
 Revive Pet,132163
 Steady Shot,132213
 
+-- Beast Mastery Specialization Spells
+
 -- Hunter Talents
 Barrage,236201
 Binding Shot,462650
@@ -43,3 +45,5 @@ Dire Beast,236186
 Multi-Shot,132330
 Wailing Arrow,132323
 Wild Instincts,132166
+
+-- Hero Talents
