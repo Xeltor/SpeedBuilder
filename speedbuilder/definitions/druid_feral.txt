@@ -2,20 +2,26 @@
 Barkskin,136097
 Bear Form,132276
 Cat Form,132115
+Dash,132120
 Entangling Roots,136100
 Ferocious Bite,132127
+Flight Form,132128
 Mangle,132135
 Mark of the Wild,136078
 Moonfire,136096
+Mount Form,1394966
 Prowl,514640
+Rebirth,136080
 Regrowth,136085
+Revive,132132
 Shred,136231
 Swipe,134296
-Wrath,535045
+Travel Form,132144
 
 -- Feral Specialization Spells
 
 -- Druid Talents
+Cyclone,136022
 Frenzied Regeneration,132091
 Heart of the Wild,135879
 Hibernate,136090
@@ -25,7 +31,6 @@ Ironfur,1378702
 Maim,132134
 Mass Entanglement,538515
 Mighty Bash,132114
-Moonkin Form,136036
 Nature's Vigil,236764
 Rake,132122
 Rejuvenation,136081
@@ -34,10 +39,10 @@ Renewal,136059
 Rip,132152
 Skull Bash,236946
 Soothe,132163
+Stampeding Roar,464343
 Starfire,135753
 Starsurge,135730
 Sunfire,236216
-Swiftmend,134914
 Thrash,451161
 Typhoon,236170
 Ursol's Vortex,571588

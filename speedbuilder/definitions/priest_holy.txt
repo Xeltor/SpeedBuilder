@@ -20,14 +20,12 @@ Purify,135894
 -- Priest Talents
 Angelic Feather,642580
 Dispel Magic,136066
-Divine Star,537026
 Divine Star Shadow,631519
-Dominate Mind,
-Halo,632352
+Divine Star,537026
 Halo Shadow,632353
+Halo,632352
 Holy Nova,135922
 Mass Dispel,135739
-Mindgames,3565723
 Power Infusion,135939
 Power Word: Life,4667420
 Prayer of Mending,135944
