@@ -1,4 +1,4 @@
--- Mage Spells
+-- Spells
 Arcane Explosion,136116
 Arcane Intellect,135932
 Cone of Cold,135852
@@ -7,34 +7,36 @@ Fire Blast,135807
 Frostbolt,135846
 Frost Nova,135848
 
--- Frost Specialization Spells
+-- Specialization Spells
 Blizzard,135857
 Cold Snap,135865
 
--- Mage Talents
+-- Talents
 Alter Time,609811
 Blast Wave,135903
-Displacement,Displacement
+Comet Storm,2126034
+Displacement,132171
 Dragon's Breath,134153
+Flurry,1506795
+Frostfire Bolt,5927630
+Frozen Orb,629077
+Glacial Spike,1698699
+Greater Invisibility,575584
+Ice Barrier,135988
+Ice Block,135841
 Ice Floes,610877
+Ice Lance,135844
 Ice Nova,1033909
+Icy Veins,135838
 Mass Barrier,1723997
+Mass Invisibility,1387356
 Mass Polymorph,575585
 Mirror Image,135994
-Prismatic Barrier,135991
+Ray of Frost,1698700
 Remove Curse,136082
 Ring of Frost,464484
 Shifting Power,3636841
+Shimmer,135739
 Slow,136091
 Spellsteal,135729
-
--- Frost Talents
-Comet Storm,2126034
-Flurry,1506795
-Frozen Orb,629077
-Glacial Spike,1698699
-Ice Lance,135844
-Icy Veins,135838
-Ray of Frost,1698700
-
--- Hero Talents
+Supernova,1033912

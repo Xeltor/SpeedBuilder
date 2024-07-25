@@ -1,4 +1,4 @@
--- Warrior Spells
+-- Spells
 Battle Shout,132333
 Charge,132337
 Execute,135358
@@ -12,39 +12,38 @@ Taunt,136080
 Victory Rush,132342
 Whirlwind,132369
 
--- Protection Specialization Spells
+-- Specialization Spells
 Devastate,135291
 
--- Warrior Talents
+-- Talents
 Avatar,613534
 Battle Stance,132349
+Berserker Shout,136009
 Bitter Immunity,136088
+Challenging Shout,132091
+Champion's Spear,3565453
 Defensive Stance,132341
+Demoralizing Shout,132366
+Devastator,135291
+Disrupting Shout,132091
 Heroic Leap,236171
+Ignore Pain,1377132
 Impending Victory,589768
 Intervene,132365
 Intimidating Shout,132154
+Last Stand,135871
+Piercing Howl,136147
 Rallying Cry,132351
+Ravager,970854
+Rend,132155
+Revenge,132353
 Shattering Throw,311430
+Shield Charge,4667427
+Shield Wall,132362
 Shockwave,236312
-Spear of Bastion,3565453
+Spell Block,132358
 Spell Reflection,132361
 Storm Bolt,613535
 Thunder Clap,136105
 Thunderous Roar,642418
-Titanic Throw,132453
 Wrecking Throw,460959
-
--- Protection Talents
-Challenging Shout,132091
-Demoralizing Shout,132366
-Ignore Pain,1377132
-Last Stand,135871
-Ravager,970854
-Rend,132155
-Revenge,132353
-Shield Charge,4667427
-Shield Wall,132362
-Spell Block,132358
-
--- Hero Talents

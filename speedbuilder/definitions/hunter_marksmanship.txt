@@ -1,4 +1,4 @@
--- Hunter Spells
+-- Spells
 Arcane Shot,132218
 Call Pet,132161
 Exhilaration,461117
@@ -8,40 +8,31 @@ Mend Pet,132179
 Revive Pet,132163
 Steady Shot,132213
 
--- Marksmanship Specialization Spells
+-- Specialization Spells
 
--- Hunter Talents
+-- Talents
+Aimed Shot,135130
 Barrage,236201
 Binding Shot,462650
+Bursting Shot,1376038
 Camouflage,461113
+Chimaera Shot,236176
 Concussive Shot,135860
 Counter Shot,249170
-Death Chakram,3578207
 Explosive Shot,236178
 High Explosive Trap,135826
+Implosive Trap,1044088
 Intimidation,132111
-Kill Command,132176
 Kill Shot,236174
 Misdirection,132180
-Roar of Sacrifice,464604
-Scatter Shot,132153
-Sentinel Owl,4067367
-Serpent Sting,1033905
-Stampede,461112
-Steel Trap,1467588
-Survival of the Fittest,136094
-Tar Trap,576309
-Tranquilizing Shot,136020
-
--- Marksmanship Talents
-Aimed Shot,135130
-Bursting Shot,1376038
-Chimaera Shot,236176
 Multi-Shot,132330
 Rapid Fire,461115
+Roar of Sacrifice,464604
 Salvo,1033904
+Scare Beast,132118
+Scatter Shot,132153
+Survival of the Fittest,136051
+Tar Trap,576309
+Tranquilizing Shot,136020
 Trueshot,132329
 Volley,132205
-Wailing Arrow,132323
-
--- Hero Talents

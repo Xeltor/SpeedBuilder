@@ -1,0 +1,27 @@
+-- Spells
+
+-- Specialization
+
+-- Talents
+Cauterizing Flame,4630446
+Dragonrage,4622452
+Engulf,5927629
+Eternity Surge,4630444
+Expunge,4630445
+Firestorm,4622459
+Landslide,1016245
+Obsidian Scales,1394891
+Oppressing Roar,4622466
+Pyre,4622468
+Quell,4622469
+Renewing Blaze,4630463
+Rescue,4622460
+Shattering Star,4622449
+Sleep Walk,1396974
+Source of Magic,4630412
+Spatial Paradox,5199645
+Time Spiral,4622479
+Tip the Scales,4622480
+Unravel,4630499
+Verdant Embrace,4622471
+Zephyr,4630449

@@ -1,0 +1,32 @@
+-- Spells
+
+-- Specialization
+
+-- Talents
+Cauterizing Flame,4630446
+Dream Breath,4622454
+Dream Flight,4622455
+Echo,4622456
+Emerald Communion,4630447
+Engulf,5927629
+Expunge,4630445
+Landslide,1016245
+Obsidian Scales,1394891
+Oppressing Roar,4622466
+Quell,4622469
+Renewing Blaze,4630463
+Rescue,4622460
+Reversion,4630467
+Rewind,4622474
+Sleep Walk,1396974
+Source of Magic,4630412
+Spatial Paradox,5199645
+Spiritbloom,4622476
+Stasis,4630476
+Temporal Anomaly,4630480
+Time Dilation,4622478
+Time Spiral,4622479
+Tip the Scales,4622480
+Unravel,4630499
+Verdant Embrace,4622471
+Zephyr,4630449

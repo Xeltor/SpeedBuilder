@@ -1,4 +1,4 @@
--- Shaman Spells
+-- Spells
 Earthbind Totem,136102
 Flame Shock,135813
 Healing Surge,136044
@@ -6,8 +6,10 @@ Lightning Bolt,136048
 Lightning Shield,136051
 Primal Strike,460956
 
--- Shaman Talents
+-- Talents
 Ancestral Guidance,538564
+Ancestral Swiftness,5927625
+Ascendance,135791
 Astral Shift,538565
 Capacitor Totem,136013
 Chain Heal,136042
@@ -15,36 +17,34 @@ Chain Lightning,136015
 Cleanse Spirit,236288
 Earth Elemental,136024
 Earth Shield,136089
+Earth Shock,136026
 Earthgrab Totem,136100
+Earthquake,451165
+Earthquake,451165
+Elemental Blast,651244
+Fire Elemental,135790
 Frost Shock,135849
 Greater Purge,451166
+Gust of Wind,463565
 Healing Stream Totem,135127
 Hex,237579
 Lava Burst,237582
 Lightning Lasso,1385911
+Liquid Magma Totem,971079
 Nature's Swiftness,136076
 Poison Cleansing Totem,136070
-Purge,136075
-Spiritwalker's Grace,451170
-Stoneskin Totem,4667425
-Thunderstorm,237589
-Totemic Projection,538574
-Totemic Recall,538570
-Tranquil Air Totem,538575
-Tremor Totem,136108
-Wind Shear,136018
-
--- Elemental Talents
-Ascendance,135791
-Earth Shock,136026
-Earthquake,451165
-Elemental Blast,651244
-Fire Elemental,135790
-Icefury,135855
-Lava Beam,236216
-Liquid Magma Totem,971079
 Primordial Wave,3578231
+Purge,136075
+Spirit Walk,132328
+Spiritwalker's Grace,451170
+Stone Bulwark Totem,538572
 Storm Elemental,2065626
 Stormkeeper,839977
-
--- Hero Talents
+Surging Totem,5927655
+Thunderstorm,237589
+Thunderstrike Ward,5975854
+Totemic Projection,538574
+Totemic Recall,538570
+Tremor Totem,136108
+Wind Rush Totem,538576
+Wind Shear,136018

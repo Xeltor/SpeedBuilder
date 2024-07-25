@@ -1,4 +1,4 @@
--- Paladin Spells
+-- Spells
 Consecration,135926
 Divine Shield,524354
 Flash of Light,135907
@@ -7,36 +7,33 @@ Judgment,135959
 Shield of the Righteous,236265
 Word of Glory,133192
 
--- Paladin Talents
+-- Talents
+Ardent Defender,135870
+Auras of the Resolute,135893
+Avenger's Shield,135874
 Avenging Wrath,135875
+Bastion of Light,535594
+Blessed Hammer,535595
 Blessing of Freedom,135968
 Blessing of Protection,135964
 Blessing of Sacrifice,135966
+Blessing of Spellwarding,135880
 Blinding Light,571553
 Cleanse Toxins,135953
-Concentration Aura,135933
 Crusader Aura,135890
-Devotion Aura,135893
 Divine Steed,1360759
 Divine Toll,3565448
-Hammer of Wrath,613533
-Lay on hands,135928
-Rebuke,523893
-Repentance,135942
-Retribution Aura,135889
-Turn Evil,571559
-
--- Protection Talents
-Ardent Defender,135870
-Avenger's Shield,135874
-Bastion of Light,535594
-Blessed Hammer,535595
-Blessing of Spellwarding,135880
+Eternal Flame,135433
 Eye of Tyr,1272527
 Guardian of Ancient Kings,135919
 Hammer of the Righteous,236253
+Hammer of Wrath,613533
+Holy Bulwark,5927636
+Lay on Hands,135928
 Moment of Glory,237537
-Sanctified Wrath,236259
+Rebuke,523893
+Repentance,135942
+Rite of Adjuration,237051
+Rite of Sanctification,237172
 Sentinel,135922
-
--- Hero Talents
+Turn Evil,571559

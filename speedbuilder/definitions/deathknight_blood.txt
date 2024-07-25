@@ -1,40 +1,33 @@
--- Death Knight Spells
+-- Spells
 Death And Decay,136144
 Death Coil,136145
 Lichborne,136187
 
--- Death Knight Talents
+-- Talents
 Abomination Limb,3578196
 Anti-Magic Zone,237510
 Asphyxiate,538558
 Blinding Sleet,135836
-Chains Of Ice,135834
-Control Undead,237273
-Death Pact,136146
-Death Strike,237517
-Empower Rune Weapon,135372
-Icebound Fortitude,237525
-Mind Freeze,237527
-Raise Dead,1100170
-Sacrificial Pact,136133
-Soul Reaper,636333
-Wraith Walk,1100041
-
--- Blood Talents
 Blood Boil,237513
 Blood Tap,237515
 Blooddrinker,838812
 Bonestorm,342917
 Consumption,1121487
+Control Undead,237273
 Dancing Rune Weapon,135277
-Death's Caress,1376743
+Death Pact,136146
+Death Strike,237517
 Gorefiend's Grasp,538767
 Heart Strike,135675
-Mark Of Blood,132205
+Icebound Fortitude,237525
+Mark of Blood,132205
 Marrowrend,1376745
+Mind Freeze,237527
+Raise Dead,1100170
+Reaper's Mark,5927621
 Rune Tap,237529
+Sacrificial Pact,136133
+Soul Reaper,636333
 Tombstone,132151
 Vampiric Blood,136168
-
--- Hero Talents
-Reaper's Mark,5927621
+Wraith Walk,1100041

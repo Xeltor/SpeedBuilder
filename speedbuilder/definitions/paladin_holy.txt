@@ -1,4 +1,4 @@
--- Paladin Spells
+-- Spells
 Consecration,135926
 Divine Shield,524354
 Flash of Light,135907
@@ -7,45 +7,39 @@ Judgment,135959
 Shield of the Righteous,236265
 Word of Glory,133192
 
--- Holy Specialization Spells
+-- Specialization Spells
 Beacon of Light,236247
 Cleanse,135949
 Divine Protection,524353
 Holy Light,135981
 
--- Paladin Talents
+-- Talents
+Aura Mastery,135872
+Auras of the Resolute,135893
+Avenging Crusader,589117
 Avenging Wrath,135875
+Barrier of Faith,4067370
+Beacon of Faith,1030095
+Beacon of Virtue,1030094
 Blessing of Freedom,135968
 Blessing of Protection,135964
 Blessing of Sacrifice,135966
+Blessing of Summer,3636845
 Blinding Light,571553
-Cleanse Toxins,135953
-Concentration Aura,135933
 Crusader Aura,135890
-Devotion Aura,135893
 Divine Steed,1360759
 Divine Toll,3565448
+Eternal Flame,135433
 Hammer of Wrath,613533
-Lay on hands,135928
-Rebuke,523893
-Repentance,135942
-Retribution Aura,135889
-Turn Evil,571559
-
--- Holy Talents
-Aura Mastery,135872
-Avenging Crusader,589117
-Barrier of Faith,4067370
-Beacon of Faith,1030095
-Blessing of Summer,3636845
-Daybreak,237537
-Divine Favor,135915
 Hand of Divinity,135985
+Holy Bulwark,5927636
 Holy Prism,613408
 Holy Shock,135972
+Lay on Hands,135928
 Light of Dawn,461859
-Light of the Martyr,1360762
-Light's Hammer,613955
+Rebuke,523893
+Repentance,135942
+Rite of Adjuration,237051
+Rite of Sanctification,237172
+Turn Evil,571559
 Tyr's Deliverance,1122562
-
--- Hero Talents

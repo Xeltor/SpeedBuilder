@@ -1,4 +1,4 @@
--- Druid Spells
+-- Spells
 Barkskin,136097
 Bear Form,132276
 Cat Form,132115
@@ -18,21 +18,30 @@ Shred,136231
 Swipe,134296
 Travel Form,132144
 
--- Guardian Specialization Spells
+-- Specialization Spells
 
--- Druid Talents
+-- Talents
+Berserk,236149
+Bristling Fur,1033476
+Convoke the Spirits,3636839
 Cyclone,136022
 Frenzied Regeneration,132091
 Heart of the Wild,135879
 Hibernate,136090
 Incapacitating Roar,132121
+Incarnation: Guardian of Ursoc,571586
 Innervate,136048
 Ironfur,1378702
+Lunar Beam,136057
 Maim,132134
 Mass Entanglement,538515
+Maul,132136
 Mighty Bash,132114
 Nature's Vigil,236764
+Pulverize,1033490
+Rage of the Sleeper,1129695
 Rake,132122
+Raze,132131
 Rejuvenation,136081
 Remove Corruption,135952
 Renewal,136059
@@ -43,21 +52,10 @@ Stampeding Roar,464343
 Starfire,135753
 Starsurge,135730
 Sunfire,236216
+Survival Instincts,236169
 Thrash,451161
+Tiger Dash,1817485
 Typhoon,236170
 Ursol's Vortex,571588
+Wild Charge,538771
 Wild Growth,236153
-
--- Guardian Talents
-Berserk,236149
-Bristling Fur,1033476
-Convoke the Spirits,3636839
-Incarnation: Guardian of Ursoc,571586
-Lunar Beam,136057
-Maul,132136
-Pulverize,1033490
-Rage of the Sleeper,1129695
-Raze,132131
-Survival Instincts,236169
-
--- Hero Talents

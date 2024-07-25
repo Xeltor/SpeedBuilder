@@ -1,4 +1,4 @@
--- Monk Spells
+-- Spells
 Blackout Kick,574575
 Crackling Jade Lightning,606542
 Expel Harm,627486
@@ -8,36 +8,25 @@ Tiger Palm,606551
 Touch of Death,606552
 Vivify,1360980
 
--- Monk Talents
-Chi Burst,135734
-Chi Wave,606541
-Dampen Harm,620827
+-- Talents
+Celestial Conduit,5927619
+Chi Torpedo,607849
+Clash,628134
 Detox,460692
 Diffuse Magic,775460
 Disable,132316
+Fists of Fury,627606
 Fortifying Brew,615341
+Invoke Xuen the White Tiger,620832
+Jadefire Stomp,3636842
 Paralysis,629534
 Ring of Peace,839107
 Rising Sun Kick,642415
 Song of Chi-Ji,332402
 Soothing Mist,606550
 Spear Hand Strike,608940
-Summon Black Ox Statue,627607
-Summon Jade Serpent Statue,620831
-Summon White Tiger Statue,4667418
-Transcendence,627608
-
--- Windwalker Talents
-Bonedust Brew,3578227
-Faeline Stomp,3636842
-Fists of Fury,627606
-Flying Serpent Kick,606545
-Invoke Xuen the White Tiger,620832
-Rushing Jade Wind,606549
-Serenity,988197
-Storm Earth and Fire,136038
+"Storm, Earth, and Fire",136038
 Strike of the Windlord,1282595
-Touch of Karma,651728
+Tiger's Lust,651727
+Transcendence,627608
 Whirling Dragon Punch,988194
-
--- Hero Talents

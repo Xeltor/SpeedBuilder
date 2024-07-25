@@ -11,39 +11,29 @@ Steady Shot,132213
 -- Beast Mastery Specialization Spells
 
 -- Hunter Talents
+Barbed Shot,2058007
 Barrage,236201
+Bestial Wrath,132127
 Binding Shot,462650
+Bloodshed,132139
+Bursting Shot,1376038
+Call of the Wild,4667415
 Camouflage,461113
+Cobra Shot,461114
 Concussive Shot,135860
 Counter Shot,249170
-Death Chakram,3578207
+Dire Beast,236186
 Explosive Shot,236178
 High Explosive Trap,135826
+Implosive Trap,1044088
 Intimidation,132111
 Kill Command,132176
 Kill Shot,236174
 Misdirection,132180
+Multi-Shot,132330
 Roar of Sacrifice,464604
+Scare Beast,132118
 Scatter Shot,132153
-Sentinel Owl,4067367
-Serpent Sting,1033905
-Stampede,461112
-Steel Trap,1467588
-Survival of the Fittest,136094
+Survival of the Fittest,136051
 Tar Trap,576309
 Tranquilizing Shot,136020
-
--- Beast Mastery Talents
-A Murder of Crows,645217
-Barbed Shot,2058007
-Bestial Wrath,132127
-Bloodshed,132139
-Bloody Frenzy,132278
-Call of the Wild,4667415
-Cobra Shot,461114
-Dire Beast,236186
-Multi-Shot,132330
-Wailing Arrow,132323
-Wild Instincts,132166
-
--- Hero Talents

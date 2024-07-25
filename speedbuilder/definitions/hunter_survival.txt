@@ -1,4 +1,4 @@
--- Hunter Spells
+-- Spells
 Arcane Shot,132218
 Call Pet,132161
 Exhilaration,461117
@@ -8,45 +8,32 @@ Mend Pet,132179
 Revive Pet,132163
 Steady Shot,132213
 
--- Survival Specialization Spells
+-- Specialization Spells
 
--- Hunter Talents
-Barrage,236201
+-- Talents
 Binding Shot,462650
+Bursting Shot,1376038
+Butchery,999948
 Camouflage,461113
 Concussive Shot,135860
-Counter Shot,249170
-Death Chakram,3578207
+Coordinated Assault,2032587
 Explosive Shot,236178
+Flanking Strike,236184
+Fury of the Eagle,1239829
 High Explosive Trap,135826
+Implosive Trap,1044088
 Intimidation,132111
 Kill Command,132176
 Kill Shot,236174
 Misdirection,132180
+Mongoose Bite,1376044
+Muzzle,1376045
+Raptor Strike,1376046
 Roar of Sacrifice,464604
+Scare Beast,132118
 Scatter Shot,132153
-Sentinel Owl,4067367
-Serpent Sting,1033905
-Stampede,461112
-Steel Trap,1467588
-Survival of the Fittest,136094
+Spearhead,4667416
+Survival of the Fittest,136051
 Tar Trap,576309
 Tranquilizing Shot,136020
-
--- Survival Talents
-Aspect of the Eagle,612363
-Butchery,999948
-Carve,1376039
-Coordinated Assault,2032587
-Flanking Strike,236184
-Fury of the Eagle,1239829
-Harpoon,1376040
-Mongoose Bite,1376044
-Pheromone Bomb,2065635
-Raptor Strike,1376046
-Shrapnel Bomb,2065637
-Spearhead,4667416
-Volatile Bomb,2065636
 Wildfire Bomb,2065634
-
--- Hero Talents

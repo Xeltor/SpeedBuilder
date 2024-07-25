@@ -1,0 +1,32 @@
+-- Spells
+
+-- Specialization
+
+-- Talents
+Bestow Weyrnstone,5199618
+Blistering Scales,5199621
+Breath of Eons,5199622
+Cauterizing Flame,4630446
+Draconic Attunements,5199626
+Ebon Might,5061347
+Engulf,5927629
+Eruption,5199630
+Expunge,4630445
+Landslide,1016245
+Obsidian Scales,1394891
+Oppressing Roar,4622466
+Prescience,5199639
+Quell,4622469
+Renewing Blaze,4630463
+Rescue,4622460
+Sleep Walk,1396974
+Source of Magic,4630412
+Spatial Paradox,5199645
+Time Skip,5201905
+Time Spiral,4622479
+Timelessness,5199646
+Tip the Scales,4622480
+Unravel,4630499
+Upheaval,5199647
+Verdant Embrace,4622471
+Zephyr,4630449

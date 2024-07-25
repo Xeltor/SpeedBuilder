@@ -1,4 +1,4 @@
--- Warlock Spells
+-- Spells
 Corruption,136118
 Curse of Weakness,136138
 Drain Life,136169
@@ -13,34 +13,31 @@ Summon Sayaad,4352493
 Summon Voidwalker,136221
 Unending Resolve,136150
 
--- Affliction Specialization Spells
+-- Specialization Spells
 Agony,136139
 
--- Warlock Talents
+-- Talents
 Amplify Curse,136132
 Banish,136135
-Curse of Exhaustion,136162
-Curse of Tongues,136140
+Burning Rush,538043
+Curses of Enfeeblement,132094
 Dark Pact,136146
+Demonic Circle,237559
+Demonic Gateway,607512
 Fel Domination,237564
-Howl of Terror,607852
-Mortal Coil,607853
-Shadowfury,607865
-Soulburn,463286
-Summon Soulkeeper,841219
-
--- Affliction Talents
-Drain Soul,136163
 Grimoire of Sacrifice,538443
 Haunt,236298
-Malefic Rapture,236296
+Howl of Terror,607852
+Malevolence,5927631
+Mortal Coil,607853
+Oblivion,828455
 Phantom Singularity,132886
 Seed of Corruption,136193
-Siphon Life,136188
+Shadowflame,236302
+Shadowfury,607865
 Soul Rot,3636850
-Soul Swap,460857
+Soulburn,463286
 Summon Darkglare,1416161
 Unstable Affliction,136228
 Vile Taint,1391774
-
--- Hero Talents
+Wither,5927632

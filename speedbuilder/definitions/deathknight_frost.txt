@@ -1,39 +1,34 @@
--- Death Knight Spells
+-- Spells
 Death And Decay,136144
 Death Coil,136145
 Lichborne,136187
 
--- Frost Specialization Spells
+-- Specialization Spells
 Remorseless Winter,538770
 
--- Death Knight Talents
+-- Talents
 Abomination Limb,3578196
 Anti-Magic Zone,237510
 Asphyxiate,538558
 Blinding Sleet,135836
-Chains Of Ice,135834
+Breath of Sindragosa,1029007
+Chill Streak,429386
 Control Undead,237273
 Death Pact,136146
 Death Strike,237517
 Empower Rune Weapon,135372
-Icebound Fortitude,237525
-Mind Freeze,237527
-Raise Dead,1100170
-Sacrificial Pact,136133
-Soul Reaper,636333
-Wraith Walk,1100041
-
--- Frost Talents
-Breath Of Sindragosa,1029007
-Chill Streak,429386
 Frost Strike,237520
 Frostscythe,1060569
 Frostwyrm's Fury,341980
 Glacial Advance,537514
-Horn Of Winter,134228
+Horn of Winter,134228
 Howling Blast,135833
+Icebound Fortitude,237525
+Mind Freeze,237527
 Obliterate,135771
-Pillar Of Frost,458718
-
--- Hero Talents
+Pillar of Frost,458718
+Raise Dead,1100170
 Reaper's Mark,5927621
+Sacrificial Pact,136133
+Soul Reaper,636333
+Wraith Walk,1100041

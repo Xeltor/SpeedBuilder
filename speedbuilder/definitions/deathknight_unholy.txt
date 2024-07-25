@@ -1,40 +1,36 @@
--- Death Knight Spells
+-- Spells
 Death And Decay,136144
 Death Coil,136145
 Lichborne,136187
 
--- Unholy Specialization Spells
+-- Specialization Spells
 Epidemic,136066
 Outbreak,348565
 
--- Death Knight Talents
+-- Talents
 Abomination Limb,3578196
 Anti-Magic Zone,237510
+Apocalypse,1392565
+Army of the Dead,237511
 Asphyxiate,538558
 Blinding Sleet,135836
-Chains Of Ice,135834
+Clawing Shadows,615099
 Control Undead,237273
+Dark Transformation,342913
 Death Pact,136146
 Death Strike,237517
-Empower Rune Weapon,135372
-Icebound Fortitude,237525
-Mind Freeze,237527
-Raise Dead,1100170
-Sacrificial Pact,136133
-Soul Reaper,636333
-Wraith Walk,1100041
-
--- Unholy Talents
-Apocalypse,1392565
-Army Of The Dead,237511
-Clawing Shadows,615099
-Dark Transformation,342913
 Defile,1029008
 Festering Strike,879926
+Icebound Fortitude,237525
+Mind Freeze,237527
 Raise Abomination,298667
+Raise Dead,1100170
+Raise Dead,1100170
+Reaper's Mark,5927621
+Sacrificial Pact,136133
 Scourge Strike,237530
+Soul Reaper,636333
 Summon Gargoyle,458967
 Unholy Assault,136224
 Vile Contagion,136182
-
--- Hero Talents
+Wraith Walk,1100041

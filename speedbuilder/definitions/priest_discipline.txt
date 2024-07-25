@@ -1,4 +1,4 @@
--- Priest Spells
+-- Spells
 Desperate Prayer,237550
 Fade,135994
 Flash Heal,135907
@@ -12,40 +12,38 @@ Smite,135924
 Void Bolt,1035040
 Voidform,1386550
 
--- Discipline Specialization Spells
+-- Specialization Spells
 Penance,237545
 Purify,135894
 
--- Priest Talents
+-- Talents
 Angelic Feather,642580
 Dispel Magic,136066
-Divine Star Shadow,631519
 Divine Star,537026
-Halo Shadow,632353
+Dominate Mind,1386549
+Evangelism,135895
 Halo,632352
 Holy Nova,135922
+Leap of Faith,463835
+Luminous Barrier,537078
 Mass Dispel,135739
+Mind Control,136206
+Mindbender,136214
+Pain Suppression,135936
 Power Infusion,135939
+Power Word: Barrier,253400
 Power Word: Life,4667420
+Power Word: Radiance,1386546
 Prayer of Mending,135944
-Purify Disease,135935
+Premonition,5927640
+Purge the Wicked,236216
+Rapture,237548
 Renew,135953
 Shackle Undead,136091
 Shadow Word: Death,136149
 Shadowfiend,136199
+Ultimate Penitence,1060982
 Vampiric Embrace,136230
+Void Blast,4914668
 Void Shift,537079
 Void Tendrils,537022
-
--- Discipline Talents
-Evangelism,135895
-Luminous Barrier,537078
-Mindbender,136214
-Pain Suppression,135936
-Power Word: Barrier,253400
-Power Word: Radiance,1386546
-Purge the Wicked,236216
-Rapture,237548
-Ultimate Penitence,1060982
-
--- Hero Talents
