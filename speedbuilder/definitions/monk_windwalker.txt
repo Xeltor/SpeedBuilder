@@ -25,7 +25,7 @@ Rising Sun Kick,642415
 Song of Chi-Ji,332402
 Soothing Mist,606550
 Spear Hand Strike,608940
-"Storm, Earth, and Fire",136038
+Storm Earth and Fire,136038
 Strike of the Windlord,1282595
 Tiger's Lust,651727
 Transcendence,627608
