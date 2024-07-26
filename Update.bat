@@ -1,11 +1,5 @@
 @echo off
-ECHO Storing local changes.
-git stash
-
-ECHO Pulling git updates.
+git reset
+git checkout .
 git pull
-
-ECHO Reapplying local changes.
-git stash pop
-
 pause
