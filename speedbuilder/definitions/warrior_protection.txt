@@ -1,5 +1,6 @@
 -- Spells
 Battle Shout,132333
+Berserker Rage,136009
 Charge,132337
 Execute,135358
 Hamstring,132316
@@ -15,6 +16,9 @@ Whirlwind,132369
 -- Specialization Spells
 Devastate,135291
 
+-- Alternative icons
+Impending Victory,589768,=Victory Rush
+
 -- Talents
 Avatar,613534
 Battle Stance,132349
@@ -28,7 +32,6 @@ Devastator,135291
 Disrupting Shout,132091
 Heroic Leap,236171
 Ignore Pain,1377132
-Impending Victory,589768
 Intervene,132365
 Intimidating Shout,132154
 Last Stand,135871

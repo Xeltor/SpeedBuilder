@@ -1,20 +1,22 @@
 -- Spells
+Command Demon,236292
 Corruption,136118
-Conflagrate,135807
 Curse of Weakness,136138
 Drain Life,136169
 Fear,136183
 Health Funnel,136168
 Shadow Bolt,136197
-Spell Lock,136174
+Soulstone,136210
 Subjugate Demon,136154
 Summon Felhunter,136217
 Summon Imp,136218
 Summon Sayaad,4352493
 Summon Voidwalker,136221
+Unending Breath,136148
 Unending Resolve,136150
 
 -- Specialization Spells
+Chaos Bolt,236291
 Immolate,135817
 Incinerate,135789
 

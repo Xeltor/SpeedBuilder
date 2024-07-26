@@ -2,10 +2,13 @@
 Barkskin,136097
 Bear Form,132276
 Cat Form,132115
+Charm Woodland Creature,254857
 Dash,132120
 Entangling Roots,136100
 Ferocious Bite,132127
+Flap,132925
 Flight Form,132128
+Growl,132270
 Mangle,132135
 Mark of the Wild,136078
 Moonfire,136096
@@ -17,6 +20,7 @@ Revive,132132
 Shred,136231
 Swipe,134296
 Travel Form,132144
+Wrath,535045
 
 -- Specialization Spells
 
@@ -37,6 +41,7 @@ Maim,132134
 Mass Entanglement,538515
 Maul,132136
 Mighty Bash,132114
+Moonkin Form,136036
 Nature's Vigil,236764
 Pulverize,1033490
 Rage of the Sleeper,1129695

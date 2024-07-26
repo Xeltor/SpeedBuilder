@@ -1,7 +1,19 @@
 -- Spells
+Anti-Magic Shell,136120
+Chains of Ice,135834
+Corpse Exploder,136133
+Dark Command,136088
 Death And Decay,136144
 Death Coil,136145
+Death Grip,237532
+Death's Advance,237561
 Lichborne,136187
+Path of Frost,237528
+Raise Ally,136143
+Rune Strike,237518
+
+-- Specialization Spells
+Death's Caress,1376743
 
 -- Talents
 Abomination Limb,3578196

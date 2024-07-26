@@ -1,14 +1,19 @@
 -- Spells
+Chaos Strike,1305152
+Demon's Bite,135561
 Disrupt,1305153
+Fel Rush,1247261
+Glide,1305157
 Immolation Aura,1344649
 Metamorphosis,1247262
+Soul Carver,1309072
+Spectral Sight,1247266
 Throw Glaive,1305159
+Torment,1344654
 
 -- Specialization Spells
 Blade Dance,1305149
 Blur,1305150
-Chaos Strike,1305152
-Demon's Bite,135561
 Sigil Of Flame,1344652
 
 -- Talents

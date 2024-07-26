@@ -1,11 +1,26 @@
 -- Spells
+Anti-Magic Shell,136120
+Chains of Ice,135834
+Corpse Exploder,136133
+Dark Command,136088
 Death And Decay,136144
 Death Coil,136145
+Death Grip,237532
+Death's Advance,237561
 Lichborne,136187
+Path of Frost,237528
+Raise Ally,136143
+Rune Strike,237518
 
 -- Specialization Spells
 Epidemic,136066
 Outbreak,348565
+
+-- Alternative icons
+Clawing Shadows,615099,=Scourge Strike
+Defile,1029008,=Death And Decay
+Festering Strike,879926,=Rune Strike
+Raise Abomination,298667,=Army of the Dead
 
 -- Talents
 Abomination Limb,3578196
@@ -14,17 +29,12 @@ Apocalypse,1392565
 Army of the Dead,237511
 Asphyxiate,538558
 Blinding Sleet,135836
-Clawing Shadows,615099
 Control Undead,237273
 Dark Transformation,342913
 Death Pact,136146
 Death Strike,237517
-Defile,1029008
-Festering Strike,879926
 Icebound Fortitude,237525
 Mind Freeze,237527
-Raise Abomination,298667
-Raise Dead,1100170
 Raise Dead,1100170
 Reaper's Mark,5927621
 Sacrificial Pact,136133

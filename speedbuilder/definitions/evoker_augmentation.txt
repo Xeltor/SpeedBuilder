@@ -1,6 +1,17 @@
 -- Spells
+Azure Strike,4622447
+Blessing of the Bronze,4622448
+Deep Breath,4622450
+Disintegrate,4622451
+Emerald Blossom,4622457
+Fire Breath,4622458
+Fury of the Aspects,4723908
+Hover,4622463
+Living Flame,4622464
+Return,4622472
 
 -- Specialization
+Sense Power,132160
 
 -- Talents
 Bestow Weyrnstone,5199618

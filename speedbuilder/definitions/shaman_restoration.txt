@@ -6,6 +6,16 @@ Lightning Bolt,136048
 Lightning Shield,136051
 Primal Strike,460956
 
+-- Specialization Spells
+Ancestral Vision,237576
+Cleanse Spirit,236288
+Purify Spirit,236288
+Water Shield,132315
+
+-- Alternative icons
+Cloudburst Totem,971076,=Healing Stream Totem
+Surging Totem,5927655,=Healing Rain
+
 -- Talents
 Ancestral Guidance,538564
 Ancestral Protection Totem,136080
@@ -15,7 +25,6 @@ Astral Shift,538565
 Capacitor Totem,136013
 Chain Heal,136042
 Chain Lightning,136015
-Cloudburst Totem,971076
 Earth Elemental,136024
 Earth Shield,136089
 Earthen Wall Totem,136098
@@ -41,7 +50,6 @@ Spirit Link Totem,237586
 Spirit Walk,132328
 Spiritwalker's Grace,451170
 Stone Bulwark Totem,538572
-Surging Totem,5927655
 Thunderstorm,237589
 Totemic Projection,538574
 Totemic Recall,538570

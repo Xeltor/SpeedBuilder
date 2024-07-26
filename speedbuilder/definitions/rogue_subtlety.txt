@@ -3,12 +3,16 @@ Ambush,132282
 Cheap Shot,132092
 Crimson Vial,1373904
 Crippling Poison,132274
+Detection,132319
+Distract,132289
 Eviscerate,132292
 Feint,132294
 Instant Poison,132273
 Kick,132219
 Kidney Shot,132298
+Pick Pocket,133644
 Sap,132310
+Shroud of Concealment,635350
 Sinister Strike,136189
 Slice and Dice,132306
 Stealth,132320
@@ -19,8 +23,10 @@ Wound Poison,134197
 Backstab,132090
 Black Powder,608955
 Rupture,132302
+Shadow Dance,236279
 Shadowstrike,1373912
 Shuriken Storm,1375677
+Shuriken Toss,135431
 Symbols of Death,252272
 
 -- Talents

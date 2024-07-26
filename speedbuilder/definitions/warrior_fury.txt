@@ -1,5 +1,6 @@
 -- Spells
 Battle Shout,132333
+Berserker Rage,136009
 Charge,132337
 Execute,135358
 Hamstring,132316
@@ -14,6 +15,9 @@ Whirlwind,132369
 
 -- Specialization Spells
 
+-- Alternative icons
+Impending Victory,589768,=Victory Rush
+
 -- Talents
 Avatar,613534
 Berserker Shout,136009
@@ -25,7 +29,6 @@ Champion's Spear,3565453
 Defensive Stance,132341
 Enraged Regeneration,132345
 Heroic Leap,236171
-Impending Victory,589768
 Intervene,132365
 Intimidating Shout,132154
 Odyn's Fury,1278409

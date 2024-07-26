@@ -1,14 +1,28 @@
 -- Spells
 Consecration,135926
+Crusader Strike,135891
+Devotion Aura,135893
 Divine Shield,524354
 Flash of Light,135907
 Hammer of Justice,135963
+Hand of Reckoning,135984
+Intercession,4726195
 Judgment,135959
+Redemption,135955
+Retribution Aura,135889
 Shield of the Righteous,236265
 Word of Glory,133192
 
 -- Specialization Spells
-Crusader Strike,135891
+Divine Protection,524353
+Templar's Verdict,461860
+
+-- Alternative icons
+Crusade,236262,=Avenging Wrath
+Final Verdict,461860,=Templar's Verdict
+Justicar's Vengeance,135957,=Templar's Verdict
+Templar Slash,1112940,=Crusader Strike
+Templar Strike,1109508,=Crusader Strike
 
 -- Talents
 Auras of the Resolute,135893
@@ -27,10 +41,8 @@ Divine Toll,3565448
 Eternal Flame,135433
 Execution Sentence,613954
 Final Reckoning,135878
-Final Verdict,461860
 Hammer of Wrath,613533
 Holy Bulwark,5927636
-Justicar's Vengeance,135957
 Lay on Hands,135928
 Rebuke,523893
 Repentance,135942

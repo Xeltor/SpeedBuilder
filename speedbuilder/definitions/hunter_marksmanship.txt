@@ -7,6 +7,7 @@ Hunter's Mark,236188
 Mend Pet,132179
 Revive Pet,132163
 Steady Shot,132213
+Wailing Arrow,132323
 
 -- Specialization Spells
 

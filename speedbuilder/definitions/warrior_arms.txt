@@ -1,5 +1,6 @@
 -- Spells
 Battle Shout,132333
+Berserker Rage,136009
 Charge,132337
 Execute,135358
 Hamstring,132316
@@ -13,6 +14,10 @@ Victory Rush,132342
 Whirlwind,132369
 
 -- Specialization Spells
+Sweeping Strikes,132306
+
+-- Alternative icons
+Impending Victory,589768,=Victory Rush
 
 -- Talents
 Avatar,613534
@@ -27,7 +32,6 @@ Defensive Stance,132341
 Die by the Sword,132336
 Heroic Leap,236171
 Ignore Pain,1377132
-Impending Victory,589768
 Intervene,132365
 Intimidating Shout,132154
 Mortal Strike,132355

@@ -1,9 +1,15 @@
 -- Spells
 Consecration,135926
+Crusader Strike,135891
+Devotion Aura,135893
 Divine Shield,524354
 Flash of Light,135907
 Hammer of Justice,135963
+Hand of Reckoning,135984
+Intercession,4726195
 Judgment,135959
+Redemption,135955
+Retribution Aura,135889
 Shield of the Righteous,236265
 Word of Glory,133192
 

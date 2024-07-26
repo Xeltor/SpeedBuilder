@@ -1,15 +1,37 @@
 -- Spells
 Arcane Explosion,136116
 Arcane Intellect,135932
+Blink,135736
 Cone of Cold,135852
 Counterspell,135856
 Fire Blast,135807
-Frostbolt,135846
 Frost Nova,135848
+Frostbolt,135846
+Invisibility,132220
+Polymorph,136071
+Slow Fall,135992
+Time Warp,458224
 
 -- Specialization Spells
 Arcane Barrage,236205
 Arcane Blast,135735
+
+-- Alternative icons
+Polymorph Peacock,,=Polymorph
+Polymorph Pig,,=Polymorph
+Polymorph Polar Bear Cub,,=Polymorph
+Polymorph Bumblebee,,=Polymorph
+Polymorph Penguin,,=Polymorph
+Polymorph Mosswool,,=Polymorph
+Polymorph Duck,,=Polymorph
+Polymorph Turtle,,=Polymorph
+Polymorph Direhorn,,=Polymorph
+Polymorph Turkey,,=Polymorph
+Polymorph Monkey,,=Polymorph
+Polymorph Mawrat,,=Polymorph
+Polymorph Black Cat,,=Polymorph
+Polymorph Rabbit,,=Polymorph
+Polymorph Porcupine,,=Polymorph
 
 -- Talents
 Alter Time,609811

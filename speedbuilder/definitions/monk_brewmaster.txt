@@ -3,6 +3,9 @@ Blackout Kick,574575
 Crackling Jade Lightning,606542
 Expel Harm,627486
 Leg Sweep,642414
+Provoke,620830
+Resuscitate,132132
+Roll,574574
 Spinning Crane Kick,606543
 Tiger Palm,606551
 Touch of Death,606552

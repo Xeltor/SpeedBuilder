@@ -6,6 +6,13 @@ Lightning Bolt,136048
 Lightning Shield,136051
 Primal Strike,460956
 
+-- Alternative icons
+Earthgrab Totem,136100,=Earthbind Totem
+Elemental Blast,651244,=Lava Burst
+Stormstrike,132314,=Primal Strike
+Surging Totem,5927655,=Windfury Totem
+Windstrike,1029585,=Primal Strike
+
 -- Talents
 Ancestral Guidance,538564
 Ancestral Swiftness,5927625
@@ -19,8 +26,6 @@ Crash Lightning,1370984
 Doom Winds,1035054
 Earth Elemental,136024
 Earth Shield,136089
-Earthgrab Totem,136100
-Elemental Blast,651244
 Feral Spirit,237577
 Fire Nova,459027
 Frost Shock,135849
@@ -39,9 +44,7 @@ Purge,136075
 Spirit Walk,132328
 Spiritwalker's Grace,451170
 Stone Bulwark Totem,538572
-Stormstrike,132314
 Sundering,524794
-Surging Totem,5927655
 Thunderstorm,237589
 Totemic Projection,538574
 Totemic Recall,538570
