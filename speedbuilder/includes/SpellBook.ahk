@@ -174,7 +174,7 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     ]
 
     Footer := [
-        "`n-- Do not change anything below this point."
+        "`n-- Do not change anything below this point.`n"
     ]
 
     ; Write Header.
@@ -186,11 +186,11 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     FileAppend("`n-- Class spells and talents.`n", KeybindFile)
     for Name, Spell in Keybinds {
         if Spell.Type = "Class" {
-            SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n", KeybindFile
+            SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
             if InStr(Spell.Keybind, "=")
                 Footer.Push(SpellLine)
             else
-                FileAppend(SpellLine)
+                FileAppend(SpellLine, KeybindFile)
         }
     }
 
@@ -211,7 +211,7 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     ; Write footer.
     if Footer.Length > 1 {
         for line in Footer {
-            FileAppend(line "`n", KeybindFile)
+            FileAppend(line, KeybindFile)
         }
     }
 
