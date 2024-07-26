@@ -29,7 +29,7 @@ GetClassSpells(ClassSpec, Spellbook) {
 
         split := StrSplit(A_LoopReadLine, ',')
 
-        if split.Length >= 2 or split.Length <=3 {
+        if (split.Length >= 2 and split.Length <=3) {
             Spell := Object()
 
             Spell.Name := Trim(split[1])
