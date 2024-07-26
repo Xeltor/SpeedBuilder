@@ -156,10 +156,10 @@ SetClassKeybinds(ClassSpec, Keybinds) {
         FileMove(KeybindFile, BackupFile)
     }
 
-    Explanation := [
+    Header := [
         "-- " ClassSpec " keybind file.",
         "-- ",
-        "-- Add keybinds at the end of each line using the below format, you can skip skills that are not used.",
+        "-- Add keybinds at the end of each line using the below format, you can skip spells that are not used.",
         "-- ",
         "-- Alphabetical: a - z ",
         "-- Numeric: 0 - 9",
@@ -173,8 +173,12 @@ SetClassKeybinds(ClassSpec, Keybinds) {
         "-- Example2: Control + Alt + 1 = ^!1"
     ]
 
-    ; Write explanation.
-    for line in Explanation {
+    Footer := [
+        "`n-- Do not change anything below this point."
+    ]
+
+    ; Write Header.
+    for line in Header {
         FileAppend(line "`n", KeybindFile)
     }
 
@@ -182,7 +186,11 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     FileAppend("`n-- Class spells and talents.`n", KeybindFile)
     for Name, Spell in Keybinds {
         if Spell.Type = "Class" {
-            FileAppend(Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n", KeybindFile)
+            SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n", KeybindFile
+            if InStr(Spell.Keybind, "=")
+                Footer.Push(SpellLine)
+            else
+                FileAppend(SpellLine)
         }
     }
 
@@ -200,8 +208,17 @@ SetClassKeybinds(ClassSpec, Keybinds) {
         }
     }
 
+    ; Write footer.
+    if Footer.Length > 1 {
+        for line in Footer {
+            FileAppend(line "`n", KeybindFile)
+        }
+    }
+
     ; Remove backup.
     if FileExist(BackupFile) {
         FileDelete(BackupFile)
     }
+
+    return KeybindFile
 }

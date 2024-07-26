@@ -26,9 +26,13 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     ResetIconReplacement(SetupData.xCoord, SetupData.yCoord)
 
     ; Write to keybinds file.
-    SetClassKeybinds(SetupData.ClassSpecChoice, Spellbook)
+    KeybindFile := SetClassKeybinds(SetupData.ClassSpecChoice, Spellbook)
 
     ; Notify user that the process has completed.
-    MsgBox("The automatic process has completed, you can now open the Keybinds folder and setup/update your keybinds.", AppName, "0x40")
+    Result := MsgBox("The automatic process has completed.`n`nDo you want to open the keybind file to setup/update your keybinds?", AppName, "0x44")
+    if Result = "Yes" {
+        Run("explorer.exe " KeybindFile, A_WorkingDir)
+    }
+
     ExitApp()
 }

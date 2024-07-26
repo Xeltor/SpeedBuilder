@@ -4,7 +4,7 @@ Escape::ExitApp()
 ; Setup globals
 global TargetGui := ""
 global SupportGui := ""
-global AppName := "Speed Builder Setup"
+global AppName := "SpeedBuilder Setup"
 #Include speedbuilder\includes\ConfigManager.ahk
 
 ; Load config.

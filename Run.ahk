@@ -1,6 +1,6 @@
 #SingleInstance Force
 
-AppName := "Run"
+AppName := "SpeedBuilder"
 if !FileExist("config.ini") {
     MsgBox("Config file not created, please run ConfigSetup.ahk.", AppName)
     ExitApp()

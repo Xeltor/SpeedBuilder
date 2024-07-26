@@ -1,7 +1,7 @@
 ; Safety escape
 Escape::ExitApp()
 
-global AppName := "Class Setup"
+global AppName := "SpeedBuilder Class Setup"
 #Include speedbuilder\includes\ConfigManager.ahk
 #Include speedbuilder\gui\SpecSelectSetup.ahk
 
