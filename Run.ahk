@@ -50,8 +50,27 @@ Rotation() {
             colors := GetPixelColors()
     
             if Keybinds[colors] {
-                Send(Keybinds[colors].Keybind)
+                ; Replacement 
+                if InStr(Keybinds[colors].Keybind, "=") {
+                    ReplacementBind := FindReplacementBind(Keybinds[colors].Keybind, Keybinds)
+                    if (ReplacementBind) {
+                        Send(ReplacementBind)
+                    }
+                } else {
+                    Send(Keybinds[colors].Keybind)
+                }
             }
         }
     }
+}
+
+FindReplacementBind(name, binds) {
+    name := Trim(StrReplace(name, "=", ""))
+
+    for key, obj in binds {
+        if (StrLower(obj.Name) = StrLower(name)) {
+            return obj.Keybind
+        }
+    }
+    return false
 }

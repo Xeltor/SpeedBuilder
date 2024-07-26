@@ -29,13 +29,13 @@ GetClassSpells(ClassSpec, Spellbook) {
 
         split := StrSplit(A_LoopReadLine, ',')
 
-        if split.Length = 2 {
+        if split.Length >= 2 or split.Length <=3 {
             Spell := Object()
 
             Spell.Name := Trim(split[1])
             Spell.IconID := Trim(split[2])
             Spell.Colors := ""
-            Spell.Keybind := ""
+            Spell.Keybind := (split.Length = 3) ? Trim(split[3]) : ""
             Spell.Updated := true
             Spell.Type := "Class"
 
@@ -130,7 +130,10 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
                         }
 
                         Spellbook[StrLower(Spell.Name)].Colors := Spell.Colors
-                        Spellbook[StrLower(Spell.Name)].Keybind := Spell.Keybind
+                        ; Overwrite user keybind choice for remapped spells.
+                        if !InStr(Spellbook[StrLower(Spell.Name)].Keybind, "=") {
+                            Spellbook[StrLower(Spell.Name)].Keybind := Spell.Keybind
+                        }
                     }
                 }
             } else {
