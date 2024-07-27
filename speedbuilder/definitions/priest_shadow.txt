@@ -19,10 +19,11 @@ Shadowform,136200
 Vampiric Touch,135978
 
 -- Alternative icons
-Void Bolt,1035040,=Void Eruption
-Mindbender,136214,=Shadowfiend
 Mind Flay: Insanity,425954,=Mind Flay
-Mind Spike: Insanity,1391678,=Mind Spike
+Mind Spike,457655,=Mind Flay
+Mind Spike: Insanity,1391678,=Mind Flay
+Mindbender,136214,=Shadowfiend
+Void Bolt,1035040,=Void Eruption
 
 -- Priest Talents
 Angelic Feather,642580
@@ -37,7 +38,6 @@ Holy Nova,135922
 Leap of Faith,463835
 Mass Dispel,135739
 Mind Control,136206
-Mind Spike,457655
 Power Infusion,135939
 Power Word: Life,4667420
 Prayer of Mending,135944
