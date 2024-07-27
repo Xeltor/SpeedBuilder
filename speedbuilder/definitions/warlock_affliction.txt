@@ -19,12 +19,12 @@ Unending Resolve,136150
 Agony,136139
 Malefic Rapture,236296
 
--- Alternative icons
-Drain Soul,136163,=Shadow Bolt
-Seduction,1717715,=Command Demon
-Shadow Bulwark,136121,=Command Demon
-Singe Magic,135791,=Command Demon
-Spell Lock,136174,=Command Demon
+-- Spell aliases
+Drain Soul,136163,@Shadow Bolt
+Seduction,1717715,@Command Demon
+Shadow Bulwark,136121,@Command Demon
+Singe Magic,135791,@Command Demon
+Spell Lock,136174,@Command Demon
 
 -- Talents
 Amplify Curse,136132

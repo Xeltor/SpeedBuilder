@@ -15,6 +15,9 @@ Rune Strike,237518
 -- Specialization Spells
 Remorseless Winter,538770
 
+-- Spell aliases
+Obliterate,135771,@Rune Strike
+
 -- Talents
 Abomination Limb,3578196
 Anti-Magic Zone,237510
@@ -34,7 +37,6 @@ Horn of Winter,134228
 Howling Blast,135833
 Icebound Fortitude,237525
 Mind Freeze,237527
-Obliterate,135771
 Pillar of Frost,458718
 Raise Dead,1100170
 Reaper's Mark,5927621

@@ -24,6 +24,12 @@ Wrath,535045
 
 -- Specialization Spells
 
+-- Spell aliases
+Incarnation: Guardian of Ursoc,571586,@Berserk
+Tiger Dash,1817485,@Dash
+Wild Charge Bear,132183,@Wild Charge
+Wild Charge Cat,304501,@Wild Charge
+
 -- Talents
 Berserk,236149
 Bristling Fur,1033476
@@ -33,7 +39,6 @@ Frenzied Regeneration,132091
 Heart of the Wild,135879
 Hibernate,136090
 Incapacitating Roar,132121
-Incarnation: Guardian of Ursoc,571586
 Innervate,136048
 Ironfur,1378702
 Lunar Beam,136057
@@ -59,7 +64,6 @@ Starsurge,135730
 Sunfire,236216
 Survival Instincts,236169
 Thrash,451161
-Tiger Dash,1817485
 Typhoon,236170
 Ursol's Vortex,571588
 Wild Charge,538771

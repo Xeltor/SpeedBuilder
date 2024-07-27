@@ -17,12 +17,12 @@ Word of Glory,133192
 Divine Protection,524353
 Templar's Verdict,461860
 
--- Alternative icons
-Crusade,236262,=Avenging Wrath
-Final Verdict,461860,=Templar's Verdict
-Justicar's Vengeance,135957,=Templar's Verdict
-Templar Slash,1112940,=Crusader Strike
-Templar Strike,1109508,=Crusader Strike
+-- Spell aliases
+Crusade,236262,@Avenging Wrath
+Final Verdict,461860,@Templar's Verdict
+Justicar's Vengeance,135957,@Templar's Verdict
+Templar Slash,1112940,@Crusader Strike
+Templar Strike,1109508,@Crusader Strike
 
 -- Talents
 Auras of the Resolute,135893

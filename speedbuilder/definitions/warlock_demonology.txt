@@ -1,5 +1,5 @@
 -- Spells
-Command Demon,236292
+Command Demon,1723990
 Corruption,136118
 Curse of Weakness,136138
 Drain Life,136169
@@ -19,12 +19,15 @@ Unending Resolve,136150
 Hand of Gul'dan,535592
 Summon Felguard,136216
 
--- Alternative icons
-Axe Toss,236316,=Command Demon
-Seduction,1717715,=Command Demon
-Shadow Bulwark,136121,=Command Demon
-Singe Magic,135791,=Command Demon
-Spell Lock,136174,=Command Demon
+-- Spell aliases
+Axe Toss,236316,@Command Demon
+Burning Rush Green Flame,840191,@Burning Rush
+Seduction,1717715,@Command Demon
+Shadow Bulwark,136121,@Command Demon
+Singe Magic,135791,@Command Demon
+Spell Lock,136174,@Command Demon
+Summon Charhound,1709931,@Summon Vilefiend
+Summon Gloomhound,1709932,@Summon Vilefiend
 
 -- Talents
 Amplify Curse,136132

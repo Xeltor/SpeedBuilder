@@ -15,8 +15,8 @@ Whirlwind,132369
 
 -- Specialization Spells
 
--- Alternative icons
-Impending Victory,589768,=Victory Rush
+-- Spell aliases
+Impending Victory,589768,@Victory Rush
 
 -- Talents
 Avatar,613534

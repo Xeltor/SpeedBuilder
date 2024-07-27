@@ -55,13 +55,13 @@ GetCommonItems(Items) {
 
         split := StrSplit(A_LoopReadLine, ',')
 
-        if split.Length = 2 {
+        if (split.Length >= 2 and split.Length <=3) {
             Item := Object()
 
             Item.Name := Trim(split[1])
             Item.IconID := Trim(split[2])
             Item.Colors := ""
-            Item.Keybind := ""
+            Item.Keybind := (split.Length = 3) ? Trim(split[3]) : ""
             Item.Updated := true
             Item.Type := "Item"
 
@@ -81,13 +81,13 @@ GetCommonSpells(Spellbook) {
 
         split := StrSplit(A_LoopReadLine, ',')
 
-        if split.Length = 2 {
+        if (split.Length >= 2 and split.Length <=3) {
             Spell := Object()
 
             Spell.Name := Trim(split[1])
             Spell.IconID := Trim(split[2])
             Spell.Colors := ""
-            Spell.Keybind := ""
+            Spell.Keybind := (split.Length = 3) ? Trim(split[3]) : ""
             Spell.Updated := true
             Spell.Type := "Common"
 
@@ -131,7 +131,7 @@ GetClassKeybinds(ClassSpec, Spellbook, ByName := false) {
 
                         Spellbook[StrLower(Spell.Name)].Colors := Spell.Colors
                         ; Overwrite user keybind choice for remapped spells.
-                        if !InStr(Spellbook[StrLower(Spell.Name)].Keybind, "=") {
+                        if (SubStr(Spellbook[StrLower(Spell.Name)].Keybind, 1, 1) != Config.AliasPrefix) {
                             Spellbook[StrLower(Spell.Name)].Keybind := Spell.Keybind
                         }
                     }
@@ -174,7 +174,7 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     ]
 
     Footer := [
-        "`n-- Do not change anything below this point.`n"
+        "`n-- Keybind aliases. Do not change.`n"
     ]
 
     ; Write Header.
@@ -187,7 +187,7 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     for Name, Spell in Keybinds {
         if Spell.Type = "Class" {
             SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
-            if InStr(Spell.Keybind, "=")
+            if (SubStr(Spell.Keybind, 1, 1) = Config.AliasPrefix)
                 Footer.Push(SpellLine)
             else
                 FileAppend(SpellLine, KeybindFile)
@@ -197,14 +197,22 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     FileAppend("`n-- Racial spells.`n", KeybindFile)
     for Name, Spell in Keybinds {
         if Spell.Type = "Common" {
-            FileAppend(Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n", KeybindFile)
+            SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
+            if (SubStr(Spell.Keybind, 1, 1) = Config.AliasPrefix)
+                Footer.Push(SpellLine)
+            else
+                FileAppend(SpellLine, KeybindFile)
         }
     }
 
     FileAppend("`n-- Items.`n", KeybindFile)
     for Name, Spell in Keybinds {
         if Spell.Type = "Item" {
-            FileAppend(Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n", KeybindFile)
+            SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
+            if (SubStr(Spell.Keybind, 1, 1) = Config.AliasPrefix)
+                Footer.Push(SpellLine)
+            else
+                FileAppend(SpellLine, KeybindFile)
         }
     }
 

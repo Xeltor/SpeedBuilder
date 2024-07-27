@@ -12,9 +12,9 @@ Cleanse Spirit,236288
 Purify Spirit,236288
 Water Shield,132315
 
--- Alternative icons
-Cloudburst Totem,971076,=Healing Stream Totem
-Surging Totem,5927655,=Healing Rain
+-- Spell aliases
+Cloudburst Totem,971076,@Healing Stream Totem
+Surging Totem,5927655,@Healing Rain
 
 -- Talents
 Ancestral Guidance,538564

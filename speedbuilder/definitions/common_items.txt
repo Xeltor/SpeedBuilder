@@ -1,48 +1,51 @@
 -- Items.
 Healthstone,538745
 
+-- Macro
+Trinket Macro,136243
+
 -- Trinkets (11.0) (https://www.wowhead.com/items/slot:12/group-by:level?filter=82:195:62;2:1:1;110000:0:0)
-Abyssal Trap,893778
-Algari Alchemist Stone,4497562
-Algari Competitor's Emblem,132344
-Algari Competitor's Medallion,1322720
-Arathi Demolition Charge,252176
-Bronzebeard Family Compass,4635200
-Burin of the Candle King,1379201
-Bursting Lightshard,5948040
-Charged Stormrook Plume,5899332
-Concoction: Kiss of Death,4497603
-Creeping Coagulum,5948205
-Delve Ring,463567
-Fearbreaker's Echo,1892681
-Forged Aspirant's Badge of Ferocity,135884
-Forged Aspirant's Emblem,132344
-Forged Gladiator's Badge of Ferocity,135884
-Forged Gladiator's Emblem,132344
-Foul Behemoth's Chelicera,5948209
-Goldenglow Censer,4626288
-High Speaker's Accretion,5929586
-Horn of Declaration,134229
-Imperfect Ascendancy Serum,967529
-Kaheti Shadeweaver's Emblem,3853942
-Mad Queen's Mandate,5948202
-Mereldar's Toll,5948032
-Message-Imprinted Silken Square,629936
-Nizrek's Holographic Manipulator,5502817
-Oppressive Orator's Larynx,136202
-Overclocked Gear-A-Rang Launcher,4569826
-Ovinax's Mercurial Egg,5948240
-Quickwick Candlestick,454044
-Ravenous Honey Buzzer,4548852
-Shriveled Ancient Tentacle,133574
-Signet of the Priory,5948043
-Sikran's Endless Arsenal,5948249
-Silken Chain Weaver,4549275
-Skarmorak Shard,5948038
-Skyterror's Corrosive Organ,5948243
-Spymaster's Web,5545567
-Swarmlord's Authority,5948252
-Tome of Light's Devotion,1495827
-Treacherous Transmitter,5948071
-Twin Fang Instruments,1786422
-Viscous Coaglam,5948203
+Abyssal Trap,893778,@Trinket Macro
+Algari Alchemist Stone,4497562,@Trinket Macro
+Algari Competitor's Emblem,132344,@Trinket Macro
+Algari Competitor's Medallion,1322720,@Trinket Macro
+Arathi Demolition Charge,252176,@Trinket Macro
+Bronzebeard Family Compass,4635200,@Trinket Macro
+Burin of the Candle King,1379201,@Trinket Macro
+Bursting Lightshard,5948040,@Trinket Macro
+Charged Stormrook Plume,5899332,@Trinket Macro
+Concoction: Kiss of Death,4497603,@Trinket Macro
+Creeping Coagulum,5948205,@Trinket Macro
+Delve Ring,463567,@Trinket Macro
+Fearbreaker's Echo,1892681,@Trinket Macro
+Forged Aspirant's Badge of Ferocity,135884,@Trinket Macro
+Forged Aspirant's Emblem,132344,@Trinket Macro
+Forged Gladiator's Badge of Ferocity,135884,@Trinket Macro
+Forged Gladiator's Emblem,132344,@Trinket Macro
+Foul Behemoth's Chelicera,5948209,@Trinket Macro
+Goldenglow Censer,4626288,@Trinket Macro
+High Speaker's Accretion,5929586,@Trinket Macro
+Horn of Declaration,134229,@Trinket Macro
+Imperfect Ascendancy Serum,967529,@Trinket Macro
+Kaheti Shadeweaver's Emblem,3853942,@Trinket Macro
+Mad Queen's Mandate,5948202,@Trinket Macro
+Mereldar's Toll,5948032,@Trinket Macro
+Message-Imprinted Silken Square,629936,@Trinket Macro
+Nizrek's Holographic Manipulator,5502817,@Trinket Macro
+Oppressive Orator's Larynx,136202,@Trinket Macro
+Overclocked Gear-A-Rang Launcher,4569826,@Trinket Macro
+Ovinax's Mercurial Egg,5948240,@Trinket Macro
+Quickwick Candlestick,454044,@Trinket Macro
+Ravenous Honey Buzzer,4548852,@Trinket Macro
+Shriveled Ancient Tentacle,133574,@Trinket Macro
+Signet of the Priory,5948043,@Trinket Macro
+Sikran's Endless Arsenal,5948249,@Trinket Macro
+Silken Chain Weaver,4549275,@Trinket Macro
+Skarmorak Shard,5948038,@Trinket Macro
+Skyterror's Corrosive Organ,5948243,@Trinket Macro
+Spymaster's Web,5545567,@Trinket Macro
+Swarmlord's Authority,5948252,@Trinket Macro
+Tome of Light's Devotion,1495827,@Trinket Macro
+Treacherous Transmitter,5948071,@Trinket Macro
+Twin Fang Instruments,1786422,@Trinket Macro
+Viscous Coaglam,5948203,@Trinket Macro

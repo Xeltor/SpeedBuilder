@@ -15,6 +15,9 @@ Rune Strike,237518
 -- Specialization Spells
 Death's Caress,1376743
 
+-- Spell aliases
+Heart Strike,135675,@Rune Strike
+
 -- Talents
 Abomination Limb,3578196
 Anti-Magic Zone,237510
@@ -30,7 +33,6 @@ Dancing Rune Weapon,135277
 Death Pact,136146
 Death Strike,237517
 Gorefiend's Grasp,538767
-Heart Strike,135675
 Icebound Fortitude,237525
 Mark of Blood,132205
 Marrowrend,1376745

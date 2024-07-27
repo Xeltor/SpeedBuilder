@@ -16,8 +16,8 @@ Whirlwind,132369
 -- Specialization Spells
 Devastate,135291
 
--- Alternative icons
-Impending Victory,589768,=Victory Rush
+-- Spell aliases
+Impending Victory,589768,@Victory Rush
 
 -- Talents
 Avatar,613534

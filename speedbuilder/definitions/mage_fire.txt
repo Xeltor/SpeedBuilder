@@ -16,22 +16,22 @@ Time Warp,458224
 Fireball,135812
 Flamestrike,135826
 
--- Alternative icons
-Polymorph Black Cat,236547,=Polymorph
-Polymorph Bumblebee,2027853,=Polymorph
-Polymorph Direhorn,877480,=Polymorph
-Polymorph Duck,4048815,=Polymorph
-Polymorph Mawrat,3453807,=Polymorph
-Polymorph Monkey,132159,=Polymorph
-Polymorph Mosswool,4279015,=Polymorph
-Polymorph Peacock,667691,=Polymorph
-Polymorph Penguin,327502,=Polymorph
-Polymorph Pig,135997,=Polymorph
-Polymorph Polar Bear Cub,294471,=Polymorph
-Polymorph Porcupine,644001,=Polymorph
-Polymorph Rabbit,319458,=Polymorph
-Polymorph Turkey,236708,=Polymorph
-Polymorph Turtle,132199,=Polymorph
+-- Spell aliases
+Polymorph Black Cat,236547,@Polymorph
+Polymorph Bumblebee,2027853,@Polymorph
+Polymorph Direhorn,877480,@Polymorph
+Polymorph Duck,4048815,@Polymorph
+Polymorph Mawrat,3453807,@Polymorph
+Polymorph Monkey,132159,@Polymorph
+Polymorph Mosswool,4279015,@Polymorph
+Polymorph Peacock,667691,@Polymorph
+Polymorph Penguin,327502,@Polymorph
+Polymorph Pig,135997,@Polymorph
+Polymorph Polar Bear Cub,294471,@Polymorph
+Polymorph Porcupine,644001,@Polymorph
+Polymorph Rabbit,319458,@Polymorph
+Polymorph Turkey,236708,@Polymorph
+Polymorph Turtle,132199,@Polymorph
 
 -- Talents
 Alter Time,609811

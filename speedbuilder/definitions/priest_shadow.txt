@@ -18,12 +18,12 @@ Mind Flay,136208
 Shadowform,136200
 Vampiric Touch,135978
 
--- Alternative icons
-Mind Flay: Insanity,425954,=Mind Flay
-Mind Spike,457655,=Mind Flay
-Mind Spike: Insanity,1391678,=Mind Flay
-Mindbender,136214,=Shadowfiend
-Void Bolt,1035040,=Void Eruption
+-- Spell aliases
+Mind Flay: Insanity,425954,@Mind Flay
+Mind Spike,457655,@Mind Flay
+Mind Spike: Insanity,1391678,@Mind Flay
+Mindbender,136214,@Shadowfiend
+Void Bolt,1035040,@Void Eruption
 
 -- Priest Talents
 Angelic Feather,642580

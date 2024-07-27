@@ -6,10 +6,10 @@ Lightning Bolt,136048
 Lightning Shield,136051
 Primal Strike,460956
 
--- Alternative icons
-Elemental Blast,651244,=Earth Shock
-Icefury,135855,=Frost Shock
-Lava Beam,236216,=Chain Lightning
+-- Spell aliases
+Elemental Blast,651244,@Earth Shock
+Icefury,135855,@Frost Shock
+Lava Beam,236216,@Chain Lightning
 
 -- Talents
 Ancestral Guidance,538564

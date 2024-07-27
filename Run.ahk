@@ -51,7 +51,7 @@ Rotation() {
     
             if Keybinds[colors] {
                 ; Replacement 
-                if InStr(Keybinds[colors].Keybind, "=") {
+                if (SubStr(Keybinds[colors].Keybind, 1, 1) = Config.AliasPrefix) {
                     ReplacementBind := FindReplacementBind(Keybinds[colors].Keybind, Keybinds)
                     if (ReplacementBind) {
                         Send(ReplacementBind)
@@ -65,7 +65,7 @@ Rotation() {
 }
 
 FindReplacementBind(name, binds) {
-    name := Trim(StrReplace(name, "=", ""))
+    name := Trim(StrReplace(name, Config.AliasPrefix, ""))
 
     for key, obj in binds {
         if (StrLower(obj.Name) = StrLower(name)) {

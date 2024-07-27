@@ -3,6 +3,7 @@ LoadConfig() {
 
     ; Set warcraft window.
     Config.Warcraft := "ahk_class waApplication Window"
+    Config.AliasPrefix := "@"
 
     ; Toggle on keybind.
     try {
