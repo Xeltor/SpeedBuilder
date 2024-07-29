@@ -27,7 +27,6 @@ Hotkey(Config.SpecSelectionKeyBind, SpecSelectionHotkey)
 ; Select spec gui on startup.
 SpecSelection(Config)
 
-; Change this to change te button to toggle the rotation on and off.
 ToggleSpeedBuilder(PressedHotKey) {
     global Toggle
     global Keybinds

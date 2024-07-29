@@ -36,9 +36,20 @@ SpecSelection(Config) {
     SpecGui.SetFont("s11")
     SpecGui.AddText(,"Please select the class spec you wish to play.")
     SpecGui.AddDropDownList("vClassSpecChoice r10 w360", ClassSpecs)
-    LoadButton := SpecGui.AddButton("Default", "Load")
+
+    ; Load spec
+    LoadButton := SpecGui.AddButton("Default Section", "Load spec")
     LoadButton.OnEvent("Click", LoadButton_Click)
-    SpecGui.AddText(,ReOpenMessage ": To open this menu again for spec switching.")
+
+    ; (Re)create spec
+    CreateSpecButton := SpecGui.AddButton("ys", "(Re)create spec")
+    CreateSpecButton.OnEvent("Click", CreateSpecButton_Click)
+
+    ; Config setup
+    ConfigSetupButton := SpecGui.AddButton("ys", "Config setup")
+    ConfigSetupButton.OnEvent("Click", ConfigSetupButton_Click)
+
+    SpecGui.AddText("XM", ReOpenMessage ": To open this menu again for spec switching.")
     SpecGui.OnEvent("Close", SpecSelectGui_Close)
 
     SpecGui.Show()
@@ -68,4 +79,18 @@ LoadButton_Click(GuiCtrlObj, Info) {
 
 SpecSelectGui_Close(GuiCtrlObj) {
     ExitApp()
+}
+
+CreateSpecButton_Click(GuiCtrlObj, Info) {
+    ; Destroy gui.
+    GuiCtrlObj.Gui.Destroy()
+
+    Run("ClassSetup.ahk")
+}
+
+ConfigSetupButton_Click(GuiCtrlObj, Info) {
+    ; Destroy gui.
+    GuiCtrlObj.Gui.Destroy()
+
+    Run("ConfigSetup.ahk")
 }
