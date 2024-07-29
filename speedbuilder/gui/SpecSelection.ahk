@@ -81,13 +81,19 @@ LoadButton_Click(GuiCtrlObj, Info) {
 }
 
 SpecSelectGui_Close(GuiCtrlObj) {
-    ExitApp()
+    ; Destroy gui.
+    GuiCtrlObj.Gui.Destroy()
 }
 
 CreateSpecButton_Click(GuiCtrlObj, Info) {
     ; Destroy gui.
     GuiCtrlObj.Gui.Destroy()
 
+    ; Stop the rotation, if the user didnt already.
+    if Toggle
+        Send(Config.ToggleOnOffKeyBind)
+
+    ; Run class spec setup.
     Run("ClassSetup.ahk")
 }
 
@@ -95,5 +101,9 @@ ConfigSetupButton_Click(GuiCtrlObj, Info) {
     ; Destroy gui.
     GuiCtrlObj.Gui.Destroy()
 
+    ; Run config setup.
     Run("ConfigSetup.ahk")
+
+    ; Close, we need to restart to reload config.
+    ExitApp()
 }

@@ -1,10 +1,26 @@
+global AppName := "SpeedBuilder Setup"
+
 ; Safety escape
-Escape::ExitApp()
+Escape::{
+    if FileExist("config.ini") {
+        if FileExist("Keybinds\*.txt") {
+            Result := MsgBox("Config file has been created.`n`nStart SpeedBuilder?", AppName, "0x24")
+            if Result = "Yes" {
+                Run("Run.ahk")
+            }
+        } else {
+            Result := MsgBox("Config file has been created.`n`nStart class spec setup?", AppName, "0x24")
+            if Result = "Yes" {
+                Run("ClassSetup.ahk")
+            }
+        }
+    }
+    ExitApp()
+}
 
 ; Setup globals
 global TargetGui := ""
 global SupportGui := ""
-global AppName := "SpeedBuilder Setup"
 #Include speedbuilder\includes\ConfigManager.ahk
 
 ; Load config.
