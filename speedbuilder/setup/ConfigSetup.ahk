@@ -1,13 +1,10 @@
 #Requires AutoHotkey v2
-global AppName := "SpeedBuilder Setup"
+global AppName := "Hekili Automation and Control Kit (HACK) Setup"
 
 ; Safety escape
 Escape::{
-    if FileExist("..\config.ini") {
-        Result := MsgBox("Config file has been created.`n`nStart SpeedBuilder?", AppName, "0x24")
-        if Result = "Yes" {
-            Run("..\Run.ahk")
-        }
+    if FileExist("..\..\config.ini") {
+        Run("..\..\Run.ahk")
     }
     ExitApp()
 }
@@ -18,11 +15,14 @@ global SupportGui := ""
 #Include ..\includes\ConfigManager.ahk
 
 ; Load config.
-global Config := LoadConfig("..\")
+global Config := LoadConfig("..\..\")
 
 ; Stop if warcraft isnt running.
 if !WinExist(Config.Warcraft) {
-    MsgBox("Please make sure World of Warcraft is running.", AppName)
+    MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")
+    if FileExist("..\..\config.ini") {
+        Run("..\..\Run.ahk")
+    }
     ExitApp()
 }
 

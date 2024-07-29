@@ -26,8 +26,10 @@ global Keybinds := ""
 global Config := LoadConfig()
 
 ; Set hotkeys.
+HotIfWinActive(Config.Warcraft)
 Hotkey(Config.ToggleOnOffKeyBind, ToggleSpeedBuilder)
 Hotkey(Config.SpecSelectionKeyBind, SpecSelectionHotkey)
+HotIfWinActive()
 
 ; Check if class specs are setup.
 if !FileExist("Keybinds\*.txt") {

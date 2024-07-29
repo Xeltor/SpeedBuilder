@@ -30,10 +30,10 @@ SpecSelection(Config) {
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     SpecGui.SetFont("s11")
     SpecGui.AddText(,"Please select the class spec you wish to play.")
-    SpecGui.AddDropDownList("vClassSpecChoice r10 w360", ClassSpecs)
+    SpecGui.AddDropDownList("vClassSpecChoice r10 w400", ClassSpecs)
 
     ; Load spec
-    LoadButton := SpecGui.AddButton("Default Section", "Load spec")
+    LoadButton := SpecGui.AddButton("Default Section", "(Re)load spec/keybinds")
     LoadButton.OnEvent("Click", LoadButton_Click)
 
     ; (Re)create spec
@@ -44,8 +44,8 @@ SpecSelection(Config) {
     ConfigSetupButton := SpecGui.AddButton("ys", "Config setup")
     ConfigSetupButton.OnEvent("Click", ConfigSetupButton_Click)
 
-    SpecGui.AddText("XM", ReOpenMessage ": To open this menu again for spec switching.")
-    ; SpecGui.OnEvent("Close", SpecSelectGui_Close)
+    SpecGui.AddText("XM", ReOpenMessage ": To open this menu again.")
+    SpecGui.OnEvent("Close", SpecSelectGui_Close)
 
     SpecGui.Show()
 }
@@ -64,18 +64,17 @@ LoadButton_Click(GuiCtrlObj, Info) {
     GuiCtrlObj.Gui.Destroy()
 
     if !ClassSpecChoice {
-        MsgBox("No class spec selected, exiting.", AppName)
-        ExitApp()
+        MsgBox("No class spec selected, please select a class spec.", AppName, "0x30")
+        SpecSelection(Config)
     }
 
     SelectedClassSpec := ClassSpecChoice
     KeyBinds := GetClassKeybinds(SelectedClassSpec, Map())
 }
 
-; SpecSelectGui_Close(GuiCtrlObj) {
-;     ; Destroy gui.
-;     ExitApp()
-; }
+SpecSelectGui_Close(GuiCtrlObj) {
+    ExitApp()
+}
 
 CreateSpecButton_Click(GuiCtrlObj, Info) {
     ; Destroy gui.
