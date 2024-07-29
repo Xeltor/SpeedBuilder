@@ -2,7 +2,7 @@
 #Requires AutoHotkey v2
 CoordMode('ToolTip', 'Screen')
 
-AppName := "SpeedBuilder"
+AppName := "Hekili Automation and Control Kit (HACK)"
 if !FileExist("config.ini") {
     Result := MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34")
     if Result = "Yes" {
@@ -37,10 +37,11 @@ if !FileExist("Keybinds\*.txt") {
     } else {
         ExitApp()
     }
+} else {
+    ; Select spec gui on startup.
+    SpecSelection(Config)
 }
 
-; Select spec gui on startup.
-SpecSelection(Config)
 
 ToggleSpeedBuilder(PressedHotKey) {
     global Toggle

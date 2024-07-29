@@ -2,6 +2,12 @@
 #Include IconReplacementSetup.ahk
 
 SpecSetupSelection() {
+    ; Stop if warcraft isnt running.
+    if !WinExist(Config.Warcraft) {
+        MsgBox("Please make sure World of Warcraft is running.", AppName)
+        ExitApp()
+    }
+
     ClassSpecs := GetClassSpecs(true)
 
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)

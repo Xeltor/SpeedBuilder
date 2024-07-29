@@ -45,7 +45,7 @@ SpecSelection(Config) {
     ConfigSetupButton.OnEvent("Click", ConfigSetupButton_Click)
 
     SpecGui.AddText("XM", ReOpenMessage ": To open this menu again for spec switching.")
-    SpecGui.OnEvent("Close", SpecSelectGui_Close)
+    ; SpecGui.OnEvent("Close", SpecSelectGui_Close)
 
     SpecGui.Show()
 }
@@ -72,10 +72,10 @@ LoadButton_Click(GuiCtrlObj, Info) {
     KeyBinds := GetClassKeybinds(SelectedClassSpec, Map())
 }
 
-SpecSelectGui_Close(GuiCtrlObj) {
-    ; Destroy gui.
-    GuiCtrlObj.Gui.Destroy()
-}
+; SpecSelectGui_Close(GuiCtrlObj) {
+;     ; Destroy gui.
+;     ExitApp()
+; }
 
 CreateSpecButton_Click(GuiCtrlObj, Info) {
     ; Destroy gui.
