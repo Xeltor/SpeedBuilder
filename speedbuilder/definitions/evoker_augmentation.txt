@@ -13,6 +13,8 @@ Return,4622472
 -- Specialization
 Sense Power,132160
 
+-- Spell aliases
+
 -- Talents
 Bestow Weyrnstone,5199618
 Blistering Scales,5199621

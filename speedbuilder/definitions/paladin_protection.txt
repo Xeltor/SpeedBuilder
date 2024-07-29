@@ -13,13 +13,18 @@ Retribution Aura,135889
 Shield of the Righteous,236265
 Word of Glory,133192
 
+-- Specialization Spells
+
+-- Spell aliases
+Blessed Hammer,535595,@Crusader Strike
+Sentinel,135922,@Avenging Wrath
+
 -- Talents
 Ardent Defender,135870
 Auras of the Resolute,135893
 Avenger's Shield,135874
 Avenging Wrath,135875
 Bastion of Light,535594
-Blessed Hammer,535595
 Blessing of Freedom,135968
 Blessing of Protection,135964
 Blessing of Sacrifice,135966
@@ -41,5 +46,4 @@ Rebuke,523893
 Repentance,135942
 Rite of Adjuration,237051
 Rite of Sanctification,237172
-Sentinel,135922
 Turn Evil,571559

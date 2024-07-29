@@ -1,4 +1,4 @@
--- Priest Spells
+-- Spells
 Desperate Prayer,237550
 Fade,135994
 Flash Heal,135907
@@ -13,14 +13,16 @@ Resurrection,135955
 Shadow Word: Pain,136207
 Smite,135924
 
--- Holy Specialization Spells
+-- Specialization Spells
 Heal,135913
 Holy Fire,135972
 Mass Resurrection,413586
 Purify,135894
 Purify Disease,135935
 
--- Priest Talents
+-- Spell aliases
+
+-- Talents
 Angelic Feather,642580
 Apotheosis,1060983
 Circle of Healing,135887

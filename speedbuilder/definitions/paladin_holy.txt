@@ -21,6 +21,8 @@ Cleanse Toxins,135953
 Divine Protection,524353
 Holy Light,135981
 
+-- Spell aliases
+
 -- Talents
 Aura Mastery,135872
 Auras of the Resolute,135893

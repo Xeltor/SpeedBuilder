@@ -25,6 +25,11 @@ Wrath,535045
 -- Specialization Spells
 Moonkin Form,136036
 
+-- Spell aliases
+Full Moon,1392542,@New Moon
+Half Moon,1392543,@New Moon
+Incarnation: Chosen of Elune,571586,@Celestial Alignment
+
 -- Talents
 Celestial Alignment,136060
 Convoke the Spirits,3636839
@@ -35,7 +40,6 @@ Fury of Elune,132123
 Heart of the Wild,135879
 Hibernate,136090
 Incapacitating Roar,132121
-Incarnation: Chosen of Elune,571586
 Innervate,136048
 Ironfur,1378702
 Maim,132134

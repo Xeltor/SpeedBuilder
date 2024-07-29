@@ -14,6 +14,8 @@ Return,4622472
 Mass Return,4622473
 Naturalize,4630445
 
+-- Spell aliases
+
 -- Talents
 Cauterizing Flame,4630446
 Dream Breath,4622454

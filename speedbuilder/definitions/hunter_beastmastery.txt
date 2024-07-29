@@ -11,6 +11,8 @@ Wailing Arrow,132323
 
 -- Specialization Spells
 
+-- Spell aliases
+
 -- Talents
 Barbed Shot,2058007
 Barrage,236201

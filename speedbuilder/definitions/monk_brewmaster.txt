@@ -11,6 +11,11 @@ Tiger Palm,606551
 Touch of Death,606552
 Vivify,1360980
 
+-- Specialization Spells
+
+-- Spell aliases
+Press the Advantage,2032605,@Tiger Palm
+
 -- Talents
 Black Ox Brew,629483
 Breath of Fire,615339

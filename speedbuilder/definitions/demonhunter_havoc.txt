@@ -16,6 +16,8 @@ Blade Dance,1305149
 Blur,1305150
 Sigil Of Flame,1344652
 
+-- Spell aliases
+
 -- Talents
 Chaos Nova,135795
 Consume Magic,828455

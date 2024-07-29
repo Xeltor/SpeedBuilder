@@ -17,10 +17,10 @@ Epidemic,136066
 Outbreak,348565
 
 -- Spell aliases
-Clawing Shadows,615099,r=Scourge Strike
-Defile,1029008,r=Death And Decay
-Festering Strike,879926,r=Rune Strike
-Raise Abomination,298667,r=Army of the Dead
+Clawing Shadows,615099,@Scourge Strike
+Defile,1029008,@Death And Decay
+Festering Strike,879926,@Rune Strike
+Raise Abomination,298667,@Army of the Dead
 
 -- Talents
 Abomination Limb,3578196

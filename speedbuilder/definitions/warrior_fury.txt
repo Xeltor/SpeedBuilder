@@ -17,6 +17,7 @@ Whirlwind,132369
 
 -- Spell aliases
 Impending Victory,589768,@Victory Rush
+Thunder Blast,460957,@Thunder Clap
 
 -- Talents
 Avatar,613534

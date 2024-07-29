@@ -13,6 +13,12 @@ Wailing Arrow,132323
 Aspect of the Eagle,612363
 Harpoon,1376040
 
+-- Spell aliases
+Mongoose Bite,1376044,@Raptor Strike
+Pheromone Bomb,2065635,@Wildfire Bomb
+Shrapnel Bomb,2065637,@Wildfire Bomb
+Volatile Bomb,2065636,@Wildfire Bomb
+
 -- Talents
 Binding Shot,462650
 Bursting Shot,1376038
@@ -29,7 +35,6 @@ Intimidation,132111
 Kill Command,132176
 Kill Shot,236174
 Misdirection,132180
-Mongoose Bite,1376044
 Muzzle,1376045
 Raptor Strike,1376046
 Roar of Sacrifice,464604

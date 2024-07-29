@@ -20,6 +20,8 @@ Sigil Of Flame,1344652
 Soul Cleave,1344653
 Throw Glaive,1305159
 
+-- Spell aliases
+
 -- Talents
 Bulk Extraction,136194
 Chaos Nova,135795

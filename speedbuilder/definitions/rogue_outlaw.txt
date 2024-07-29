@@ -28,6 +28,8 @@ Pistol Shot,1373908
 Roll the Bones,1373910
 Sinister Strike,136189
 
+-- Spell aliases
+
 -- Talents
 Adrenaline Rush,136206
 Atrophic Poison,132300

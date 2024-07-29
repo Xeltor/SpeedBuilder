@@ -11,13 +11,15 @@ Wailing Arrow,132323
 
 -- Specialization Spells
 
+-- Spell aliases
+Chimaera Shot,236176,@Arcane Shot
+
 -- Talents
 Aimed Shot,135130
 Barrage,236201
 Binding Shot,462650
 Bursting Shot,1376038
 Camouflage,461113
-Chimaera Shot,236176
 Concussive Shot,135860
 Counter Shot,249170
 Explosive Shot,236178

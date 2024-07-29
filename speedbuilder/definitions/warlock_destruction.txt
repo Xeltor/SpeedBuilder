@@ -20,6 +20,8 @@ Chaos Bolt,236291
 Immolate,135817
 Incinerate,135789
 
+-- Spell aliases
+
 -- Talents
 Amplify Curse,136132
 Banish,136135

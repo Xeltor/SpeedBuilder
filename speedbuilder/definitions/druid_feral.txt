@@ -24,6 +24,9 @@ Wrath,535045
 
 -- Specialization Spells
 
+-- Spell aliases
+Incarnation: Avatar of Ashamane,571586,@Berserk
+
 -- Talents
 Adaptive Swarm,3578197
 Berserk,236149
@@ -35,7 +38,6 @@ Frenzied Regeneration,132091
 Heart of the Wild,135879
 Hibernate,136090
 Incapacitating Roar,132121
-Incarnation: Avatar of Ashamane,571586
 Innervate,136048
 Ironfur,1378702
 Maim,132134

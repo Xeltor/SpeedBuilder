@@ -12,6 +12,8 @@ Return,4622472
 
 -- Specialization
 
+-- Spell aliases
+
 -- Talents
 Cauterizing Flame,4630446
 Dragonrage,4622452

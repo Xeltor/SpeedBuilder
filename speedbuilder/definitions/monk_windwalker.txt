@@ -15,6 +15,9 @@ Vivify,1360980
 Touch of Karma,651728
 Flying Serpent Kick,606545
 
+-- Spell aliases
+Storm Earth and Fire: Fixate,236188,@Storm Earth and Fire
+
 -- Talents
 Celestial Conduit,5927619
 Chi Torpedo,607849

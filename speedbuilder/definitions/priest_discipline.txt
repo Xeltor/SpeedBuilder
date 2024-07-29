@@ -19,6 +19,8 @@ Penance,237545
 Purify,135894
 Purify Disease,135935
 
+-- Spell aliases
+
 -- Talents
 Angelic Feather,642580
 Dispel Magic,136066

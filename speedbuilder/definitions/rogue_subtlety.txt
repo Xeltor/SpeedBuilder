@@ -29,6 +29,8 @@ Shuriken Storm,1375677
 Shuriken Toss,135431
 Symbols of Death,252272
 
+-- Spell aliases
+
 -- Talents
 Atrophic Poison,132300
 Blind,136175

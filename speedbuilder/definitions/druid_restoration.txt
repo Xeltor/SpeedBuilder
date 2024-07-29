@@ -28,6 +28,8 @@ Remove Corruption,135952
 Revitalize,132125
 Swiftmend,134914
 
+-- Spell aliases
+
 -- Talents
 Cenarion Ward,132137
 Convoke the Spirits,3636839
