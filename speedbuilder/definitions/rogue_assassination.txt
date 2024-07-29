@@ -20,12 +20,14 @@ Vanish,132331
 Wound Poison,134197
 
 -- Specialization Spells
-Envenom,132287
 Fan of Knives,236273
 Garrote,132297
-Mutilate,132304
 Poisoned Knife,1373909
 Rupture,132302
+
+-- Spell aliases
+Mutilate,132304,@Sinister Strike
+Envenom,132287,@Eviscerate
 
 -- Talents
 Amplifying Poison,134207
