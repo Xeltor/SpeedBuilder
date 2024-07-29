@@ -1,5 +1,5 @@
 #Requires AutoHotkey v2
-global AppName := "Hekili Automation and Control Kit (HACK) Setup"
+global AppName := "SLASH: System Layout And Settings Handler"
 
 ; Safety escape
 Escape::{
