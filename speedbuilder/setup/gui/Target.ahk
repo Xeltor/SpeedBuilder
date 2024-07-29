@@ -10,8 +10,8 @@ Ctrl & LButton:: {
     Config.Hekili.xCoord := xCoord
     Config.Hekili.yCoord := yCoord
 
-    IniWrite(Config.Hekili.xCoord, "config.ini", "Hekili", "xCoord")
-    IniWrite(Config.Hekili.yCoord, "config.ini", "Hekili", "yCoord")
+    IniWrite(Config.Hekili.xCoord, "..\..\config.ini", "Hekili", "xCoord")
+    IniWrite(Config.Hekili.yCoord, "..\..\config.ini", "Hekili", "yCoord")
 
 	TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
@@ -23,7 +23,7 @@ NumpadAdd:: {
 
     if (Config.Hekili.BoxWidth + 1 <= 100) {
         Config.Hekili.BoxWidth := Config.Hekili.BoxWidth + 1
-        IniWrite(Config.Hekili.BoxWidth, "config.ini", "Hekili", "BoxWidth")
+        IniWrite(Config.Hekili.BoxWidth, "..\..\config.ini", "Hekili", "BoxWidth")
         TargetGui := DrawTargetGui(Config.Hekili, TargetGui, True)
 
         WinActivate(Config.Warcraft)
@@ -37,7 +37,7 @@ NumpadSub:: {
 
     if (Config.Hekili.BoxWidth + 1 > 25) {
         Config.Hekili.BoxWidth := Config.Hekili.BoxWidth - 1
-        IniWrite(Config.Hekili.BoxWidth, "config.ini", "Hekili", "BoxWidth")
+        IniWrite(Config.Hekili.BoxWidth, "..\..\config.ini", "Hekili", "BoxWidth")
         TargetGui := DrawTargetGui(Config.Hekili, TargetGui, True)
 
         WinActivate(Config.Warcraft)
@@ -50,7 +50,7 @@ Left:: {
     global Config
 
     Config.Hekili.xCoord := Config.Hekili.xCoord - 1
-    IniWrite(Config.Hekili.xCoord, "config.ini", "Hekili", "xCoord")
+    IniWrite(Config.Hekili.xCoord, "..\..\config.ini", "Hekili", "xCoord")
     TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
 
@@ -60,7 +60,7 @@ Right:: {
     global Config
 
     Config.Hekili.xCoord := Config.Hekili.xCoord + 1
-    IniWrite(Config.Hekili.xCoord, "config.ini", "Hekili", "xCoord")
+    IniWrite(Config.Hekili.xCoord, "..\..\config.ini", "Hekili", "xCoord")
     TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
 
@@ -70,7 +70,7 @@ Up:: {
     global Config
 
     Config.Hekili.yCoord := Config.Hekili.yCoord - 1
-    IniWrite(Config.Hekili.yCoord, "config.ini", "Hekili", "yCoord")
+    IniWrite(Config.Hekili.yCoord, "..\..\config.ini", "Hekili", "yCoord")
     TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
 
@@ -80,7 +80,7 @@ Down:: {
     global Config
 
     Config.Hekili.yCoord := Config.Hekili.yCoord + 1
-    IniWrite(Config.Hekili.yCoord, "config.ini", "Hekili", "yCoord")
+    IniWrite(Config.Hekili.yCoord, "..\..\config.ini", "Hekili", "yCoord")
     TargetGui := DrawTargetGui(Config.Hekili, TargetGui)
 }
 #HotIf
@@ -94,7 +94,7 @@ DrawTargetGui(Hekili, TargetGui := "", Destroy := False) {
 
     if (TargetGui = "") {
         TargetGui := Gui("+E0x20 +ToolWindow +LastFound +AlwaysOnTop")
-        TargetGui.AddPicture("h" Hekili.BoxWidth " w-1 X-0 Y-0", "speedbuilder\resources\bullseye.gif")
+        TargetGui.AddPicture("h" Hekili.BoxWidth " w-1 X-0 Y-0", "resources\bullseye.gif")
         WinSetTransColor("0xFF00FF", TargetGui)
         TargetGui.Opt("-Caption +Disabled")
 

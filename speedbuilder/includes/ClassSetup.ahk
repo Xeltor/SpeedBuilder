@@ -17,10 +17,14 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     Spellbook := GetClassKeybinds(SetupData.ClassSpecChoice, Spellbook, true)
 
     ; Get color combo for each icon.
+    TotalItems := Spellbook.Count
+    i := 1
     for IconID, Spell in Spellbook {
         if Spell.Updated or RedoAllIcons {
+            showPopup("Progress: " i "/" TotalItems, 120)
             SetIconReplacement(Spell.IconID, SetupData.xCoord, SetupData.yCoord)
             Spell.Colors := GetPixelColors(true)
+            i++
         }
     }
     ResetIconReplacement(SetupData.xCoord, SetupData.yCoord)
@@ -33,6 +37,9 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     if Result = "Yes" {
         Run("explorer.exe " KeybindFile, A_WorkingDir)
     }
-
-    ExitApp()
+    
+    if !FileExist("Keybinds\*.txt")
+        ExitApp()
+    else
+        SpecSelection(Config)
 }

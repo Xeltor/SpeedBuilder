@@ -2,11 +2,11 @@
 #Requires AutoHotkey v2
 CoordMode('ToolTip', 'Screen')
 
-AppName := "SpeedBuilder"
+AppName := "HACK: Hekili Automation and Control Kit"
 if !FileExist("config.ini") {
     Result := MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34")
     if Result = "Yes" {
-        Run("ConfigSetup.ahk")
+        Run("speedbuilder\setup\ConfigSetup.ahk")
     }
     ExitApp()
 }
@@ -15,6 +15,7 @@ if !FileExist("config.ini") {
 #Include speedbuilder\includes\SpellBook.ahk
 #Include speedbuilder\includes\ColorPicker.ahk
 #Include speedbuilder\gui\SpecSelection.ahk
+#Include speedbuilder\gui\SpecSelectSetup.ahk
 
 global Toggle := false
 global TickRate := 1000 / 60
@@ -25,11 +26,24 @@ global Keybinds := ""
 global Config := LoadConfig()
 
 ; Set hotkeys.
+HotIfWinActive(Config.Warcraft)
 Hotkey(Config.ToggleOnOffKeyBind, ToggleSpeedBuilder)
 Hotkey(Config.SpecSelectionKeyBind, SpecSelectionHotkey)
+HotIfWinActive()
 
-; Select spec gui on startup.
-SpecSelection(Config)
+; Check if class specs are setup.
+if !FileExist("Keybinds\*.txt") {
+    Result := MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34")
+    if Result = "Yes" {
+        SpecSetupSelection()
+    } else {
+        ExitApp()
+    }
+} else {
+    ; Select spec gui on startup.
+    SpecSelection(Config)
+}
+
 
 ToggleSpeedBuilder(PressedHotKey) {
     global Toggle

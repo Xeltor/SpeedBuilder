@@ -51,5 +51,8 @@ IconReplacementSelection(ClassSpecChoice) {
 }
 
 IconReplacementGui_Close(GuiCtrlObj) {
-    ExitApp()
+    if !FileExist("Keybinds\*.txt")
+        ExitApp()
+    else
+        SpecSelection(Config)
 }

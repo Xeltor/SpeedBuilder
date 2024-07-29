@@ -2,15 +2,7 @@
 
 SpecSelection(Config) {
     ClassSpecs := GetClassSpecs()
-
-    if !ClassSpecs.Length {
-        Result := MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34")
-        if Result = "Yes" {
-            Run("ClassSetup.ahk")
-        }
-        ExitApp()
-    }
-
+    
     ReOpenMessage := ""
     TrimCount := 0
     if (Config.SpecSelectionKeyBind ~= "\#") {
@@ -38,10 +30,10 @@ SpecSelection(Config) {
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     SpecGui.SetFont("s11")
     SpecGui.AddText(,"Please select the class spec you wish to play.")
-    SpecGui.AddDropDownList("vClassSpecChoice r10 w360", ClassSpecs)
+    SpecGui.AddDropDownList("vClassSpecChoice r10 w400", ClassSpecs)
 
     ; Load spec
-    LoadButton := SpecGui.AddButton("Default Section", "Load spec")
+    LoadButton := SpecGui.AddButton("Default Section", "(Re)load spec/keybinds")
     LoadButton.OnEvent("Click", LoadButton_Click)
 
     ; (Re)create spec
@@ -52,7 +44,7 @@ SpecSelection(Config) {
     ConfigSetupButton := SpecGui.AddButton("ys", "Config setup")
     ConfigSetupButton.OnEvent("Click", ConfigSetupButton_Click)
 
-    SpecGui.AddText("XM", ReOpenMessage ": To open this menu again for spec switching.")
+    SpecGui.AddText("XM", ReOpenMessage ": To open this menu again.")
     SpecGui.OnEvent("Close", SpecSelectGui_Close)
 
     SpecGui.Show()
@@ -72,8 +64,8 @@ LoadButton_Click(GuiCtrlObj, Info) {
     GuiCtrlObj.Gui.Destroy()
 
     if !ClassSpecChoice {
-        MsgBox("No class spec selected, exiting.", AppName)
-        ExitApp()
+        MsgBox("No class spec selected, please select a class spec.", AppName, "0x30")
+        SpecSelection(Config)
     }
 
     SelectedClassSpec := ClassSpecChoice
@@ -81,8 +73,7 @@ LoadButton_Click(GuiCtrlObj, Info) {
 }
 
 SpecSelectGui_Close(GuiCtrlObj) {
-    ; Destroy gui.
-    GuiCtrlObj.Gui.Destroy()
+    ExitApp()
 }
 
 CreateSpecButton_Click(GuiCtrlObj, Info) {
@@ -94,7 +85,7 @@ CreateSpecButton_Click(GuiCtrlObj, Info) {
         Send(Config.ToggleOnOffKeyBind)
 
     ; Run class spec setup.
-    Run("ClassSetup.ahk")
+    SpecSetupSelection()
 }
 
 ConfigSetupButton_Click(GuiCtrlObj, Info) {
@@ -102,7 +93,7 @@ ConfigSetupButton_Click(GuiCtrlObj, Info) {
     GuiCtrlObj.Gui.Destroy()
 
     ; Run config setup.
-    Run("ConfigSetup.ahk")
+    Run("speedbuilder\setup\ConfigSetup.ahk")
 
     ; Close, we need to restart to reload config.
     ExitApp()
