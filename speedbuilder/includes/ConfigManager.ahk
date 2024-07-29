@@ -4,6 +4,7 @@ LoadConfig(dirOffset := "") {
     ; Set warcraft window.
     Config.Warcraft := "ahk_class waApplication Window"
     Config.AliasPrefix := "@"
+    Config.CurrentSpec := ""
 
     ; Toggle on keybind.
     if FileExist(dirOffset "config.ini") {
