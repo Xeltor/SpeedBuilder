@@ -15,7 +15,13 @@ global SupportGui := ""
 #Include ..\includes\ConfigManager.ahk
 
 ; Load config.
-global Config := LoadConfig("..\..\")
+global Config := {}
+
+if FileExist("..\..\config.ini") {
+    Config := LoadConfig("..\..\")
+} else {
+    Config := GenerateConfig("..\..\")
+}
 
 ; Stop if warcraft isnt running.
 if !WinExist(Config.Warcraft) {
