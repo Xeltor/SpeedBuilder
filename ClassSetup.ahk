@@ -3,7 +3,10 @@ Escape::ExitApp()
 
 global AppName := "SpeedBuilder Class Setup"
 if !FileExist("config.ini") {
-    MsgBox("Config file not created, please run ConfigSetup.ahk.", AppName)
+    Result := MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34")
+    if Result = "Yes" {
+        Run("ConfigSetup.ahk")
+    }
     ExitApp()
 }
 

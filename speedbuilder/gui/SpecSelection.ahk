@@ -4,7 +4,10 @@ SpecSelection(Config) {
     ClassSpecs := GetClassSpecs()
 
     if !ClassSpecs.Length {
-        MsgBox("No classes have been setup, please run ClassSetup.ahk", AppName)
+        Result := MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34")
+        if Result = "Yes" {
+            Run("ClassSetup.ahk")
+        }
         ExitApp()
     }
 
