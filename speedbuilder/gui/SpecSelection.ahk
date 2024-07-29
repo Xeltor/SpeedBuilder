@@ -2,15 +2,7 @@
 
 SpecSelection(Config) {
     ClassSpecs := GetClassSpecs()
-
-    if !ClassSpecs.Length {
-        Result := MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34")
-        if Result = "Yes" {
-            Run("ClassSetup.ahk")
-        }
-        ExitApp()
-    }
-
+    
     ReOpenMessage := ""
     TrimCount := 0
     if (Config.SpecSelectionKeyBind ~= "\#") {
@@ -94,7 +86,7 @@ CreateSpecButton_Click(GuiCtrlObj, Info) {
         Send(Config.ToggleOnOffKeyBind)
 
     ; Run class spec setup.
-    Run("ClassSetup.ahk")
+    SpecSetupSelection()
 }
 
 ConfigSetupButton_Click(GuiCtrlObj, Info) {
@@ -102,7 +94,7 @@ ConfigSetupButton_Click(GuiCtrlObj, Info) {
     GuiCtrlObj.Gui.Destroy()
 
     ; Run config setup.
-    Run("ConfigSetup.ahk")
+    Run("speedbuilder\setup\ConfigSetup.ahk")
 
     ; Close, we need to restart to reload config.
     ExitApp()

@@ -27,8 +27,8 @@ ContinueButton_Click(GuiCtrlObj, Info) {
     GuiCtrlObj.Gui.Destroy()
 
     if !ClassSpecChoice {
-        MsgBox("No class spec selected, exiting.", AppName, "0x30")
-        ExitApp()
+        MsgBox("No class spec selected, please select a spec.", AppName, "0x30")
+        SpecSetupSelection()
     }
 
     ; Icon replacement GUI.

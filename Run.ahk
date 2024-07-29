@@ -6,7 +6,7 @@ AppName := "SpeedBuilder"
 if !FileExist("config.ini") {
     Result := MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34")
     if Result = "Yes" {
-        Run("ConfigSetup.ahk")
+        Run("speedbuilder\setup\ConfigSetup.ahk")
     }
     ExitApp()
 }
@@ -15,6 +15,7 @@ if !FileExist("config.ini") {
 #Include speedbuilder\includes\SpellBook.ahk
 #Include speedbuilder\includes\ColorPicker.ahk
 #Include speedbuilder\gui\SpecSelection.ahk
+#Include speedbuilder\gui\SpecSelectSetup.ahk
 
 global Toggle := false
 global TickRate := 1000 / 60
@@ -27,6 +28,16 @@ global Config := LoadConfig()
 ; Set hotkeys.
 Hotkey(Config.ToggleOnOffKeyBind, ToggleSpeedBuilder)
 Hotkey(Config.SpecSelectionKeyBind, SpecSelectionHotkey)
+
+; Check if class specs are setup.
+if !FileExist("Keybinds\*.txt") {
+    Result := MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34")
+    if Result = "Yes" {
+        SpecSetupSelection()
+    } else {
+        ExitApp()
+    }
+}
 
 ; Select spec gui on startup.
 SpecSelection(Config)

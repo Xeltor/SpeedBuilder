@@ -33,6 +33,9 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     if Result = "Yes" {
         Run("explorer.exe " KeybindFile, A_WorkingDir)
     }
-
-    ExitApp()
+    
+    if !FileExist("Keybinds\*.txt")
+        ExitApp()
+    else
+        SpecSelection(Config)
 }
