@@ -1,4 +1,5 @@
 #SingleInstance Force
+#Requires AutoHotkey v2
 CoordMode('ToolTip', 'Screen')
 
 AppName := "SpeedBuilder"

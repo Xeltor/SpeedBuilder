@@ -1,3 +1,4 @@
+#Requires AutoHotkey v2
 global AppName := "SpeedBuilder Setup"
 
 ; Safety escape

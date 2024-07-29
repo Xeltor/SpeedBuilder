@@ -1,3 +1,4 @@
+#Requires AutoHotkey v2
 ; Safety escape
 Escape::ExitApp()
 
