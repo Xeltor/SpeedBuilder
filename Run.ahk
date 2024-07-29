@@ -1,4 +1,5 @@
 #SingleInstance Force
+CoordMode('ToolTip', 'Screen')
 
 AppName := "SpeedBuilder"
 if !FileExist("config.ini") {
@@ -34,14 +35,23 @@ ToggleSpeedBuilder(PressedHotKey) {
     SetTimer Rotation, (Toggle := !Toggle) ? TickRate : 0
 
     if Toggle {
-        TrayTip(AppName, "Rotation activated.")
+        showPopup("Rotation activated.", 112)
     } else {
-        TrayTip(AppName, "Rotation deactivated.")
+        showPopup("Rotation deactivated.", 125)
     }
 }
 
 SpecSelectionHotkey(PressedHotKey) {
     SpecSelection(Config)
+}
+
+showPopup(Message, Width) {
+    x := A_ScreenWidth - Width
+    y := A_ScreenHeight - 50
+
+    ToolTip("`n" Message "`n ", x, y)
+    ; Hide the tooltip after 3 seconds
+    SetTimer(() => ToolTip(""), -3000)
 }
 
 Rotation() {
