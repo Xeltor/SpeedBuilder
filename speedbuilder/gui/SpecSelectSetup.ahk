@@ -3,9 +3,9 @@
 
 SpecSetupSelection() {
     ; Stop if warcraft isnt running.
-    if !WinExist(Config.Warcraft) {
+    if !WinExist(cfg.Warcraft) {
         MsgBox("Please make sure World of Warcraft is running and select (Re)create spec to try again.", AppName, "0x30")
-        SpecSelection(Config)
+        SpecSelection()
         return
     }
 

@@ -21,7 +21,7 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     i := 1
     for IconID, Spell in Spellbook {
         if Spell.Updated or RedoAllIcons {
-            showPopup("Progress: " i "/" TotalItems, 120)
+            showPopup("Progress: " i "/" TotalItems)
             SetIconReplacement(Spell.IconID, SetupData.xCoord, SetupData.yCoord)
             Spell.Colors := GetPixelColors(true)
             i++
@@ -41,5 +41,5 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     if !FileExist("Keybinds\*.txt")
         ExitApp()
     else
-        SpecSelection(Config)
+        SpecSelection()
 }

@@ -4,7 +4,7 @@
 global IconReplacementGui := ""
 global SetupData := Object()
 
-#HotIf IconReplacementGui != "" and WinActive(Config.Warcraft)
+#HotIf IconReplacementGui != "" and WinActive(cfg.Warcraft)
 CTRL & LButton:: {
     global IconReplacementGui
     global SetupData
@@ -54,5 +54,5 @@ IconReplacementGui_Close(GuiCtrlObj) {
     if !FileExist("Keybinds\*.txt")
         ExitApp()
     else
-        SpecSelection(Config)
+        SpecSelection()
 }

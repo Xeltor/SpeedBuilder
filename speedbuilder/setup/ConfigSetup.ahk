@@ -3,6 +3,9 @@ global AppName := "SLASH: System Layout And Settings Handler"
 
 ; Safety escape
 Escape::{
+    if cfg {
+        cfg.SaveConfigFile("..\..\")
+    }
     if FileExist("..\..\config.ini") {
         Run("..\..\Run.ahk")
     }
@@ -12,19 +15,19 @@ Escape::{
 ; Setup globals
 global TargetGui := ""
 global SupportGui := ""
-#Include ..\includes\ConfigManager.ahk
+#Include ..\class\Config.ahk
 
-; Load config.
-global Config := {}
+; Global config.
+global cfg := {}
 
 if FileExist("..\..\config.ini") {
-    Config := LoadConfig("..\..\")
+    cfg := Config.LoadConfig("..\..\")
 } else {
-    Config := GenerateConfig("..\..\")
+    cfg := Config.New()
 }
 
 ; Stop if warcraft isnt running.
-if !WinExist(Config.Warcraft) {
+if !WinExist(cfg.Warcraft) {
     MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")
     if FileExist("..\..\config.ini") {
         Run("..\..\Run.ahk")
@@ -36,8 +39,8 @@ if !WinExist(Config.Warcraft) {
 #include gui\Target.ahk
 
 ; Draw GUI.
-TargetGui := DrawTargetGui(Config.Hekili)
+TargetGui := DrawTargetGui()
 SupportGui := DrawSupportGui()
 
 ; Activate WoW.
-WinActivate(Config.Warcraft)
+WinActivate(cfg.Warcraft)

@@ -1,37 +1,37 @@
 #Include ..\includes\SpellBook.ahk
 
-SpecSelection(Config) {
+SpecSelection() {
     ClassSpecs := GetClassSpecs()
     
     ReOpenMessage := ""
     TrimCount := 0
-    if (Config.SpecSelectionKeyBind ~= "\#") {
+    if (cfg.SpecSelectionKeyBind ~= "\#") {
         ReOpenMessage .= "WindowsKey + "
         TrimCount++
     }
-    if Config.SpecSelectionKeyBind ~= "\!" {
+    if (cfg.SpecSelectionKeyBind ~= "\!") {
         ReOpenMessage .= "Alt + "
         TrimCount++
     }
-    if Config.SpecSelectionKeyBind ~= "\^" {
+    if (cfg.SpecSelectionKeyBind ~= "\^") {
         ReOpenMessage .= "Ctrl + "
         TrimCount++
     }
-    if (Config.SpecSelectionKeyBind ~= "\+") {
+    if (cfg.SpecSelectionKeyBind ~= "\+") {
         ReOpenMessage .= "Shift + "
         TrimCount++
     }
     if TrimCount {
-        ReOpenMessage .= SubStr(Config.SpecSelectionKeyBind, TrimCount + 1)
+        ReOpenMessage .= SubStr(cfg.SpecSelectionKeyBind, TrimCount + 1)
     } else {
-        ReOpenMessage .= Config.SpecSelectionKeyBind
+        ReOpenMessage .= cfg.SpecSelectionKeyBind
     }
 
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     SpecGui.SetFont("s11")
     SpecGui.AddText(,"Please select the class spec you wish to play.")
-    GuiControl := SpecGui.AddDropDownList("vClassSpecChoice r10 w400", ClassSpecs)
-    GuiControl.Choose(Config.CurrentSpec)
+    ClassSpecChoice := SpecGui.AddDropDownList("vClassSpecChoice r10 w400", ClassSpecs)
+    ClassSpecChoice.Choose(cfg.CurrentSpec)
 
     ; Load spec
     LoadButton := SpecGui.AddButton("Default Section", "(Re)load spec/keybinds")
@@ -60,18 +60,21 @@ LoadButton_Click(GuiCtrlObj, Info) {
 
     ; Store choices.
     ClassSpecChoice := SpecSelectorValues.ClassSpecChoice
-    Config.CurrentSpec := SpecSelectorValues.ClassSpecChoice
+    cfg.CurrentSpec := SpecSelectorValues.ClassSpecChoice
 
     ; Destroy gui.
     GuiCtrlObj.Gui.Destroy()
 
     if !ClassSpecChoice {
         MsgBox("No class spec selected, please select a class spec.", AppName, "0x30")
-        SpecSelection(Config)
+        SpecSelection()
     }
 
     SelectedClassSpec := ClassSpecChoice
     KeyBinds := GetClassKeybinds(SelectedClassSpec, Map())
+
+    ClassSpec := cfg.GetFormattedCurrentSpec()
+    showPopup("Loaded " KeyBinds.Count " spells for " ClassSpec)
 }
 
 SpecSelectGui_Close(GuiCtrlObj) {
@@ -84,7 +87,7 @@ CreateSpecButton_Click(GuiCtrlObj, Info) {
 
     ; Stop the rotation, if the user didnt already.
     if Toggle
-        Send(Config.ToggleOnOffKeyBind)
+        Send(cfg.ToggleOnOffKeyBind)
 
     ; Run class spec setup.
     SpecSetupSelection()

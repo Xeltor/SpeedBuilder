@@ -11,7 +11,7 @@ if !FileExist("config.ini") {
     ExitApp()
 }
 
-#Include speedbuilder\includes\ConfigManager.ahk
+#Include speedbuilder\class\Config.ahk
 #Include speedbuilder\includes\SpellBook.ahk
 #Include speedbuilder\includes\ColorPicker.ahk
 #Include speedbuilder\gui\SpecSelection.ahk
@@ -23,13 +23,13 @@ global SelectedClassSpec := ""
 global Keybinds := ""
 
 ; Load config.
-global Config := LoadConfig()
+global cfg := Config.LoadConfigFile()
 
 ; Set hotkeys.
-HotIfWinActive(Config.Warcraft)
-Hotkey(Config.ToggleOnOffKeyBind, ToggleSpeedBuilder)
-Hotkey(Config.SpecSelectionKeyBind, SpecSelectionHotkey)
-HotIfWinActive()
+; HotIfWinActive(cfg.Warcraft)
+Hotkey(cfg.ToggleOnOffKeyBind, ToggleSpeedBuilder)
+Hotkey(cfg.SpecSelectionKeyBind, SpecSelectionHotkey)
+; HotIfWinActive()
 
 ; Check if class specs are setup.
 if !FileExist("Keybinds\*.txt") {
@@ -41,7 +41,7 @@ if !FileExist("Keybinds\*.txt") {
     }
 } else {
     ; Select spec gui on startup.
-    SpecSelection(Config)
+    SpecSelection()
 }
 
 
@@ -49,40 +49,47 @@ ToggleSpeedBuilder(PressedHotKey) {
     global Toggle
     global Keybinds
 
+    if !cfg.CurrentSpec
+        return
+
+    ClassSpec := cfg.GetFormattedCurrentSpec()
+
     SetTimer Rotation, (Toggle := !Toggle) ? TickRate : 0
 
     if Toggle {
-        showPopup("Rotation activated.", 112)
+        showPopup(ClassSpec " rotation activated.")
     } else {
-        showPopup("Rotation deactivated.", 125)
+        showPopup(ClassSpec " rotation deactivated.")
     }
 }
 
 SpecSelectionHotkey(PressedHotKey) {
-    SpecSelection(Config)
+    SpecSelection()
 }
 
-showPopup(Message, Width) {
-    x := A_ScreenWidth - Width
-    y := A_ScreenHeight - 50
+showPopup(Message) {
+    x := A_ScreenWidth - ( 5 * StrLen(Message) )
+    y := A_ScreenHeight
 
     ToolTip("`n" Message "`n ", x, y)
     ; Hide the tooltip after 3 seconds
-    SetTimer(() => ToolTip(""), -3000)
+    SetTimer(() => ToolTip(""), -5000)
 }
 
 Rotation() {
-    if WinActive(Config.Warcraft) {
+    if WinActive(cfg.Warcraft) {
         try {
             colors := GetPixelColors()
     
             if Keybinds[colors] {
-                ; Replacement 
-                if (SubStr(Keybinds[colors].Keybind, 1, 1) = Config.AliasPrefix) {
-                    ReplacementBind := FindReplacementBind(Keybinds[colors].Keybind, Keybinds)
+                ; Check if alias.
+                if (SubStr(Keybinds[colors].Keybind, 1, 1) = cfg.AliasPrefix) {
+                    ReplacementBind := FindAlias(Keybinds[colors].Keybind, Keybinds)
                     if (ReplacementBind) {
                         Send(ReplacementBind)
                     }
+
+                ; No alias
                 } else {
                     Send(Keybinds[colors].Keybind)
                 }
@@ -91,7 +98,7 @@ Rotation() {
     }
 }
 
-FindReplacementBind(name, binds) {
+FindAlias(name, binds) {
     name := Trim(StrReplace(name, Config.AliasPrefix, ""))
 
     for key, obj in binds {
