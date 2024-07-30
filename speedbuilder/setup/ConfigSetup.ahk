@@ -1,9 +1,14 @@
 #Requires AutoHotkey v2
+#Include ..\class\Config.ahk
 global AppName := "SLASH: System Layout And Settings Handler"
+global cfg := Config()
 
 ; Safety escape
 Escape::{
-    if FileExist("..\..\config.ini") {
+    if cfg {
+        cfg.SaveConfigFile(true)
+    }
+    if cfg.ConfigFileExists(true) {
         Run("..\..\Run.ahk")
     }
     ExitApp()
@@ -12,21 +17,15 @@ Escape::{
 ; Setup globals
 global TargetGui := ""
 global SupportGui := ""
-#Include ..\includes\ConfigManager.ahk
 
-; Load config.
-global Config := {}
-
-if FileExist("..\..\config.ini") {
-    Config := LoadConfig("..\..\")
-} else {
-    Config := GenerateConfig("..\..\")
+if cfg.ConfigFileExists(true) {
+    cfg.LoadConfigFile(true)
 }
 
 ; Stop if warcraft isnt running.
-if !WinExist(Config.Warcraft) {
+if !WinExist(cfg.Warcraft) {
     MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")
-    if FileExist("..\..\config.ini") {
+    if cfg.ConfigFileExists(true) {
         Run("..\..\Run.ahk")
     }
     ExitApp()
@@ -36,8 +35,8 @@ if !WinExist(Config.Warcraft) {
 #include gui\Target.ahk
 
 ; Draw GUI.
-TargetGui := DrawTargetGui(Config.Hekili)
+TargetGui := DrawTargetGui()
 SupportGui := DrawSupportGui()
 
 ; Activate WoW.
-WinActivate(Config.Warcraft)
+WinActivate(cfg.Warcraft)

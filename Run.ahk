@@ -1,35 +1,24 @@
 #SingleInstance Force
 #Requires AutoHotkey v2
+#Include speedbuilder\class\Config.ahk
+#Include speedbuilder\class\Specialization.ahk
+#Include speedbuilder\includes\ColorPicker.ahk
+#Include speedbuilder\gui\SpecSelection.ahk
+#Include speedbuilder\gui\SpecSelectSetup.ahk
 CoordMode('ToolTip', 'Screen')
+global AppName := "HACK: Hekili Automation and Control Kit"
+global cfg := Config()
+global LoadedSpec := ""
 
-AppName := "HACK: Hekili Automation and Control Kit"
-if !FileExist("config.ini") {
+if !cfg.ConfigFileExists() {
     Result := MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34")
     if Result = "Yes" {
         Run("speedbuilder\setup\ConfigSetup.ahk")
     }
     ExitApp()
+} else {
+    cfg := cfg.LoadConfigFile()
 }
-
-#Include speedbuilder\includes\ConfigManager.ahk
-#Include speedbuilder\includes\SpellBook.ahk
-#Include speedbuilder\includes\ColorPicker.ahk
-#Include speedbuilder\gui\SpecSelection.ahk
-#Include speedbuilder\gui\SpecSelectSetup.ahk
-
-global Toggle := false
-global TickRate := 1000 / 60
-global SelectedClassSpec := ""
-global Keybinds := ""
-
-; Load config.
-global Config := LoadConfig()
-
-; Set hotkeys.
-HotIfWinActive(Config.Warcraft)
-Hotkey(Config.ToggleOnOffKeyBind, ToggleSpeedBuilder)
-Hotkey(Config.SpecSelectionKeyBind, SpecSelectionHotkey)
-HotIfWinActive()
 
 ; Check if class specs are setup.
 if !FileExist("Keybinds\*.txt") {
@@ -41,63 +30,61 @@ if !FileExist("Keybinds\*.txt") {
     }
 } else {
     ; Select spec gui on startup.
-    SpecSelection(Config)
+    SpecSelection()
 }
 
+; Set hotkeys.
+HotIfWinActive(cfg.Warcraft)
+Hotkey(cfg.ToggleOnOffKeyBind, ToggleSpeedBuilder)
+Hotkey(cfg.SpecSelectionKeyBind, SpecSelectionHotkey)
+HotIfWinActive()
 
 ToggleSpeedBuilder(PressedHotKey) {
-    global Toggle
-    global Keybinds
+    if !LoadedSpec
+        return
 
-    SetTimer Rotation, (Toggle := !Toggle) ? TickRate : 0
+    ClassSpec := LoadedSpec.Name
 
-    if Toggle {
-        showPopup("Rotation activated.", 112)
+    SetTimer Rotation, (cfg.ToggleState := !cfg.ToggleState) ? cfg.TickRate : 0
+
+    if cfg.ToggleState {
+        showPopup(ClassSpec " rotation activated.")
     } else {
-        showPopup("Rotation deactivated.", 125)
+        showPopup(ClassSpec " rotation deactivated.")
     }
 }
 
 SpecSelectionHotkey(PressedHotKey) {
-    SpecSelection(Config)
+    SpecSelection()
 }
 
-showPopup(Message, Width) {
-    x := A_ScreenWidth - Width
-    y := A_ScreenHeight - 50
+showPopup(Message) {
+    x := A_ScreenWidth - ( 5 * StrLen(Message) )
+    y := A_ScreenHeight
 
     ToolTip("`n" Message "`n ", x, y)
     ; Hide the tooltip after 3 seconds
-    SetTimer(() => ToolTip(""), -3000)
+    SetTimer(() => ToolTip(""), -5000)
 }
 
 Rotation() {
-    if WinActive(Config.Warcraft) {
+    if WinActive(cfg.Warcraft) {
         try {
             colors := GetPixelColors()
     
-            if Keybinds[colors] {
-                ; Replacement 
-                if (SubStr(Keybinds[colors].Keybind, 1, 1) = Config.AliasPrefix) {
-                    ReplacementBind := FindReplacementBind(Keybinds[colors].Keybind, Keybinds)
+            if LoadedSpec.Actions[colors] {
+                ; Check if alias.
+                if LoadedSpec.Actions[colors].IsAlias {
+                    ReplacementBind := LoadedSpec.GetAlias(LoadedSpec.Actions[colors].Keybind)
                     if (ReplacementBind) {
                         Send(ReplacementBind)
                     }
+
+                ; No alias
                 } else {
-                    Send(Keybinds[colors].Keybind)
+                    Send(LoadedSpec.Actions[colors].Keybind)
                 }
             }
         }
     }
-}
-
-FindReplacementBind(name, binds) {
-    name := Trim(StrReplace(name, Config.AliasPrefix, ""))
-
-    for key, obj in binds {
-        if (StrLower(obj.Name) = StrLower(name)) {
-            return obj.Keybind
-        }
-    }
-    return false
 }

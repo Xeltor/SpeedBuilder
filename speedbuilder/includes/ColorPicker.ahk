@@ -4,10 +4,10 @@ GetPixelColors(Setup:=false) {
     ; Give WoW some time to respond
     if Setup {
         Sleep(1000)
-        WinActivate(Config.Warcraft)
+        WinActivate(cfg.Warcraft)
     }
 
-    for p in Config.Hekili.Pixels {
+    for p in cfg.HekiliPixels() {
         colors := colors PixelGetColor(p.xCoord, p.yCoord)
     }
 
@@ -15,7 +15,7 @@ GetPixelColors(Setup:=false) {
 }
 
 SetIconReplacement(IconID, xCoord, yCoord) {
-    WinActivate(Config.Warcraft)
+    WinActivate(cfg.Warcraft)
     MouseClick(, xCoord, yCoord, 2)
     Send("^a")
     Send(IconID)
@@ -23,7 +23,7 @@ SetIconReplacement(IconID, xCoord, yCoord) {
 }
 
 ResetIconReplacement(xCoord, yCoord) {
-    WinActivate(Config.Warcraft)
+    WinActivate(cfg.Warcraft)
     MouseClick(, xCoord, yCoord, 2)
     Send("^a")
     Send("{Del}")
