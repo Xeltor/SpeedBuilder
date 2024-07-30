@@ -1,7 +1,10 @@
-#Include ..\includes\SpellBook.ahk
-
 SpecSelection() {
     ClassSpecs := GetClassSpecs()
+    ClassSpecNames := []
+
+    for spec in ClassSpecs {
+        ClassSpecNames.Push(spec.Name)
+    }
     
     ReOpenMessage := ""
     TrimCount := 0
@@ -30,8 +33,10 @@ SpecSelection() {
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     SpecGui.SetFont("s11")
     SpecGui.AddText(,"Please select the class spec you wish to play.")
-    ClassSpecChoice := SpecGui.AddDropDownList("vClassSpecChoice r10 w400", ClassSpecs)
-    ClassSpecChoice.Choose(cfg.CurrentSpec)
+    ClassSpecChoice := SpecGui.AddDropDownList("vClassSpecChoice r10 w400", ClassSpecNames)
+    try {
+        ClassSpecChoice.Choose(LoadedSpec.Name)
+    }
 
     ; Load spec
     LoadButton := SpecGui.AddButton("Default Section", "(Re)load spec/keybinds")
@@ -52,15 +57,13 @@ SpecSelection() {
 }
 
 LoadButton_Click(GuiCtrlObj, Info) {
-    global SelectedClassSpec
-    global KeyBinds
-
+    global LoadedSpec
+    
     ; Hide parent.
     SpecSelectorValues := GuiCtrlObj.Gui.Submit(true)
 
     ; Store choices.
-    ClassSpecChoice := SpecSelectorValues.ClassSpecChoice
-    cfg.CurrentSpec := SpecSelectorValues.ClassSpecChoice
+    ClassSpecChoice := StrLower(StrReplace(SpecSelectorValues.ClassSpecChoice, " ", "_"))
 
     ; Destroy gui.
     GuiCtrlObj.Gui.Destroy()
@@ -68,13 +71,13 @@ LoadButton_Click(GuiCtrlObj, Info) {
     if !ClassSpecChoice {
         MsgBox("No class spec selected, please select a class spec.", AppName, "0x30")
         SpecSelection()
+        return
     }
 
-    SelectedClassSpec := ClassSpecChoice
-    KeyBinds := GetClassKeybinds(SelectedClassSpec, Map())
+    LoadedSpec := Specialization(ClassSpecChoice).LoadActions()
 
-    ClassSpec := cfg.GetFormattedCurrentSpec()
-    showPopup("Loaded " KeyBinds.Count " spells for " ClassSpec)
+    ClassSpec := LoadedSpec.Name
+    showPopup("Loaded " LoadedSpec.Actions.Count " spells for " ClassSpec)
 }
 
 SpecSelectGui_Close(GuiCtrlObj) {
@@ -86,7 +89,7 @@ CreateSpecButton_Click(GuiCtrlObj, Info) {
     GuiCtrlObj.Gui.Destroy()
 
     ; Stop the rotation, if the user didnt already.
-    if Toggle
+    if cfg.ToggleState
         Send(cfg.ToggleOnOffKeyBind)
 
     ; Run class spec setup.
@@ -102,4 +105,20 @@ ConfigSetupButton_Click(GuiCtrlObj, Info) {
 
     ; Close, we need to restart to reload config.
     ExitApp()
+}
+
+GetClassSpecs() {
+    ClassSpecs := []
+
+    DirLocation := "Keybinds\*.txt"
+
+    loop files DirLocation {
+        if not InStr(A_LoopFileName, "common_") {
+            FileWithoutExt := StrReplace(A_LoopFileName, "." A_LoopFileExt)
+
+            ClassSpecs.Push(Specialization(FileWithoutExt))
+        }
+    }
+
+    return ClassSpecs
 }

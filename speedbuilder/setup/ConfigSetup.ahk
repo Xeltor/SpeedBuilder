@@ -1,12 +1,14 @@
 #Requires AutoHotkey v2
+#Include ..\class\Config.ahk
 global AppName := "SLASH: System Layout And Settings Handler"
+global cfg := Config()
 
 ; Safety escape
 Escape::{
     if cfg {
-        cfg.SaveConfigFile("..\..\")
+        cfg.SaveConfigFile(true)
     }
-    if FileExist("..\..\config.ini") {
+    if cfg.ConfigFileExists(true) {
         Run("..\..\Run.ahk")
     }
     ExitApp()
@@ -15,21 +17,15 @@ Escape::{
 ; Setup globals
 global TargetGui := ""
 global SupportGui := ""
-#Include ..\class\Config.ahk
 
-; Global config.
-global cfg := {}
-
-if FileExist("..\..\config.ini") {
-    cfg := Config.LoadConfig("..\..\")
-} else {
-    cfg := Config.New()
+if cfg.ConfigFileExists(true) {
+    cfg.LoadConfigFile(true)
 }
 
 ; Stop if warcraft isnt running.
 if !WinExist(cfg.Warcraft) {
     MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")
-    if FileExist("..\..\config.ini") {
+    if cfg.ConfigFileExists(true) {
         Run("..\..\Run.ahk")
     }
     ExitApp()
