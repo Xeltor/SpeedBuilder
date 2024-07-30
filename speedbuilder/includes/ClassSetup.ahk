@@ -5,7 +5,7 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     ActionList := []
     for Definition in SetupData.ClassSpecChoice.Definitions {
         ; Update existing
-        if SetupData.ClassSpecChoice.Actions[Definition.Name] {
+        if SetupData.ClassSpecChoice.Actions.Has(Definition.Name) {
             NewAction := SetupData.ClassSpecChoice.Actions[Definition.Name].FromDefinition(Definition)
         } else {
             NewAction := Action().FromDefinition(Definition)
@@ -15,13 +15,13 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     }
 
     ; Get color combo for each icon.
-    TotalItems := ActionList.Count
+    TotalItems := ActionList.Length
     i := 1
-    for Action in ActionList {
-        if Action.IsUpdated or RedoAllIcons {
+    for Act in ActionList {
+        if Act.IsUpdated or RedoAllIcons {
             showPopup("Progress: " i "/" TotalItems)
-            SetIconReplacement(Action.IconID, SetupData.xCoord, SetupData.yCoord)
-            Action.Colors := GetPixelColors(true)
+            SetIconReplacement(Act.IconID, SetupData.xCoord, SetupData.yCoord)
+            Act.Colors := GetPixelColors(true)
         }
         i++
     }
@@ -82,7 +82,7 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     ; Write keybinds.
     FileAppend("`n-- Class spells and talents.`n", KeybindFile)
     for Name, Spell in Keybinds {
-        if Spell.Type = "Spell" {
+        if Spell.ActionType = "Spell" {
             SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
             if Spell.IsAlias
                 Footer.Push(SpellLine)
@@ -93,7 +93,7 @@ SetClassKeybinds(ClassSpec, Keybinds) {
 
     FileAppend("`n-- Racial spells.`n", KeybindFile)
     for Name, Spell in Keybinds {
-        if Spell.Type = "Common" {
+        if Spell.ActionType = "Common" {
             SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
             if Spell.IsAlias
                 Footer.Push(SpellLine)
@@ -104,7 +104,7 @@ SetClassKeybinds(ClassSpec, Keybinds) {
 
     FileAppend("`n-- Items.`n", KeybindFile)
     for Name, Spell in Keybinds {
-        if Spell.Type = "Item" {
+        if Spell.ActionType = "Item" {
             SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
             if Spell.IsAlias
                 Footer.Push(SpellLine)

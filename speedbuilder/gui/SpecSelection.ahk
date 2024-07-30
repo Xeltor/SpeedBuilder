@@ -77,7 +77,10 @@ LoadButton_Click(GuiCtrlObj, Info) {
     LoadedSpec := Specialization(ClassSpecChoice).LoadActions()
 
     ClassSpec := LoadedSpec.Name
-    showPopup("Loaded " LoadedSpec.Actions.Count " spells for " ClassSpec)
+    showPopup("Loaded " LoadedSpec.Actions.Count " actions for " ClassSpec)
+
+    if not WinActive(cfg.Warcraft)
+        WinActivate(cfg.Warcraft)
 }
 
 SpecSelectGui_Close(GuiCtrlObj) {

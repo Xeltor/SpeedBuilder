@@ -75,7 +75,7 @@ Rotation() {
             if LoadedSpec.Actions[colors] {
                 ; Check if alias.
                 if LoadedSpec.Actions[colors].IsAlias {
-                    ReplacementBind := LoadedSpec.GetAlias(LoadedSpec.Actions[colors].Name)
+                    ReplacementBind := LoadedSpec.GetAlias(LoadedSpec.Actions[colors].Keybind)
                     if (ReplacementBind) {
                         Send(ReplacementBind)
                     }

@@ -9,7 +9,7 @@ Class Definition {
 
         this.Name := Values[1]
         this.IconID := Values[2]
-        if Values >= 3
+        if Values.Length >= 3
             this.Alias := Values[3]
 
         this.DefinitionType := DefinitionType

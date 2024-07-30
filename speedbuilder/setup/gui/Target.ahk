@@ -10,7 +10,7 @@ Ctrl & LButton:: {
     cfg.HekiliXCoord := xCoord
     cfg.HekiliYCoord := yCoord
 
-	TargetGui := DrawTargetGui(cfg.Hekili, TargetGui)
+	TargetGui := DrawTargetGui(TargetGui)
 }
 
 ; Increase box size.

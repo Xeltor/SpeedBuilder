@@ -64,11 +64,11 @@ class Specialization {
                 continue
             }
 
-            Action := Action(A_LoopReadLine)
+            Act := Action(A_LoopReadLine)
             if ByName
-                this.Actions[Action.Name] := Action
+                this.Actions[Act.Name] := Act
             else
-                this.Actions[Action.Colors] := Action
+                this.Actions[Act.Colors] := Act
         }
 
         return this
