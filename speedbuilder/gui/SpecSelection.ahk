@@ -93,7 +93,7 @@ CreateSpecButton_Click(GuiCtrlObj, Info) {
 
     ; Stop the rotation, if the user didnt already.
     if cfg.ToggleState
-        Send(cfg.ToggleOnOffKeyBind)
+        ToggleSpeedBuilder("")
 
     ; Run class spec setup.
     SpecSetupSelection()
