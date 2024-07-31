@@ -79,7 +79,7 @@ LoadButton_Click(GuiCtrlObj, Info) {
     ClassSpec := LoadedSpec.Name
     showPopup("Loaded " LoadedSpec.Actions.Count " actions for " ClassSpec)
 
-    if not WinActive(cfg.Warcraft)
+    if not WinActive(cfg.Warcraft) and WinExist(cfg.Warcraft)
         WinActivate(cfg.Warcraft)
 }
 
