@@ -43,14 +43,12 @@ ToggleSpeedBuilder(PressedHotKey) {
     if !LoadedSpec
         return
 
-    ClassSpec := LoadedSpec.Name
-
     SetTimer Rotation, (cfg.ToggleState := !cfg.ToggleState) ? cfg.TickRate : 0
 
     if cfg.ToggleState {
-        showPopup(ClassSpec " rotation activated.")
+        showPopup(LoadedSpec.Name " rotation activated.")
     } else {
-        showPopup(ClassSpec " rotation deactivated.")
+        showPopup(LoadedSpec.Name " rotation deactivated.")
     }
 }
 
