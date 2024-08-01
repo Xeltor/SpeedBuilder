@@ -62,7 +62,7 @@ Rotation() {
         
         if action {
             keybind := action.IsAlias ? LoadedSpec.GetActionByAlias(action.Keybind) : action.Keybind
-            if keybind {
+            if keybind != "" {
                 Send(keybind)
             }
         }
