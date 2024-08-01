@@ -29,7 +29,7 @@ ContinueButton_Click(GuiCtrlObj, Info) {
     SpecSelectorValues := GuiCtrlObj.Gui.Submit(true)
 
     ; Store choices.
-    ClassSpecChoice := StrLower(StrReplace(SpecSelectorValues.ClassSpecChoice, " ", "_"))
+    ClassSpecChoice := SpecSelectorValues.ClassSpecChoice
 
     ; Destroy gui.
     GuiCtrlObj.Gui.Destroy()

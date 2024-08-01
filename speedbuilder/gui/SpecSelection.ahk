@@ -1,11 +1,6 @@
 SpecSelection() {
     ClassSpecs := GetClassSpecs()
-    ClassSpecNames := []
 
-    for spec in ClassSpecs {
-        ClassSpecNames.Push(spec.Name)
-    }
-    
     ReOpenMessage := ""
     TrimCount := 0
     if (cfg.SpecSelectionKeyBind ~= "\#") {
@@ -33,8 +28,11 @@ SpecSelection() {
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     SpecGui.SetFont("s11")
     SpecGui.AddText(,"Please select the class spec you wish to play.")
-    ClassSpecChoice := SpecGui.AddDropDownList("vClassSpecChoice r10 w400", ClassSpecNames)
+
+    ; Populate list.
+    ClassSpecChoice := SpecGui.AddDropDownList("vClassSpecChoice r10 w400", ClassSpecs)
     try {
+        ; Attempt to select the current spec if set.
         ClassSpecChoice.Choose(LoadedSpec.Name)
     }
 
@@ -63,7 +61,7 @@ LoadButton_Click(GuiCtrlObj, Info) {
     SpecSelectorValues := GuiCtrlObj.Gui.Submit(true)
 
     ; Store choices.
-    ClassSpecChoice := StrLower(StrReplace(SpecSelectorValues.ClassSpecChoice, " ", "_"))
+    ClassSpecChoice := SpecSelectorValues.ClassSpecChoice,
 
     ; Destroy gui.
     GuiCtrlObj.Gui.Destroy()
@@ -119,7 +117,7 @@ GetClassSpecs() {
         if not InStr(A_LoopFileName, "common_") {
             FileWithoutExt := StrReplace(A_LoopFileName, "." A_LoopFileExt)
 
-            ClassSpecs.Push(Specialization(FileWithoutExt))
+            ClassSpecs.Push(Specialization(FileWithoutExt).Name)
         }
     }
 

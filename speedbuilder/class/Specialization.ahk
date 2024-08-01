@@ -8,7 +8,7 @@ class Specialization {
     Definitions := []
 
     __New(FileName) {
-        this.FileName := FileName
+        this.FileName := StrLower(StrReplace(FileName, " ", "_"))
         this.Name := StrTitle(StrReplace(FileName, "_", " "))
     }
 
