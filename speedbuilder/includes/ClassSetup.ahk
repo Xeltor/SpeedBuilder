@@ -36,10 +36,8 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
         Run("explorer.exe " KeybindFile, A_WorkingDir)
     }
     
-    if !FileExist("Keybinds\*.txt")
-        ExitApp()
-    else
-        SpecSelection()
+    ; Return to main menu on completion.
+    SpecSelection()
 }
 
 SetClassKeybinds(ClassSpec, Keybinds) {

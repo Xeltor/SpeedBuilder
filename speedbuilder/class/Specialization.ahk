@@ -7,19 +7,20 @@ class Specialization {
     Actions := Map()
     Definitions := []
 
-    __New(FileName) {
+    __New(FileName, Setup := false) {
         this.FileName := StrLower(StrReplace(FileName, " ", "_"))
         this.Name := StrTitle(StrReplace(FileName, "_", " "))
-    }
 
-    LoadSetup() {
-        this.LoadDefinitions()
-        this.LoadActions(true)
-
-        return this
+        if Setup {
+            this.LoadDefinitions()
+        }
+        this.LoadActions(Setup)
     }
 
     LoadDefinitions() {
+        ; Clear definitions.
+        this.Definitions := []
+
         ; Common items
         loop read, "speedbuilder\definitions\common_items.txt" {
             if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
@@ -49,29 +50,29 @@ class Specialization {
 
             this.Definitions.Push(Spell)        
         }
-
-        return this
     }
 
-    LoadActions(ByName := false) {
+    LoadActions(Setup := false) {
         KeybindFile := "Keybinds\" this.FileName ".txt"
 
         if !FileExist(KeybindFile)
-            return this
+            return
 
+        ; Clear actions.
+        this.Actions := Map()
+
+        ; Add actions from keybind file.
         loop read, KeybindFile {
             if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
                 continue
             }
 
             Act := Action(A_LoopReadLine)
-            if ByName
+            if Setup
                 this.Actions[Act.Name] := Act
             else
                 this.Actions[Act.Colors] := Act
         }
-
-        return this
     }
 
     GetAlias(ActionName) {

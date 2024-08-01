@@ -61,7 +61,7 @@ showPopup(Message) {
     y := A_ScreenHeight
 
     ToolTip("`n" Message "`n ", x, y)
-    ; Hide the tooltip after 3 seconds
+    ; Hide the tooltip after 5 seconds
     SetTimer(() => ToolTip(""), -5000)
 }
 

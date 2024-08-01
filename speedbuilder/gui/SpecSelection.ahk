@@ -72,7 +72,7 @@ LoadButton_Click(GuiCtrlObj, Info) {
         return
     }
 
-    LoadedSpec := Specialization(ClassSpecChoice).LoadActions()
+    LoadedSpec := Specialization(ClassSpecChoice)
 
     ClassSpec := LoadedSpec.Name
     showPopup("Loaded " LoadedSpec.Actions.Count " actions for " ClassSpec)

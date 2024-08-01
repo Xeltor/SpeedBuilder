@@ -47,12 +47,9 @@ IconReplacementSelection(ClassSpecChoice) {
     IconReplacementGui.AddText("", "1. Open Hekili. ( /hekili )`n2. Make the primary box visible. (Displays -> Primary -> Visibility)`n3. Go to Abilities in the left side row.`n4. In the top right select the ability Hekili is showing.`n5. CTRL + Click inside the Icon Replacement box.")
     IconReplacementGui.OnEvent("Close", IconReplacementGui_Close)
 
-    IconReplacementGui.Show()
+    IconReplacementGui.Show("X0 Y0")
 }
 
 IconReplacementGui_Close(GuiCtrlObj) {
-    if !FileExist("Keybinds\*.txt")
-        ExitApp()
-    else
-        SpecSelection()
+    SpecSetupSelection()
 }
