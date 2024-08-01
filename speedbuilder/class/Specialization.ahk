@@ -35,8 +35,8 @@ class Specialization {
         ; Read common items
         readDefinitions("common_items", "Item")
     
-        ; Read common spells
-        readDefinitions("common_spells", "Common")
+        ; Read racial spells
+        readDefinitions("common_spells", "Racial")
     
         ; Read specialization spells
         readDefinitions(this.FileName, "Spell")

@@ -84,7 +84,7 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     
         ; Process and append keybinds
         Aliases := WriteKeybinds(KeybindFile, Keybinds, "Spell", Aliases)
-        Aliases := WriteKeybinds(KeybindFile, Keybinds, "Common", Aliases)
+        Aliases := WriteKeybinds(KeybindFile, Keybinds, "Racial", Aliases)
         Aliases := WriteKeybinds(KeybindFile, Keybinds, "Item", Aliases)
     
         ; Write footer if there are any aliases
@@ -120,7 +120,7 @@ WriteSection(keybindFile, lines) {
 }
 
 WriteKeybinds(keybindFile, keybinds, actionType, aliases) {
-    FileAppend("`n-- " actionType " spells.`n", keybindFile)
+    FileAppend("`n-- " actionType " keybinds.`n", keybindFile)
 
     for _, spell in keybinds {
         if (spell.ActionType = actionType) {
