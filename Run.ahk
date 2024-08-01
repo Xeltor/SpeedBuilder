@@ -66,22 +66,18 @@ showPopup(Message) {
 }
 
 Rotation() {
-    if WinActive(cfg.Warcraft) {
-        try {
-            colors := GetPixelColors()
-    
-            if LoadedSpec.Actions[colors] {
-                ; Check if alias.
-                if LoadedSpec.Actions[colors].IsAlias {
-                    ReplacementBind := LoadedSpec.GetAlias(LoadedSpec.Actions[colors].Keybind)
-                    if (ReplacementBind) {
-                        Send(ReplacementBind)
-                    }
+    if !WinActive(cfg.Warcraft) {
+        return
+    }
 
-                ; No alias
-                } else {
-                    Send(LoadedSpec.Actions[colors].Keybind)
-                }
+    try {
+        colors := GetPixelColors()
+        action := LoadedSpec.Actions[colors]
+        
+        if action {
+            keybind := action.IsAlias ? LoadedSpec.GetActionByAlias(action.Keybind) : action.Keybind
+            if keybind {
+                Send(keybind)
             }
         }
     }

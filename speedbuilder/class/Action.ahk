@@ -12,9 +12,7 @@ class Action {
     ActionType := ""
 
     Keybind {
-        get {
-            return this.__keybind
-        }
+        get => this.__keybind
         set {
             this.IsAlias := (SubStr(value, 1, 1) = "@")
             this.__keybind := value
@@ -32,17 +30,13 @@ class Action {
         }
     }
 
-    FromDefinition(Definition) {
-        this.Name := Definition.Name
-        if this.IconID != Definition.IconID {
-            this.IconID := Definition.IconID
-            this.IsUpdated := true
-        }
-        if !this.Colors
-            this.IsUpdated := true
-        if Definition.Alias
-            this.Keybind := Definition.Alias
-        this.ActionType := Definition.DefinitionType
+    FromDefinition(definition) {
+        this.Name := definition.Name
+        this.IsUpdated := (this.IconID != definition.IconID) or !this.Colors
+        this.IconID := definition.IconID
+        this.Colors := this.Colors ? this.Colors : ""
+        this.Keybind := definition.Alias ? definition.Alias : this.Keybind
+        this.ActionType := definition.DefinitionType
 
         return this
     }

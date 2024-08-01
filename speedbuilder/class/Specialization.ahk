@@ -18,38 +18,28 @@ class Specialization {
     }
 
     LoadDefinitions() {
-        ; Clear definitions.
+        ; Clear definitions
         this.Definitions := []
-
-        ; Common items
-        loop read, "speedbuilder\definitions\common_items.txt" {
-            if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
-                continue
+    
+        ; Helper function to read definitions
+        readDefinitions(fileName, type) {
+            filePath := "speedbuilder\definitions\" fileName ".txt"
+            loop read, filePath {
+                line := Trim(A_LoopReadLine)
+                if (InStr(line, "--") or line = "")
+                    continue
+                this.Definitions.Push(Definition(line, type))
             }
-            Item := Definition(A_LoopReadLine, "Item")
-
-            this.Definitions.Push(Item)        
         }
-
-        ; Common spells
-        loop read, "speedbuilder\definitions\common_spells.txt" {
-            if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
-                continue
-            }
-            Common := Definition(A_LoopReadLine, "Common")
-
-            this.Definitions.Push(Common)        
-        }
-        
-        ; Specialization spells
-        loop read, "speedbuilder\definitions\" this.FileName ".txt" {
-            if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
-                continue
-            }
-            Spell := Definition(A_LoopReadLine, "Spell")
-
-            this.Definitions.Push(Spell)        
-        }
+    
+        ; Read common items
+        readDefinitions("common_items", "Item")
+    
+        ; Read common spells
+        readDefinitions("common_spells", "Common")
+    
+        ; Read specialization spells
+        readDefinitions(this.FileName, "Spell")
     }
 
     LoadActions(Setup := false) {
@@ -61,28 +51,25 @@ class Specialization {
         ; Clear actions.
         this.Actions := Map()
 
-        ; Add actions from keybind file.
-        loop read, KeybindFile {
-            if InStr(A_LoopReadLine, "--") or Trim(A_LoopReadLine) = "" {
+        ; Add actions from keybind file
+        loop read, keybindFile {
+            line := Trim(A_LoopReadLine)
+            if (InStr(line, "--") or line = "")
                 continue
-            }
 
-            Act := Action(A_LoopReadLine)
-            if Setup
-                this.Actions[Act.Name] := Act
-            else
-                this.Actions[Act.Colors] := Act
+            act := Action(line)
+            this.Actions[Setup ? act.Name : act.Colors] := act
         }
     }
 
-    GetAlias(ActionName) {
-        name := Trim(StrReplace(ActionName, "@", ""))
+    GetActionByAlias(ActionName) {
+        name := StrLower(Trim(StrReplace(ActionName, "@", "")))
     
-        for key, Action in this.Actions {
-            if (StrLower(Action.Name) = StrLower(name)) {
-                return Action.Keybind
+        for _, action in this.Actions {
+            if (StrLower(action.Name) = name) {
+                return action.Keybind
             }
         }
         return false
-    }
+    }    
 }
