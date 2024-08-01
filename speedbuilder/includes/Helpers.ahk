@@ -9,14 +9,14 @@ showPopup(Message) {
 
 GetClassSpecs(Setup := false) {
     ClassSpecs := []
-
     DirLocation := Setup ? "speedbuilder\definitions\*.txt" : "Keybinds\*.txt"
 
     loop files DirLocation {
         if not InStr(A_LoopFileName, "common_") {
             FileWithoutExt := StrReplace(A_LoopFileName, "." A_LoopFileExt)
+            Spec := Specialization(FileWithoutExt)
 
-            ClassSpecs.Push(Specialization(FileWithoutExt).Name)
+            ClassSpecs.Push(Spec.Name)
         }
     }
 

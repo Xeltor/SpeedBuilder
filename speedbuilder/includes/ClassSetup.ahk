@@ -28,100 +28,110 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     ResetIconReplacement(SetupData.xCoord, SetupData.yCoord)
 
     ; Write to keybinds file.
-    KeybindFile := SetClassKeybinds(SetupData.ClassSpecChoice.FileName, ActionList)
+    KeybindFile := SetClassKeybinds(SetupData.ClassSpecChoice, ActionList)
 
     ; Notify user that the process has completed.
-    Result := MsgBox("The automatic process has completed.`n`nDo you want to open the keybind file to setup/update your keybinds?", AppName, "0x44")
-    if Result = "Yes" {
-        Run("explorer.exe " KeybindFile, A_WorkingDir)
+    if FileExist(KeybindFile) {
+        if MsgBox("The automatic process has completed.`n`nDo you want to open the keybind file to setup/update your keybinds?", AppName, "0x44") = "Yes" {
+            Run("explorer.exe " KeybindFile, A_WorkingDir)
+        }
     }
     
     ; Return to main menu on completion.
-    SpecSelection()
+    SpecSelectionGui()
 }
 
 SetClassKeybinds(ClassSpec, Keybinds) {
-    if !DirExist("Keybinds"){
-        DirCreate("Keybinds")
+    KeybindDir := "Keybinds"
+    if !DirExist(KeybindDir) {
+        DirCreate(KeybindDir)
     }
 
-    KeybindFile := "Keybinds\" ClassSpec ".txt"
-    BackupFile := "Keybinds\" ClassSpec "_backup.txt"
-    if FileExist(KeybindFile){
-        FileMove(KeybindFile, BackupFile)
+    KeybindFile := KeybindDir "\" ClassSpec.FileName ".txt"
+    BackupFile := KeybindDir "\" ClassSpec.FileName "_backup.txt"
+
+    ; Backup existing file
+    if FileExist(KeybindFile) {
+        FileMove(KeybindFile, BackupFile, true)
     }
 
-    Header := [
-        "-- " ClassSpec " keybind file.",
-        "-- ",
-        "-- Add keybinds at the end of each line using the below format, you can skip spells that are not used.",
-        "-- ",
-        "-- Alphabetical: a - z ",
-        "-- Numeric: 0 - 9",
-        "-- F-keys: {F1} - {F24}",
-        "-- Numpad: {Numpad0} - {Numpad9}",
-        "-- Control(CTRL): ^",
-        "-- Shift: +",
-        "-- Alt: !",
-        "-- ",
-        "-- Example1: Control + Shift + F10 = ^+{F10}",
-        "-- Example2: Control + Alt + 1 = ^!1"
-    ]
+    try {
+        ; Write header
+        Header := [
+            "-- " ClassSpec.Name " keybind file.`n",
+            "-- `n",
+            "-- Add keybinds at the end of each line using the below format, you can skip spells that are not used.`n",
+            "-- `n",
+            "-- Alphabetical: a - z `n",
+            "-- Numeric: 0 - 9`n",
+            "-- F-keys: {F1} - {F24}`n",
+            "-- Numpad: {Numpad0} - {Numpad9}`n",
+            "-- Control(CTRL): ^`n",
+            "-- Shift: +`n",
+            "-- Alt: !`n",
+            "-- `n",
+            "-- Example1: Control + Shift + F10 = ^+{F10}`n",
+            "-- Example2: Control + Alt + 1 = ^!1`n"
+        ]
+    
+        ; Keybind aliases
+        Aliases := [
+            "`n-- Keybind aliases. Do not change.`n"
+        ]
+    
+        ; Write header
+        WriteSection(KeybindFile, Header)
+    
+        ; Process and append keybinds
+        Aliases := WriteKeybinds(KeybindFile, Keybinds, "Spell", Aliases)
+        Aliases := WriteKeybinds(KeybindFile, Keybinds, "Common", Aliases)
+        Aliases := WriteKeybinds(KeybindFile, Keybinds, "Item", Aliases)
+    
+        ; Write footer if there are any aliases
+        if Aliases.Length > 1
+            WriteSection(KeybindFile, Aliases)
+    } catch as e {
+        ErrorMessage := "Failed to create Keybinds file"
 
-    Footer := [
-        "`n-- Keybind aliases. Do not change.`n"
-    ]
+        ; Restore backup file if it exists
+        if FileExist(BackupFile) {
+            FileMove(BackupFile, KeybindFile, true)
+            ErrorMessage .= ", original file has been recovered."
+        } else {
+            ErrorMessage .= "."
+        }
 
-    ; Write Header.
-    for line in Header {
-        FileAppend(line "`n", KeybindFile)
-    }
-
-    ; Write keybinds.
-    FileAppend("`n-- Class spells and talents.`n", KeybindFile)
-    for Name, Spell in Keybinds {
-        if Spell.ActionType = "Spell" {
-            SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
-            if Spell.IsAlias
-                Footer.Push(SpellLine)
-            else
-                FileAppend(SpellLine, KeybindFile)
+        ; Display error message
+        MsgBox(ErrorMessage "`n`nError message: " e.Message, AppName, "0x10")
+    } else {
+        ; Remove backup
+        if FileExist(backupFile) {
+            FileDelete(backupFile)
         }
     }
 
-    FileAppend("`n-- Racial spells.`n", KeybindFile)
-    for Name, Spell in Keybinds {
-        if Spell.ActionType = "Common" {
-            SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
-            if Spell.IsAlias
-                Footer.Push(SpellLine)
-            else
-                FileAppend(SpellLine, KeybindFile)
+    return keybindFile
+}
+
+WriteSection(keybindFile, lines) {
+    for line in lines {
+        FileAppend(line, keybindFile)
+    }
+}
+
+WriteKeybinds(keybindFile, keybinds, actionType, aliases) {
+    FileAppend("`n-- " actionType " spells.`n", keybindFile)
+
+    for _, spell in keybinds {
+        if (spell.ActionType = actionType) {
+            spellLine := spell.Name "," spell.IconID "," spell.Colors "," spell.Keybind "`n"
+            if (spell.IsAlias) {
+                aliases.Push(spellLine)
+            } else {
+                FileAppend(spellLine, keybindFile)
+            }
         }
     }
 
-    FileAppend("`n-- Items.`n", KeybindFile)
-    for Name, Spell in Keybinds {
-        if Spell.ActionType = "Item" {
-            SpellLine := Spell.Name "," Spell.IconID "," Spell.Colors "," Spell.Keybind "`n"
-            if Spell.IsAlias
-                Footer.Push(SpellLine)
-            else
-                FileAppend(SpellLine, KeybindFile)
-        }
-    }
-
-    ; Write footer.
-    if Footer.Length > 1 {
-        for line in Footer {
-            FileAppend(line, KeybindFile)
-        }
-    }
-
-    ; Remove backup.
-    if FileExist(BackupFile) {
-        FileDelete(BackupFile)
-    }
-
-    return KeybindFile
+    return aliases
 }

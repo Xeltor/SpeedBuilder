@@ -1,6 +1,6 @@
 #Include IconReplacementSetup.ahk
 
-SpecSetupSelection(ClassSpecChoice := "") {
+SpecSetupSelectionGui(ClassSpecChoice := "") {
     ClassSpecs := GetClassSpecs(true)
 
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
@@ -32,14 +32,14 @@ ContinueButton_Click(GuiCtrlObj, Info) {
     ; Return if warcraft isnt running.
     if !WinExist(cfg.Warcraft) {
         MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")
-        SpecSetupSelection(ClassSpecChoice)
+        SpecSetupSelectionGui(ClassSpecChoice)
         return
     }
 
     ; Return if no spec is selected.
     if !ClassSpecChoice {
         MsgBox("No class spec selected, please select a spec.", AppName, "0x30")
-        SpecSetupSelection()
+        SpecSetupSelectionGui()
         return
     }
 
@@ -47,7 +47,7 @@ ContinueButton_Click(GuiCtrlObj, Info) {
     ClassSpecSetup := Specialization(ClassSpecChoice, true)
 
     ; Icon replacement GUI.
-    IconReplacementSelection(ClassSpecSetup)
+    IconReplacementSelectionGui(ClassSpecSetup)
 }
 
 CancelButton_Click(GuiCtrlObj, Info) {
@@ -55,8 +55,8 @@ CancelButton_Click(GuiCtrlObj, Info) {
     GuiCtrlObj.Gui.Destroy()
 
     ; Go back to the main menu.
-    SpecSelection()
+    SpecSelectionGui()
 }
 
 ; Go back to the main menu.
-SpecGui_Close(GuiCtrlObj) => SpecSelection()
+SpecGui_Close(GuiCtrlObj) => SpecSelectionGui()

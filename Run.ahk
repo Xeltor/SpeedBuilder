@@ -12,8 +12,7 @@ global cfg := Config()
 global LoadedSpec := ""
 
 if !cfg.ConfigFileExists() {
-    Result := MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34")
-    if Result = "Yes" {
+    if MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34") = "Yes" {
         Run("speedbuilder\setup\ConfigSetup.ahk")
     }
     ExitApp()
@@ -21,17 +20,17 @@ if !cfg.ConfigFileExists() {
     cfg := cfg.LoadConfigFile()
 }
 
-; Check if class specs are setup.
-if !GetClassSpecs().Length {
-    Result := MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34")
-    if Result = "Yes" {
-        SpecSetupSelection()
+; Check if class specs are setup
+classSpecs := GetClassSpecs()
+if !classSpecs.Length {
+    if MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34") = "Yes" {
+        SpecSetupSelectionGui()
     } else {
         ExitApp()
     }
 } else {
-    ; Select spec gui on startup.
-    SpecSelection()
+    ; Select spec GUI on startup
+    SpecSelectionGui()
 }
 
 ; Set hotkeys.
@@ -44,16 +43,13 @@ ToggleSpeedBuilder(PressedHotKey) {
     if !LoadedSpec
         return
 
-    SetTimer Rotation, (cfg.ToggleState := !cfg.ToggleState) ? cfg.TickRate : 0
+    cfg.ToggleState := !cfg.ToggleState
+    SetTimer Rotation, cfg.ToggleState ? cfg.TickRate : 0
 
-    if cfg.ToggleState {
-        showPopup(LoadedSpec.Name " rotation activated.")
-    } else {
-        showPopup(LoadedSpec.Name " rotation deactivated.")
-    }
+    showPopup(LoadedSpec.Name " rotation " (cfg.ToggleState ? "activated." : "deactivated."))
 }
 
-SpecSelectionHotkey(PressedHotKey) => SpecSelection()
+SpecSelectionHotkey(PressedHotKey) => SpecSelectionGui()
 
 Rotation() {
     if !WinActive(cfg.Warcraft) {

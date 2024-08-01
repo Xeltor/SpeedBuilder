@@ -1,4 +1,4 @@
-SpecSelection() {
+SpecSelectionGui() {
     ClassSpecs := GetClassSpecs()
     keybindLabels := Map(
         "\#", "WindowsKey + ", 
@@ -65,7 +65,7 @@ LoadButton_Click(GuiCtrlObj, Info) {
 
     if !ClassSpecChoice {
         MsgBox("No class spec selected, please select a class spec.", AppName, "0x30")
-        SpecSelection()
+        SpecSelectionGui()
         return
     }
 
@@ -91,7 +91,7 @@ CreateSpecButton_Click(GuiCtrlObj, Info) {
         ToggleSpeedBuilder("")
 
     ; Run class spec setup.
-    SpecSetupSelection()
+    SpecSetupSelectionGui()
 }
 
 ConfigSetupButton_Click(GuiCtrlObj, Info) {
