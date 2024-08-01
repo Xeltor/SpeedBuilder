@@ -1,12 +1,14 @@
 #Include IconReplacementSetup.ahk
 
-SpecSetupSelection() {
-    ClassSpecs := GetSetupClassSpecs()
+SpecSetupSelection(ClassSpecChoice := "") {
+    ClassSpecs := GetClassSpecs(true)
 
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     SpecGui.SetFont("s11")
     SpecGui.AddText(,"Please select the class spec you wish to setup/update*.")
-    SpecGui.AddDropDownList("vClassSpecChoice r10 w360", ClassSpecs)
+    ClassSpecsDropdown := SpecGui.AddDropDownList("vClassSpecChoice r10 w360", ClassSpecs)
+    if ClassSpecChoice
+        ClassSpecsDropdown.Choose(ClassSpecChoice)
     ContinueButton := SpecGui.AddButton("Default Section", "Continue")
     ContinueButton.OnEvent("Click", ContinueButton_Click)
     CancelButton := SpecGui.AddButton("ys", "Cancel")
@@ -30,7 +32,7 @@ ContinueButton_Click(GuiCtrlObj, Info) {
     ; Return if warcraft isnt running.
     if !WinExist(cfg.Warcraft) {
         MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")
-        SpecSetupSelection()
+        SpecSetupSelection(ClassSpecChoice)
         return
     }
 
@@ -56,23 +58,5 @@ CancelButton_Click(GuiCtrlObj, Info) {
     SpecSelection()
 }
 
-SpecGui_Close(GuiCtrlObj) {
-    ; Go back to the main menu.
-    SpecSelection()
-}
-
-GetSetupClassSpecs() {
-    ClassSpecs := []
-
-    DirLocation := "speedbuilder\definitions\*.txt"
-
-    loop files DirLocation {
-        if not InStr(A_LoopFileName, "common_") {
-            FileWithoutExt := StrReplace(A_LoopFileName, "." A_LoopFileExt)
-
-            ClassSpecs.Push(Specialization(FileWithoutExt).Name)
-        }
-    }
-
-    return ClassSpecs
-}
+; Go back to the main menu.
+SpecGui_Close(GuiCtrlObj) => SpecSelection()

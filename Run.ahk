@@ -3,6 +3,7 @@
 #Include speedbuilder\class\Config.ahk
 #Include speedbuilder\class\Specialization.ahk
 #Include speedbuilder\includes\ColorPicker.ahk
+#Include speedbuilder\includes\Helpers.ahk
 #Include speedbuilder\gui\SpecSelection.ahk
 #Include speedbuilder\gui\SpecSelectSetup.ahk
 CoordMode('ToolTip', 'Screen')
@@ -21,7 +22,7 @@ if !cfg.ConfigFileExists() {
 }
 
 ; Check if class specs are setup.
-if !FileExist("Keybinds\*.txt") {
+if !GetClassSpecs().Length {
     Result := MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34")
     if Result = "Yes" {
         SpecSetupSelection()
@@ -52,18 +53,7 @@ ToggleSpeedBuilder(PressedHotKey) {
     }
 }
 
-SpecSelectionHotkey(PressedHotKey) {
-    SpecSelection()
-}
-
-showPopup(Message) {
-    x := A_ScreenWidth - ( 5 * StrLen(Message) )
-    y := A_ScreenHeight
-
-    ToolTip("`n" Message "`n ", x, y)
-    ; Hide the tooltip after 5 seconds
-    SetTimer(() => ToolTip(""), -5000)
-}
+SpecSelectionHotkey(PressedHotKey) => SpecSelection()
 
 Rotation() {
     if !WinActive(cfg.Warcraft) {

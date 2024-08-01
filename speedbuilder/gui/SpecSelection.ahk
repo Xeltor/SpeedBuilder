@@ -1,30 +1,27 @@
 SpecSelection() {
     ClassSpecs := GetClassSpecs()
-
+    keybindLabels := Map(
+        "\#", "WindowsKey + ", 
+        "\!", "Alt + ", 
+        "\^", "Ctrl + ", 
+        "\+", "Shift + "
+    )
+    
     ReOpenMessage := ""
     TrimCount := 0
-    if (cfg.SpecSelectionKeyBind ~= "\#") {
-        ReOpenMessage .= "WindowsKey + "
-        TrimCount++
-    }
-    if (cfg.SpecSelectionKeyBind ~= "\!") {
-        ReOpenMessage .= "Alt + "
-        TrimCount++
-    }
-    if (cfg.SpecSelectionKeyBind ~= "\^") {
-        ReOpenMessage .= "Ctrl + "
-        TrimCount++
-    }
-    if (cfg.SpecSelectionKeyBind ~= "\+") {
-        ReOpenMessage .= "Shift + "
-        TrimCount++
-    }
-    if TrimCount {
-        ReOpenMessage .= SubStr(cfg.SpecSelectionKeyBind, TrimCount + 1)
-    } else {
-        ReOpenMessage .= cfg.SpecSelectionKeyBind
+
+    ; Construct the re-open message based on the keybind configuration
+    for key, label in keybindLabels {
+        if (cfg.SpecSelectionKeyBind ~= key) {
+            ReOpenMessage .= label
+            TrimCount++
+        }
     }
 
+    ; Append the remaining part of the keybind
+    ReOpenMessage .= (TrimCount ? SubStr(cfg.SpecSelectionKeyBind, TrimCount + 1) : cfg.SpecSelectionKeyBind)
+
+    ; Create GUI
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     SpecGui.SetFont("s11")
     SpecGui.AddText(,"Please select the class spec you wish to play.")
@@ -106,20 +103,4 @@ ConfigSetupButton_Click(GuiCtrlObj, Info) {
 
     ; Close, we need to restart to reload config.
     ExitApp()
-}
-
-GetClassSpecs() {
-    ClassSpecs := []
-
-    DirLocation := "Keybinds\*.txt"
-
-    loop files DirLocation {
-        if not InStr(A_LoopFileName, "common_") {
-            FileWithoutExt := StrReplace(A_LoopFileName, "." A_LoopFileExt)
-
-            ClassSpecs.Push(Specialization(FileWithoutExt).Name)
-        }
-    }
-
-    return ClassSpecs
 }

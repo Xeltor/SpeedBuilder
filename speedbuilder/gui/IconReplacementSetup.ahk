@@ -50,6 +50,4 @@ IconReplacementSelection(ClassSpecChoice) {
     IconReplacementGui.Show("X0 Y0")
 }
 
-IconReplacementGui_Close(GuiCtrlObj) {
-    SpecSetupSelection()
-}
+IconReplacementGui_Close(GuiCtrlObj) => SpecSetupSelection()
