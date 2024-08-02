@@ -20,13 +20,14 @@ class Action {
     }
 
     __New(ActionString := "") {
-        split := StrSplit(ActionString, ',')
-    
-        if split.Length = 4 {
-            this.Name := Trim(split[1])
-            this.IconID := Trim(split[2])
-            this.Colors := Trim(split[3])
-            this.Keybind := Trim(split[4])
+        if ActionString {
+            split := StrSplit(ActionString, ',')
+            if split.Length = 4 {
+                this.Name := Trim(split[1])
+                this.IconID := Trim(split[2])
+                this.Colors := Trim(split[3])
+                this.Keybind := Trim(split[4])
+            }
         }
     }
 
