@@ -30,11 +30,9 @@ SortActionsByName(originalActions) {
     for _, val in originalActions {
         valString .= val.Name ","
     }
-    MsgBox(valString)
 
     ; Sort string by comma
     sortedKeyString := Sort(valString, "D,")
-    MsgBox(sortedKeyString)
 
     ; Split into a sorted array
     sortedArray := StrSplit(sortedKeyString, ",")

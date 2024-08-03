@@ -22,13 +22,12 @@ Wound Poison,134197
 -- Specialization Spells
 Between the Eyes,135610
 Blade Flurry,132350
-Dispatch,236286
 Grappling Hook,1373906
 Pistol Shot,1373908
 Roll the Bones,1373910
-Sinister Strike,136189
 
 -- Spell aliases
+Dispatch,236286,@Eviscerate
 
 -- Talents
 Adrenaline Rush,136206
