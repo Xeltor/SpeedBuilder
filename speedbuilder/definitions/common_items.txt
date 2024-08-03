@@ -19,9 +19,6 @@ Creeping Coagulum,5948205,@Trinket Macro
 Delve Ring,463567,@Trinket Macro
 Fearbreaker's Echo,1892681,@Trinket Macro
 Forged Aspirant's Badge of Ferocity,135884,@Trinket Macro
-Forged Aspirant's Emblem,132344,@Trinket Macro
-Forged Gladiator's Badge of Ferocity,135884,@Trinket Macro
-Forged Gladiator's Emblem,132344,@Trinket Macro
 Foul Behemoth's Chelicera,5948209,@Trinket Macro
 Goldenglow Censer,4626288,@Trinket Macro
 High Speaker's Accretion,5929586,@Trinket Macro

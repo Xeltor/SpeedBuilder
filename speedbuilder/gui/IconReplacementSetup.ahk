@@ -48,6 +48,10 @@ IconReplacementSelectionGUi(ClassSpecChoice) {
     IconReplacementGui.OnEvent("Close", IconReplacementGui_Close)
 
     IconReplacementGui.Show("X0 Y0")
+
+    ; Activate WoW if it exists.
+    if !WinActive(cfg.Warcraft) and WinExist(cfg.Warcraft)
+        WinActivate(cfg.Warcraft)
 }
 
 IconReplacementGui_Close(GuiCtrlObj) => SpecSetupSelectionGui()
