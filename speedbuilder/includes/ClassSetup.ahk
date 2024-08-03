@@ -1,4 +1,5 @@
 #Include ColorPicker.ahk
+#Include Helpers.ahk
 
 AutomaticClassSetup(SetupData, RedoAllIcons) {
     ; Update actions from definitions.
@@ -81,6 +82,9 @@ SetClassKeybinds(ClassSpec, Keybinds) {
     
         ; Write header
         WriteSection(KeybindFile, Header)
+
+        ; Sort keybinds by action name
+        Keybinds := SortActionsByName(Keybinds)
     
         ; Process and append keybinds
         Aliases := WriteKeybinds(KeybindFile, Keybinds, "Spell", Aliases)

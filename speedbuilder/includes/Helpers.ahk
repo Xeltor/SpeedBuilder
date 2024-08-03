@@ -22,3 +22,41 @@ GetClassSpecs(Setup := false) {
 
     return ClassSpecs
 }
+
+; Function to sort a Map by its keys
+SortActionsByName(originalActions) {
+    ; Create a string from the original map
+    valString := ""
+    for _, val in originalActions {
+        valString .= val.Name ","
+    }
+    MsgBox(valString)
+
+    ; Sort string by comma
+    sortedKeyString := Sort(valString, "D,")
+    MsgBox(sortedKeyString)
+
+    ; Split into a sorted array
+    sortedArray := StrSplit(sortedKeyString, ",")
+
+    ; Create a new sorted Map
+    sortedActions := []
+    for _, val in sortedArray {
+        if val != "" {
+            result := FindObjectByParameter(originalActions, val)
+            if result
+                sortedActions.Push(result)
+        }
+    }
+
+    return sortedActions
+}
+
+FindObjectByParameter(originalActions, parameterValue) {
+    for _, obj in originalActions {
+        if (obj.Name = parameterValue) {
+            return obj
+        }
+    }
+    return ""  ; Return an empty string if no object is found
+}
