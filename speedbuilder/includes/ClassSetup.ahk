@@ -2,17 +2,16 @@
 #Include Helpers.ahk
 
 AutomaticClassSetup(SetupData, RedoAllIcons) {
+    ; Get existing actions.
+    ExistingActions := SetupData.ClassSpecChoice.Actions
+
     ; Update actions from definitions.
     ActionList := []
     for Definition in SetupData.ClassSpecChoice.Definitions {
-        ; Update existing
-        if SetupData.ClassSpecChoice.Actions.Has(Definition.Name) {
-            NewAction := SetupData.ClassSpecChoice.Actions[Definition.Name].FromDefinition(Definition)
-        } else {
-            NewAction := Action().FromDefinition(Definition)
-        }
+        ; Update existing or generate from definition.
+        UpdatedAction := ExistingActions.Has(Definition.Name) ? ExistingActions[Definition.Name].FromDefinition(Definition) : Action().FromDefinition(Definition)
 
-        ActionList.Push(NewAction)
+        ActionList.Push(UpdatedAction)
     }
 
     ; Get color combo for each icon.
