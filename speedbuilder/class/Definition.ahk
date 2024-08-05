@@ -2,7 +2,7 @@ Class Definition {
     Name := ""
     IconID := 0
     Alias := ""
-    DefinitionType := "Spell"
+    DefinitionType := "None"
 
     __New(DefinitionString, DefinitionType) {
         Values := StrSplit(DefinitionString, ",")

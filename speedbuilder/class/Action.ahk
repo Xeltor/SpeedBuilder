@@ -9,7 +9,7 @@ class Action {
 
     ; For setup
     IsUpdated := false
-    ActionType := ""
+    ActionType := "None"
 
     Keybind {
         get => this.__keybind
