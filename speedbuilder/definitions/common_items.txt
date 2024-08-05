@@ -46,3 +46,11 @@ Tome of Light's Devotion,1495827,@Trinket Macro
 Treacherous Transmitter,5948071,@Trinket Macro
 Twin Fang Instruments,1786422,@Trinket Macro
 Viscous Coaglam,5948203,@Trinket Macro
+
+-- Trinkets (10.x)
+Ashes of the Embersoul,1357807,@Trinket Macro
+Blazebinder's Hoof,4638646,@Trinket Macro
+Dragonfire Bomb Dispenser,@Trinket Macro
+Irideus Fragment,4638427,@Trinket Macro
+Manic Grieftorch,650636,@Trinket Macro
+Mirror of Fractured Tomorrows,254116,@Trinket Macro
