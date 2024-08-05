@@ -1,11 +1,22 @@
 -- Racial traits.
 Ancestral Call,2021574
+Arcane Pulse,1851463
 Arcane Torrent,136222
 Azerite Surge,5788297
 Bag of Tricks,3193416
 Berserking,135727
 Blood Fury,135726
+Bull Rush,1723987
 Combat Analysis,3192685
+Escape Artist,132309
 Fireblood,1786406
+Gift of the Naaru,135923
+Haymaker,2447782
+Hyper Organic Light Originator,3192686
 Lights Judgment,1724000
+Quaking Palm,572035
+Regeneratin',1850550
+Rocket Barrage,133032
 Shadowmeld,132089
+Stoneform,136225
+War Stomp,132368
