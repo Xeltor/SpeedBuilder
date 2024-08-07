@@ -54,3 +54,4 @@ Dragonfire Bomb Dispenser,@Trinket Macro
 Irideus Fragment,4638427,@Trinket Macro
 Manic Grieftorch,650636,@Trinket Macro
 Mirror of Fractured Tomorrows,254116,@Trinket Macro
+Smoldering Seedling,3731812,@Trinket Macro
