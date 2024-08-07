@@ -9,7 +9,6 @@ class Action {
 
     ; For setup
     IsUpdated := false
-    ActionType := "None"
 
     Keybind {
         get => this.__keybind
@@ -37,7 +36,6 @@ class Action {
         this.IconID := definition.IconID
         this.Colors := this.Colors ? this.Colors : ""
         this.Keybind := definition.Alias ? definition.Alias : this.Keybind
-        this.ActionType := definition.DefinitionType
 
         return this
     }

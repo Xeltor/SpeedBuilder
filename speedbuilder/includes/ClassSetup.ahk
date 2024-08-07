@@ -2,14 +2,16 @@
 #Include Helpers.ahk
 
 AutomaticClassSetup(SetupData, RedoAllIcons) {
+    global LoadedSpec
+
     ; Get existing actions.
-    ExistingActions := SetupData.ClassSpecChoice.Actions
+    LoadedSpec := SetupData.ClassSpecChoice
 
     ; Update actions from definitions.
     ActionList := []
     for Definition in SetupData.ClassSpecChoice.Definitions {
         ; Update existing or generate from definition.
-        UpdatedAction := ExistingActions.Has(Definition.Name) ? ExistingActions[Definition.Name].FromDefinition(Definition) : Action().FromDefinition(Definition)
+        UpdatedAction := LoadedSpec.Actions.Has(Definition.Name) ? LoadedSpec.Actions[Definition.Name].FromDefinition(Definition) : Action().FromDefinition(Definition)
 
         ActionList.Push(UpdatedAction)
     }
@@ -27,150 +29,21 @@ AutomaticClassSetup(SetupData, RedoAllIcons) {
     }
     ResetIconReplacement(SetupData.xCoord, SetupData.yCoord)
 
-    ; Write to keybinds file.
-    KeybindFile := SetClassKeybinds(SetupData.ClassSpecChoice, ActionList)
+    ; Set updated actions.
+    LoadedSpec.Actions := ActionList
 
-    ; Notify user that the process has completed.
-    if FileExist(KeybindFile) {
-        if MsgBox("The automatic process has completed.`n`nDo you want to open the keybind file to setup/update your keybinds?", AppName, "0x44") = "Yes" {
-            Run("explorer.exe " KeybindFile, A_WorkingDir)
+    ; Save and notify user that the process has completed.
+    if LoadedSpec.SaveActions() {
+        ; Reload without setup data.
+        LoadedSpec := Specialization(LoadedSpec.FileName)
+
+        if MsgBox("The automatic process has completed.`n`nDo you want to open the keybind menu to setup/update your keybinds?", AppName, "0x44") = "Yes" {
+            ; Open keybinds tool.
+            KeybindList()
+            return
         }
     }
     
     ; Return to main menu on completion.
     SpecSelectionGui()
-}
-
-SetClassKeybinds(ClassSpec, Keybinds) {
-    KeybindDir := "Keybinds"
-    if !DirExist(KeybindDir) {
-        DirCreate(KeybindDir)
-    }
-
-    KeybindFile := KeybindDir "\" ClassSpec.FileName ".txt"
-    BackupFile := KeybindDir "\" ClassSpec.FileName "_backup.txt"
-
-    ; Backup existing file
-    if FileExist(KeybindFile) {
-        FileMove(KeybindFile, BackupFile, true)
-    }
-
-    try {
-        ; Write header
-        Header := [
-            "-- " ClassSpec.Name " keybind file.`n",
-            "-- `n",
-            "-- Add keybinds at the end of each line using the below format, you can skip spells that are not used.`n",
-            "-- `n",
-            "-- Alphabetical: a - z `n",
-            "-- Numeric: 0 - 9`n",
-            "-- F-keys: {F1} - {F24}`n",
-            "-- Numpad: {Numpad0} - {Numpad9}`n",
-            "-- Control(CTRL): ^`n",
-            "-- Shift: +`n",
-            "-- Alt: !`n",
-            "-- `n",
-            "-- Example1: Control + Shift + F10 = ^+{F10}`n",
-            "-- Example2: Control + Alt + 1 = ^!1`n"
-        ]
-    
-        ; Keybind aliases
-        Aliases := [
-            "`n-- Keybind aliases. Do not change.`n"
-        ]
-    
-        ; Write header
-        WriteSection(KeybindFile, Header)
-
-        ; Sort keybinds by action name
-        Keybinds := SortActionsByName(Keybinds)
-    
-        ; Process and append keybinds
-        Aliases := WriteKeybinds(KeybindFile, Keybinds, "Spell", Aliases)
-        Aliases := WriteKeybinds(KeybindFile, Keybinds, "Racial", Aliases)
-        Aliases := WriteKeybinds(KeybindFile, Keybinds, "Item", Aliases)
-    
-        ; Write footer if there are any aliases
-        if Aliases.Length > 1
-            WriteSection(KeybindFile, Aliases)
-    } catch as e {
-        ErrorMessage := "Failed to create Keybinds file"
-
-        ; Restore backup file if it exists
-        if FileExist(BackupFile) {
-            FileMove(BackupFile, KeybindFile, true)
-            ErrorMessage .= ", original file has been recovered."
-        } else {
-            ErrorMessage .= "."
-        }
-
-        ; Display error message
-        MsgBox(ErrorMessage "`n`nError message: " e.Message, AppName, "0x10")
-    } else {
-        ; Remove backup
-        if FileExist(backupFile) {
-            FileDelete(backupFile)
-        }
-    }
-
-    return keybindFile
-}
-
-WriteSection(keybindFile, lines) {
-    for line in lines {
-        FileAppend(line, keybindFile)
-    }
-}
-
-WriteKeybinds(keybindFile, keybinds, actionType, aliases) {
-    FileAppend("`n-- " actionType " keybinds.`n", keybindFile)
-
-    for _, spell in keybinds {
-        if (spell.ActionType = actionType) {
-            spellLine := spell.Name "," spell.IconID "," spell.Colors "," spell.Keybind "`n"
-            if (spell.IsAlias) {
-                aliases.Push(spellLine)
-            } else {
-                FileAppend(spellLine, keybindFile)
-            }
-        }
-    }
-
-    return aliases
-}
-
-; Function to sort a Map by its keys
-SortActionsByName(originalActions) {
-    ; Create a string from the original map
-    valString := ""
-    for _, val in originalActions {
-        valString .= val.Name ","
-    }
-
-    ; Sort string by comma
-    sortedKeyString := Sort(valString, "D,")
-
-    ; Split into a sorted array
-    sortedArray := StrSplit(sortedKeyString, ",")
-
-    ; Create a new sorted Map
-    sortedActions := []
-    for _, val in sortedArray {
-        if val != "" {
-            result := FindObjectByParameter(originalActions, val)
-            if result
-                sortedActions.Push(result)
-        }
-    }
-
-    return sortedActions
-}
-
-FindObjectByParameter(originalActions, parameterValue) {
-    for _, obj in originalActions {
-        if (obj.Name = parameterValue) {
-            return obj
-        }
-    }
-    return ""  ; Return an empty string if no object is found
 }

@@ -24,6 +24,10 @@ SpecSelectionGui() {
     ; Create GUI
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     SpecGui.SetFont("s11")
+
+    ; Generate tabs
+    Tab := SpecGui.Add("Tab3",, ["Run", "Config"])
+    Tab.UseTab(1)
     SpecGui.AddText(,"Please select the class spec you wish to play.")
 
     ; Populate list.
@@ -34,19 +38,31 @@ SpecSelectionGui() {
     }
 
     ; Load spec
-    LoadButton := SpecGui.AddButton("Default Section", "(Re)load spec/keybinds")
+    LoadButton := SpecGui.AddButton("Default", "(Re)load")
     LoadButton.OnEvent("Click", LoadButton_Click)
 
+    SpecGui.AddText("", ReOpenMessage ": To open this menu again.")
+    SpecGui.OnEvent("Close", SpecSelectGui_Close)
+
+    ; Continue in Tab 2 Config
+    Tab.UseTab(2)
+
+    SpecGui.AddGroupBox("r4 Section", "Keybinds")
+
+    SpecGui.AddText("XP+10 YP+20", "Change your current selected`nspec's keybinds, close the`nKeybinds menu to save.")
+
+    OpenKeybindsButton := SpecGui.AddButton("", "Change keybinds")
+    OpenKeybindsButton.OnEvent("Click", OpenKeybindsButton_Click)
+
+    SpecGui.AddGroupBox("r4 YS", "Setup")
+    
     ; (Re)create spec
-    CreateSpecButton := SpecGui.AddButton("ys", "(Re)create spec")
+    CreateSpecButton := SpecGui.AddButton("XP+10 YP+25", "(Re)create spec")
     CreateSpecButton.OnEvent("Click", CreateSpecButton_Click)
 
     ; Config setup
-    ConfigSetupButton := SpecGui.AddButton("ys", "Config setup")
+    ConfigSetupButton := SpecGui.AddButton("YP+50", "Config setup")
     ConfigSetupButton.OnEvent("Click", ConfigSetupButton_Click)
-
-    SpecGui.AddText("XM", ReOpenMessage ": To open this menu again.")
-    SpecGui.OnEvent("Close", SpecSelectGui_Close)
 
     SpecGui.Show()
 }
@@ -103,4 +119,27 @@ ConfigSetupButton_Click(GuiCtrlObj, Info) {
 
     ; Close, we need to restart to reload config.
     ExitApp()
+}
+
+OpenKeybindsButton_Click(GuiCtrlObj, Info) {
+    global LoadedSpec
+    
+    ; Hide parent.
+    SpecSelectorValues := GuiCtrlObj.Gui.Submit(true)
+
+    ; Store choices.
+    ClassSpecChoice := SpecSelectorValues.ClassSpecChoice,
+
+    ; Destroy gui.
+    GuiCtrlObj.Gui.Destroy()
+
+    if !ClassSpecChoice {
+        MsgBox("No class spec selected, please select a class spec.", AppName, "0x30")
+        SpecSelectionGui()
+        return
+    }
+
+    LoadedSpec := Specialization(ClassSpecChoice)
+
+    KeybindList()
 }

@@ -62,6 +62,59 @@ class Specialization {
         }
     }
 
+    SaveActions() {
+        KeybindDir := "Keybinds"
+        if !DirExist(KeybindDir) {
+            DirCreate(KeybindDir)
+        }
+    
+        KeybindFile := KeybindDir "\" this.FileName ".txt"
+        BackupFile := KeybindDir "\" this.FileName "_backup.txt"
+    
+        ; Backup existing file
+        if FileExist(KeybindFile) {
+            FileMove(KeybindFile, BackupFile, true)
+        }
+
+        try {
+            for _, spell in this.Actions {
+                FileAppend(spell.Name "," spell.IconID "," spell.Colors "," spell.Keybind "`n", keybindFile)
+            }
+        } catch as e {
+            ErrorMessage := "Failed to create Keybinds file"
+
+            ; Restore backup file if it exists
+            if FileExist(BackupFile) {
+                FileMove(BackupFile, KeybindFile, true)
+                ErrorMessage .= ", original file has been recovered."
+            } else {
+                ErrorMessage .= "."
+            }
+
+            ; Display error message
+            MsgBox(ErrorMessage "`n`nError message: " e.Message, AppName, "0x10")
+
+            return false
+        } else {
+            ; Remove backup
+            if FileExist(backupFile) {
+                FileDelete(backupFile)
+            }
+        }
+
+        return true
+    }
+
+    ChangeActionKeybind(ActionName, Keybind) {
+        for _, Act in this.Actions {
+            if Act.Name = ActionName {
+                Act.Keybind := Keybind
+            }
+        }
+
+        return
+    }
+
     GetActionByAlias(ActionName) {
         name := StrLower(Trim(StrReplace(ActionName, "@", "")))
     

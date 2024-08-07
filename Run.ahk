@@ -6,6 +6,7 @@
 #Include speedbuilder\includes\Helpers.ahk
 #Include speedbuilder\gui\SpecSelection.ahk
 #Include speedbuilder\gui\SpecSelectSetup.ahk
+#Include speedbuilder\gui\KeybindListGui.ahk
 CoordMode('ToolTip', 'Screen')
 global AppName := "HACK: Hekili Automation and Control Kit"
 global cfg := Config()
