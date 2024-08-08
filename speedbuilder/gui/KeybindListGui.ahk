@@ -9,17 +9,28 @@ KeybindList() {
     KeybindListGui.SetFont("s11")
     KeybindListGui.OnEvent("Close", KeybindList_Close)
 
+    ; Add user instruction
+    KeybindListGui.AddText(,"Double click to change the keybind.")
+
+    ; Create listview
     KeybindList := KeybindListGui.AddListView("Grid r20 w300 NoSortHdr Sort -Multi", ["Action", "Keybind"])
 
+    ; Add a double click event
     KeybindList.OnEvent("DoubleClick", KeyBindList_DoubleClick)
 
+    ; Add all actions and their respective keybinds
     for _, val in LoadedSpec.Actions {
         if !val.IsAlias
             KeybindList.Add("", val.Name, val.Keybind)
     }
 
+    ; Auto scale the list
     KeybindList.ModifyCol(1, "AutoHdr")
     KeybindList.ModifyCol(2, "AutoHdr")
+
+    ; Add save button
+    SaveButton := KeybindListGui.AddButton(,"Save")
+    SaveButton.OnEvent("Click", KeybindListSave_Click)
 
     KeybindListGui.Show()
 }
@@ -139,6 +150,16 @@ KeybindClear_Click(GuiCtrlObj, Info) {
 }
 
 KeybindList_Close(GuiCtrlObj) {
+    ; Save to file.
+    LoadedSpec.SaveActions()
+
+    ; Return to spec selection gui.
+    SpecSelectionGui()
+}
+
+KeybindListSave_Click(GuiCtrlObj, Info) {
+    GuiCtrlObj.Gui.Destroy()
+
     ; Save to file.
     LoadedSpec.SaveActions()
 

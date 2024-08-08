@@ -49,7 +49,7 @@ SpecSelectionGui() {
 
     SpecGui.AddGroupBox("r4 Section", "Keybinds")
 
-    SpecGui.AddText("XP+10 YP+20", "Change your current selected`nspec's keybinds, close the`nKeybinds menu to save.")
+    SpecGui.AddText("XP+10 YP+20 W175 R3", "Change your current selected spec's keybinds.")
 
     OpenKeybindsButton := SpecGui.AddButton("", "Change keybinds")
     OpenKeybindsButton.OnEvent("Click", OpenKeybindsButton_Click)
