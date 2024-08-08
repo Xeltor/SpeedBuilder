@@ -10,13 +10,13 @@ KeybindList() {
     KeybindListGui.OnEvent("Close", KeybindList_Close)
 
     ; Add user instruction
-    KeybindListGui.AddText(,"Double click to change the keybind.")
+    KeybindListGui.AddText(,"Click to change the keybind.")
 
     ; Create listview
     KeybindList := KeybindListGui.AddListView("Grid r20 w300 NoSortHdr Sort -Multi", ["Action", "Keybind"])
 
-    ; Add a double click event
-    KeybindList.OnEvent("DoubleClick", KeyBindList_DoubleClick)
+    ; Add a click event
+    KeybindList.OnEvent("Click", KeyBindList_Click)
 
     ; Add all actions and their respective keybinds
     for _, val in LoadedSpec.Actions {
@@ -35,7 +35,7 @@ KeybindList() {
     KeybindListGui.Show()
 }
 
-KeyBindList_DoubleClick(KBLV, RowNumber) {
+KeyBindList_Click(KBLV, RowNumber) {
     global KeybindSelectedRow := KBLV
     global KeybindRowNumber := RowNumber
 
