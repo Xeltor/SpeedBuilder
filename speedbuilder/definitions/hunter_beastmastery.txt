@@ -5,13 +5,13 @@ Exhilaration,461117
 Freezing Trap,135834
 Hunter's Mark,236188
 Mend Pet,132179
-Revive Pet,132163
 Steady Shot,132213
 Wailing Arrow,132323
 
 -- Specialization Spells
 
 -- Spell aliases
+Revive Pet,132163,@Mend Pet
 
 -- Talents
 Barbed Shot,2058007
