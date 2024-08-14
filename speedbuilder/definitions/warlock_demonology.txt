@@ -18,6 +18,7 @@ Unending Resolve,136150
 -- Specialization Spells
 Hand of Gul'dan,535592
 Summon Felguard,136216
+Demonbolt,2032588
 
 -- Spell aliases
 Axe Toss,236316,@Command Demon
