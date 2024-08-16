@@ -2,6 +2,7 @@
 #Requires AutoHotkey v2
 #Include speedbuilder\class\Config.ahk
 #Include speedbuilder\class\Specialization.ahk
+#Include speedbuilder\includes\Git.ahk
 #Include speedbuilder\includes\ColorPicker.ahk
 #Include speedbuilder\includes\Helpers.ahk
 #Include speedbuilder\gui\SpecSelection.ahk
@@ -11,6 +12,9 @@ CoordMode('ToolTip', 'Screen')
 global AppName := "HACK: Hekili Automation and Control Kit"
 global cfg := Config()
 global LoadedSpec := ""
+
+; Check for updates before anything
+checkForGitUpdateAndRestartIfNeeded()
 
 if !cfg.ConfigFileExists() {
     if MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34") = "Yes" {
