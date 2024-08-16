@@ -1,9 +1,11 @@
 global KeybindListGui := ""
 global KeybindSelectedRow := ""
 global KeybindRowNumber := 0
+global KeybindListView := ""
 
 KeybindList() {
     global KeybindListGui
+    global KeybindListView
 
     KeybindListGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     KeybindListGui.SetFont("s11")
@@ -13,24 +15,28 @@ KeybindList() {
     KeybindListGui.AddText(,"Click to change the keybind.")
 
     ; Create listview
-    KeybindList := KeybindListGui.AddListView("Grid r20 w300 NoSortHdr Sort -Multi", ["Action", "Keybind"])
+    KeybindListView := KeybindListGui.AddListView("Grid r20 w300 NoSortHdr Sort -Multi", ["Action", "Keybind"])
 
     ; Add a click event
-    KeybindList.OnEvent("Click", KeyBindList_Click)
+    KeybindListView.OnEvent("Click", KeyBindList_Click)
 
     ; Add all actions and their respective keybinds
     for _, val in LoadedSpec.Actions {
         if !val.IsAlias
-            KeybindList.Add("", val.Name, val.Keybind)
+            KeybindListView.Add("", val.Name, val.Keybind)
     }
 
     ; Auto scale the list
-    KeybindList.ModifyCol(1, "AutoHdr")
-    KeybindList.ModifyCol(2, "AutoHdr")
+    KeybindListView.ModifyCol(1, "AutoHdr")
+    KeybindListView.ModifyCol(2, "AutoHdr")
 
     ; Add save button
     SaveButton := KeybindListGui.AddButton(,"Save")
     SaveButton.OnEvent("Click", KeybindListSave_Click)
+
+    ; Add clear all button
+    ClearAllButton := KeybindListGui.AddButton("yp", "Clear all")
+    ClearAllButton.OnEvent("Click", KeybindListClearAll_Click)
 
     KeybindListGui.Show()
 }
@@ -165,6 +171,24 @@ KeybindListSave_Click(GuiCtrlObj, Info) {
 
     ; Return to spec selection gui.
     SpecSelectionGui()
+}
+
+KeybindListClearAll_Click(GuiCtrlObj, Info) {
+    global KeybindListView
+
+    ; Make sure the user wants this.
+    if MsgBox("Are you sure you wish to clear all keybinds?", AppName, "0x1124") = "No" {
+        return
+    }
+
+    ; Get the total number of rows in the ListView
+    RowCount := KeybindListView.GetCount()
+
+    ; Iterate through each row and clear the keybind (Column 2)
+    Loop RowCount
+    {
+        KeybindListView.Modify(A_Index, "Col2", "")  ; Clear the keybind in the second column
+    }
 }
 
 ; Cancel opteration.
