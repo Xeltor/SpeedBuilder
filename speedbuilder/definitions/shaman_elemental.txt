@@ -10,6 +10,7 @@ Primal Strike,460956
 Elemental Blast,651244,@Earth Shock
 Icefury,135855,@Frost Shock
 Lava Beam,236216,@Chain Lightning
+Tempest,5927653,@Lightning Bolt
 
 -- Talents
 Ancestral Guidance,538564

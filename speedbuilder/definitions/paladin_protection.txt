@@ -17,6 +17,7 @@ Word of Glory,133192
 
 -- Spell aliases
 Blessed Hammer,535595,@Crusader Strike
+Hammer of Light,5342121,@Eye of Tyr
 Sentinel,135922,@Avenging Wrath
 
 -- Talents

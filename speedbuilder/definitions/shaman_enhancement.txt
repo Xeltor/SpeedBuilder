@@ -10,6 +10,7 @@ Primal Strike,460956
 Earthgrab Totem,136100,@Earthbind Totem
 Stormstrike,132314,@Primal Strike
 Surging Totem,5927655,@Windfury Totem
+Tempest,5927653,@Lightning Bolt
 Windstrike,1029585,@Primal Strike
 
 -- Talents
