@@ -188,6 +188,9 @@ KeybindListClearAll_Click(GuiCtrlObj, Info) {
     Loop RowCount
     {
         KeybindListView.Modify(A_Index, "Col2", "")  ; Clear the keybind in the second column
+
+        ActionName := KeybindListView.GetText(A_Index, 1)  ; Get the action name from Column 1
+        LoadedSpec.ChangeActionKeybind(ActionName, "")  ; Clear the keybind in the data model
     }
 }
 
