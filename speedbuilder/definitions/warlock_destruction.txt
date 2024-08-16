@@ -21,6 +21,8 @@ Immolate,135817
 Incinerate,135789
 
 -- Spell aliases
+Curse of the Satyr,132888,@Curse of Weakness
+Wither,5927632,@Immolate
 
 -- Talents
 Amplify Curse,136132

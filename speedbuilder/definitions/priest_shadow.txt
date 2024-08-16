@@ -23,7 +23,9 @@ Mind Flay: Insanity,425954,@Mind Flay
 Mind Spike,457655,@Mind Flay
 Mind Spike: Insanity,1391678,@Mind Flay
 Mindbender,136214,@Shadowfiend
+Void Blast,4914668,@Mind Blast
 Void Bolt,1035040,@Void Eruption
+Voidwraith,615099,@Shadowfiend
 
 -- Priest Talents
 Angelic Feather,642580

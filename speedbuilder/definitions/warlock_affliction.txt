@@ -20,11 +20,13 @@ Agony,136139
 Malefic Rapture,236296
 
 -- Spell aliases
+Curse of the Satyr,132888,@Curse of Weakness
 Drain Soul,136163,@Shadow Bolt
 Seduction,1717715,@Command Demon
 Shadow Bulwark,136121,@Command Demon
 Singe Magic,135791,@Command Demon
 Spell Lock,136174,@Command Demon
+Wither,5927632,@Corruption
 
 -- Talents
 Amplify Curse,136132
