@@ -1,6 +1,7 @@
 -- Spells
 Earthbind Totem,136102
 Flame Shock,135813
+Flametongue Weapon,135814
 Healing Surge,136044
 Lightning Bolt,136048
 Lightning Shield,136051
