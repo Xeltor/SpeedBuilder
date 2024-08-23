@@ -34,7 +34,7 @@ Roar of Sacrifice,464604
 Salvo,1033904
 Scare Beast,132118
 Scatter Shot,132153
-Survival of the Fittest,136051
+Survival of the Fittest,136094
 Tar Trap,576309
 Tranquilizing Shot,136020
 Trueshot,132329

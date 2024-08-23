@@ -41,7 +41,7 @@ Roar of Sacrifice,464604
 Scare Beast,132118
 Scatter Shot,132153
 Spearhead,4667416
-Survival of the Fittest,136051
+Survival of the Fittest,136094
 Tar Trap,576309
 Tranquilizing Shot,136020
 Wildfire Bomb,2065634
