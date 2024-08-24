@@ -39,9 +39,9 @@ if !classSpecs.Length {
 }
 
 ; Set hotkeys.
+Hotkey(cfg.SpecSelectionKeyBind, SpecSelectionHotkey)
 HotIfWinActive(cfg.Warcraft)
 Hotkey(cfg.ToggleOnOffKeyBind, ToggleSpeedBuilder)
-Hotkey(cfg.SpecSelectionKeyBind, SpecSelectionHotkey)
 HotIfWinActive()
 
 ToggleSpeedBuilder(PressedHotKey) {
