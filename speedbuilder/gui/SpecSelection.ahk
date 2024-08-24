@@ -1,3 +1,5 @@
+#Include ../class/Battlenet.ahk
+
 SpecSelectionGui() {
     ClassSpecs := GetClassSpecs()
     keybindLabels := Map(
@@ -28,7 +30,7 @@ SpecSelectionGui() {
     ; Generate tabs
     Tab := SpecGui.Add("Tab3",, ["Run", "Config"])
     Tab.UseTab(1)
-    SpecGui.AddText(,"Please select the class spec you wish to play.")
+    SpecGui.AddText("Section","Please select the class spec you wish to play.")
 
     ; Populate list.
     ClassSpecChoice := SpecGui.AddDropDownList("vClassSpecChoice r10 w400", ClassSpecs)
@@ -41,7 +43,14 @@ SpecSelectionGui() {
     LoadButton := SpecGui.AddButton("Default", "(Re)load")
     LoadButton.OnEvent("Click", LoadButton_Click)
 
-    SpecGui.AddText("", ReOpenMessage ": To open this menu again.")
+    ; Check if WoW is running
+    bnet := Battlenet()
+    if !WinExist(cfg.Warcraft) and bnet.Exists() {
+        LaunchButton := SpecGui.AddButton("yp", "Launch WoW")
+        LaunchButton.OnEvent("Click", LaunchButton_Click)
+    }
+
+    SpecGui.AddText("XS", ReOpenMessage ": To open this menu again.")
     SpecGui.OnEvent("Close", SpecSelectGui_Close)
 
     ; Continue in Tab 2 Config
@@ -92,6 +101,22 @@ LoadButton_Click(GuiCtrlObj, Info) {
 
     if not WinActive(cfg.Warcraft) and WinExist(cfg.Warcraft)
         WinActivate(cfg.Warcraft)
+}
+
+LaunchButton_Click(GuiCtrlObj, Info) {
+    ; Destroy gui.
+    GuiCtrlObj.Gui.Destroy()
+
+    ; Launch WoW
+    bnet := Battlenet()
+    bnet.LaunchWoW()
+
+    ; Wait for it
+    showPopup("Waiting up to 30 seconds for WoW to appear.")
+    WinWait(cfg.Warcraft,,30)
+
+    ; Open GUI again.
+    SpecSelectionGui()
 }
 
 SpecSelectGui_Close(GuiCtrlObj) {
