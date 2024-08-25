@@ -18,6 +18,7 @@ Barbed Shot,2058007
 Barrage,236201
 Bestial Wrath,132127
 Binding Shot,462650
+Black Arrow,5927620
 Bloodshed,132139
 Bursting Shot,1376038
 Call of the Wild,4667415

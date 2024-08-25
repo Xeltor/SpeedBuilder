@@ -18,6 +18,7 @@ Revive Pet,132163,@Mend Pet
 Aimed Shot,135130
 Barrage,236201
 Binding Shot,462650
+Black Arrow,5927620
 Bursting Shot,1376038
 Camouflage,461113
 Concussive Shot,135860
