@@ -24,15 +24,23 @@ checkForGitUpdateAndRestartIfNeeded() {
 
         ; Check if the branch is behind
         if InStr(gitStatus.Output, "Your branch is behind") {
-            showPopup("New updates found. Updating...")
+            if MsgBox("Update available, update HACK now?", AppName, "0x24") = "No" {
+                return
+            }
 
             ; Pull the latest changes from the remote repository
             gitPullCmd := "git -C `"" scriptDir "`" pull"
             StdoutToVar(gitPullCmd)
 
             ; Restart the script after updating
-            showPopup("Updated. Restarting application...")
-            Reload  ; This restarts the AHK script
+            i := 5
+            while(i > 0) {
+                showPopup("Restarting application in " i " seconds.")
+                i--
+                Sleep(1000)
+            }
+
+            Reload
         }
         
         showPopup("Application up-to-date.")
@@ -40,11 +48,3 @@ checkForGitUpdateAndRestartIfNeeded() {
         showPopup("Could not update.")
     }
 }
-
-; RunGitCommand(command) {
-;     shell := ComObject("WScript.Shell")
-;     exec := shell.Exec(command)
-;     output := Trim(exec.StdOut.ReadAll())
-
-;     return output
-; }
