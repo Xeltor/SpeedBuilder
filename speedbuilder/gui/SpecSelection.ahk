@@ -96,11 +96,26 @@ LoadButton_Click(GuiCtrlObj, Info) {
 
     LoadedSpec := Specialization(ClassSpecChoice)
 
-    ClassSpec := LoadedSpec.Name
-    showPopup("Loaded " LoadedSpec.Actions.Count " actions for " ClassSpec)
+    if LoadedSpec.HasUpdates and MsgBox(LoadedSpec.Name " has updates. Would you like to run (re)create spec now to update it?", AppName, "0x124") = "Yes" {
+        ; Return if warcraft isnt running.
+        if !WinExist(cfg.Warcraft) {
+            MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")
+            SpecSelectionGui()
+            return
+        }
 
-    if not WinActive(cfg.Warcraft) and WinExist(cfg.Warcraft)
-        WinActivate(cfg.Warcraft)
+        ; Load specialization setup.
+        LoadedSpec := Specialization(ClassSpecChoice, true)
+
+        ; Icon replacement GUI.
+        IconReplacementSelectionGui()
+    } else {
+        ClassSpec := LoadedSpec.Name
+        showPopup("Loaded " LoadedSpec.Actions.Count " actions for " ClassSpec)
+    
+        if not WinActive(cfg.Warcraft) and WinExist(cfg.Warcraft)
+            WinActivate(cfg.Warcraft)
+    }
 }
 
 LaunchButton_Click(GuiCtrlObj, Info) {
@@ -120,7 +135,9 @@ LaunchButton_Click(GuiCtrlObj, Info) {
 }
 
 SpecSelectGui_Close(GuiCtrlObj) {
-    ExitApp()
+    ; Inform user.
+    showPopup("Minimized HACK to tray.")
+    return
 }
 
 CreateSpecButton_Click(GuiCtrlObj, Info) {
@@ -148,7 +165,7 @@ ConfigSetupButton_Click(GuiCtrlObj, Info) {
 
 OpenKeybindsButton_Click(GuiCtrlObj, Info) {
     global LoadedSpec
-    
+
     ; Hide parent.
     SpecSelectorValues := GuiCtrlObj.Gui.Submit(true)
 

@@ -1,7 +1,6 @@
 -- Spells
 Anti-Magic Shell,136120
 Chains of Ice,135834
-Corpse Exploder,136133
 Dark Command,136088
 Death And Decay,136144
 Death Coil,136145

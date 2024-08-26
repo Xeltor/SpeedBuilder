@@ -1,36 +1,21 @@
 #Include ColorPicker.ahk
 #Include Helpers.ahk
 
-AutomaticClassSetup(SetupData, RedoAllIcons) {
+AutomaticClassSetup(xCoord, yCoord, RedoAllIcons) {
     global LoadedSpec
 
-    ; Get existing actions.
-    LoadedSpec := SetupData.ClassSpecChoice
-
-    ; Update actions from definitions.
-    ActionList := []
-    for Definition in SetupData.ClassSpecChoice.Definitions {
-        ; Update existing or generate from definition.
-        UpdatedAction := LoadedSpec.Actions.Has(Definition.Name) ? LoadedSpec.Actions[Definition.Name].FromDefinition(Definition) : Action().FromDefinition(Definition)
-
-        ActionList.Push(UpdatedAction)
-    }
-
     ; Get color combo for each icon.
-    TotalItems := ActionList.Length
+    TotalItems := LoadedSpec.Actions.Count
     i := 1
-    for Act in ActionList {
+    for _, Act in LoadedSpec.Actions {
         if Act.IsUpdated or RedoAllIcons {
             showPopup("Progress: " i "/" TotalItems)
-            SetIconReplacement(Act.IconID, SetupData.xCoord, SetupData.yCoord)
+            SetIconReplacement(Act.IconID, xCoord, yCoord)
             Act.Colors := GetPixelColors(true)
         }
         i++
     }
-    ResetIconReplacement(SetupData.xCoord, SetupData.yCoord)
-
-    ; Set updated actions.
-    LoadedSpec.Actions := ActionList
+    ResetIconReplacement(xCoord, yCoord)
 
     ; Save and notify user that the process has completed.
     if LoadedSpec.SaveActions() {
