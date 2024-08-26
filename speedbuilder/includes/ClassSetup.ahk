@@ -2,10 +2,12 @@
 #Include Helpers.ahk
 
 AutomaticClassSetup(xCoord, yCoord, RedoAllIcons) {
+    global LoadedSpec
+
     ; Get color combo for each icon.
-    TotalItems := LoadedSpec.Actions.Length
+    TotalItems := LoadedSpec.Actions.Count
     i := 1
-    for Act in LoadedSpec.Actions {
+    for _, Act in LoadedSpec.Actions {
         if Act.IsUpdated or RedoAllIcons {
             showPopup("Progress: " i "/" TotalItems)
             SetIconReplacement(Act.IconID, xCoord, yCoord)

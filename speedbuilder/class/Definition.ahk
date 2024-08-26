@@ -3,7 +3,7 @@ Class Definition {
     IconID := 0
     Alias := ""
 
-    __New(DefinitionString, DefinitionType) {
+    __New(DefinitionString) {
         Values := StrSplit(DefinitionString, ",")
         this.Name := Values[1]
         this.IconID := Values[2]

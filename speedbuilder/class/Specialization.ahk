@@ -10,7 +10,7 @@ class Specialization {
     __New(FileName, Setup := false) {
         this.FileName := StrLower(StrReplace(FileName, " ", "_"))
         this.Name := StrTitle(StrReplace(FileName, "_", " "))
-        this.LoadActions(Setup)
+        this.LoadActions()
         this.GetChanges(Setup)
     }
 
@@ -19,29 +19,29 @@ class Specialization {
         Definitions := []
     
         ; Helper function to read definitions
-        readDefinitions(fileName, type) {
+        readDefinitions(fileName) {
             filePath := "speedbuilder\definitions\" fileName ".txt"
             loop read, filePath {
                 line := Trim(A_LoopReadLine)
                 if (InStr(line, "--") or line = "")
                     continue
-                Definitions.Push(Definition(line, type))
+                Definitions.Push(Definition(line))
             }
         }
     
         ; Read common items
-        readDefinitions("common_items", "Item")
+        readDefinitions("common_items")
     
         ; Read racial spells
-        readDefinitions("common_spells", "Racial")
+        readDefinitions("common_spells")
     
         ; Read specialization spells
-        readDefinitions(this.FileName, "Spell")
+        readDefinitions(this.FileName)
 
         return Definitions
     }
 
-    LoadActions(Setup := false) {
+    LoadActions() {
         KeybindFile := "Keybinds\" this.FileName ".txt"
 
         if !FileExist(KeybindFile)
@@ -57,7 +57,7 @@ class Specialization {
                 continue
 
             act := Action(line)
-            this.Actions[Setup ? act.Name : act.Colors] := act
+            this.Actions[act.Colors] := act
         }
     }
 
@@ -69,8 +69,10 @@ class Specialization {
         ; Update actions from definitions.
         ActionList := []
         for Definition in Definitions {
+            result := this.GetActionByName(Definition.Name)
+
             ; Update existing or generate from definition.
-            UpdatedAction := this.Actions.Has(Definition.Name) ? this.Actions[Definition.Name].FromDefinition(Definition) : Action().FromDefinition(Definition)
+            UpdatedAction := result.Found ? result.Action.FromDefinition(Definition) : Action().FromDefinition(Definition)
 
             ; This spec has updates.
             if UpdatedAction.IsUpdated
@@ -79,12 +81,13 @@ class Specialization {
             ActionList.Push(UpdatedAction)
         }
 
-        ; Difference in the amount of skills compared to definitions.
-        if this.Actions.Count != Definitions.Length
-            this.HasUpdates := true
-    
-        if Setup
-            this.Actions := ActionList
+        ; Save actions by name for setup purposes.
+        if Setup {
+            this.Actions := Map()
+            for act in ActionList {
+                this.Actions[act.Name] := act
+            }
+        }
     }
 
     SaveActions() {
@@ -140,7 +143,7 @@ class Specialization {
         return
     }
 
-    GetActionByAlias(ActionName) {
+    GetKeybindByAlias(ActionName) {
         name := StrLower(Trim(StrReplace(ActionName, "@", "")))
     
         for _, action in this.Actions {
@@ -149,5 +152,21 @@ class Specialization {
             }
         }
         return false
-    }    
+    }
+
+    GetActionByName(ActionName) {
+        result := Map()
+        result.Found := false
+
+        for _, action in this.Actions {
+            if (StrLower(action.Name) = StrLower(ActionName)) {
+                result := {
+                    Found: true,
+                    Action: action
+                }
+                return result
+            }
+        }
+        return result
+    }
 }

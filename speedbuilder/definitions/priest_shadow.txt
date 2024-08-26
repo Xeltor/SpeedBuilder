@@ -53,7 +53,6 @@ Shadow Word: Death,136149
 Shadowfiend,136199
 Silence,458230
 Vampiric Embrace,136230
-Void Blast,4914668
 Void Eruption,1386548
 Void Shift,537079
 Void Tendrils,537022

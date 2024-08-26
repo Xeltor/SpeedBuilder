@@ -68,7 +68,7 @@ Rotation() {
         action := LoadedSpec.Actions[colors]
         
         if action {
-            keybind := action.IsAlias ? LoadedSpec.GetActionByAlias(action.Keybind) : action.Keybind
+            keybind := action.IsAlias ? LoadedSpec.GetKeybindByAlias(action.Keybind) : action.Keybind
             if keybind != "" {
                 Send(keybind)
             }
