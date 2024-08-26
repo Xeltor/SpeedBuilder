@@ -5,21 +5,18 @@ class Specialization {
     Name := ""
     FileName := ""
     Actions := Map()
-    Definitions := []
+    HasUpdates := false
 
     __New(FileName, Setup := false) {
         this.FileName := StrLower(StrReplace(FileName, " ", "_"))
         this.Name := StrTitle(StrReplace(FileName, "_", " "))
-
-        if Setup {
-            this.LoadDefinitions()
-        }
         this.LoadActions(Setup)
+        this.GetChanges(Setup)
     }
 
-    LoadDefinitions() {
+    GetDefinitions() {
         ; Clear definitions
-        this.Definitions := []
+        Definitions := []
     
         ; Helper function to read definitions
         readDefinitions(fileName, type) {
@@ -28,7 +25,7 @@ class Specialization {
                 line := Trim(A_LoopReadLine)
                 if (InStr(line, "--") or line = "")
                     continue
-                this.Definitions.Push(Definition(line, type))
+                Definitions.Push(Definition(line, type))
             }
         }
     
@@ -40,6 +37,8 @@ class Specialization {
     
         ; Read specialization spells
         readDefinitions(this.FileName, "Spell")
+
+        return Definitions
     }
 
     LoadActions(Setup := false) {
@@ -60,6 +59,32 @@ class Specialization {
             act := Action(line)
             this.Actions[Setup ? act.Name : act.Colors] := act
         }
+    }
+
+    ; Checks for updates
+    GetChanges(Setup := false) {
+        ; Get definitions.
+        Definitions := this.GetDefinitions()
+
+        ; Update actions from definitions.
+        ActionList := []
+        for Definition in Definitions {
+            ; Update existing or generate from definition.
+            UpdatedAction := this.Actions.Has(Definition.Name) ? this.Actions[Definition.Name].FromDefinition(Definition) : Action().FromDefinition(Definition)
+
+            ; This spec has updates.
+            if UpdatedAction.IsUpdated
+                this.HasUpdates := true
+
+            ActionList.Push(UpdatedAction)
+        }
+
+        ; Difference in the amount of skills compared to definitions.
+        if this.Actions.Count != Definitions.Length
+            this.HasUpdates := true
+    
+        if Setup
+            this.Actions := ActionList
     }
 
     SaveActions() {

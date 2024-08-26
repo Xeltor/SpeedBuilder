@@ -2,20 +2,15 @@
 #Include ../includes/ClassSetup.ahk
 ; Store globally so we can destroy it indirectly.
 global IconReplacementGui := ""
-global SetupData := Object()
 
 #HotIf IconReplacementGui != "" and WinActive(cfg.Warcraft)
 CTRL & LButton:: {
     global IconReplacementGui
-    global SetupData
 
     MouseGetPos(&xCoord, &yCoord)
     SetIconReplacement(666, xCoord, yCoord)
 
     if GetPixelColors(true) = "0x00FF000x00FF00" {
-        SetupData.xCoord := xCoord
-        SetupData.yCoord := yCoord
-
         ResetIconReplacement(xCoord, yCoord)
 
         IconReplacementGui.Destroy()
@@ -28,18 +23,15 @@ CTRL & LButton:: {
 
         MsgBox("The manual part of the setup is completed. After pressing OK please don't use the keyboard and mouse while automatic setup works.`n`nYou will be notified when the process has completed.", AppName, "0x20")
 
-        AutomaticClassSetup(SetupData, RedoAllIcons)
+        AutomaticClassSetup(xCoord, yCoord, RedoAllIcons)
     } else {
         MsgBox("Could not find the Icon Replacement box, please try again or escape to cancel.", AppName, "0x30")
     }
 }
 #HotIf
 
-IconReplacementSelectionGUi(ClassSpecChoice) {
+IconReplacementSelectionGUi() {
     global IconReplacementGui
-    global SetupData
-
-    SetupData.ClassSpecChoice := ClassSpecChoice
 
     IconReplacementGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     IconReplacementGui.SetFont("s11")

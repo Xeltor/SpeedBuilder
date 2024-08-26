@@ -20,6 +20,8 @@ SpecSetupSelectionGui(ClassSpecChoice := "") {
 }
 
 ContinueButton_Click(GuiCtrlObj, Info) {
+    global LoadedSpec
+
     ; Hide parent.
     SpecSelectorValues := GuiCtrlObj.Gui.Submit(true)
 
@@ -44,10 +46,10 @@ ContinueButton_Click(GuiCtrlObj, Info) {
     }
 
     ; Load specialization setup.
-    ClassSpecSetup := Specialization(ClassSpecChoice, true)
+    LoadedSpec := Specialization(ClassSpecChoice, true)
 
     ; Icon replacement GUI.
-    IconReplacementSelectionGui(ClassSpecSetup)
+    IconReplacementSelectionGui()
 }
 
 CancelButton_Click(GuiCtrlObj, Info) {
