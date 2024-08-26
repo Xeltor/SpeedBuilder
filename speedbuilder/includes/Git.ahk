@@ -29,21 +29,22 @@ checkForGitUpdateAndRestartIfNeeded() {
             }
 
             ; Pull the latest changes from the remote repository
+            showPopup("Updating HACK.")
             gitPullCmd := "git -C `"" scriptDir "`" pull"
             StdoutToVar(gitPullCmd)
 
             ; Restart the script after updating
             i := 5
             while(i > 0) {
-                showPopup("Restarting application in " i " seconds.")
+                showPopup("Restarting HACK in " i " seconds.")
                 i--
                 Sleep(1000)
             }
 
             Reload
         }
-        
-        showPopup("Application up-to-date.")
+
+        showPopup("HACK up-to-date.")
     } catch {
         showPopup("Could not update.")
     }

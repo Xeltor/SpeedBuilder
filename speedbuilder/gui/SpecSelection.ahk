@@ -135,7 +135,9 @@ LaunchButton_Click(GuiCtrlObj, Info) {
 }
 
 SpecSelectGui_Close(GuiCtrlObj) {
-    ExitApp()
+    ; Inform user.
+    showPopup("Minimized HACK to tray.")
+    return
 }
 
 CreateSpecButton_Click(GuiCtrlObj, Info) {
@@ -163,7 +165,7 @@ ConfigSetupButton_Click(GuiCtrlObj, Info) {
 
 OpenKeybindsButton_Click(GuiCtrlObj, Info) {
     global LoadedSpec
-    
+
     ; Hide parent.
     SpecSelectorValues := GuiCtrlObj.Gui.Submit(true)
 
