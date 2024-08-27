@@ -25,7 +25,6 @@ Holy Light,135981
 
 -- Talents
 Aura Mastery,135872
-Auras of the Resolute,135893
 Avenging Crusader,589117
 Avenging Wrath,135875
 Barrier of Faith,4067370

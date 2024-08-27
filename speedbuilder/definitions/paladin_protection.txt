@@ -22,7 +22,6 @@ Sentinel,135922,@Avenging Wrath
 
 -- Talents
 Ardent Defender,135870
-Auras of the Resolute,135893
 Avenger's Shield,135874
 Avenging Wrath,135875
 Bastion of Light,535594
