@@ -38,7 +38,7 @@ checkForGitUpdateAndRestartIfNeeded() {
             StdoutToVar(gitPullCmd)
 
             ; Restart the script after updating
-            i := 5
+            i := 3
             while(i > 0) {
                 showPopup("Restarting HACK in " i " seconds.")
                 i--
@@ -48,7 +48,7 @@ checkForGitUpdateAndRestartIfNeeded() {
             Reload
         }
 
-        showPopup("HACK up-to-date.")
+        showPopup("HACK is up-to-date.")
     } catch {
         showPopup("Could not update.")
     }
