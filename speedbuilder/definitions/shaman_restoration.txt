@@ -9,7 +9,6 @@ Primal Strike,460956
 -- Specialization Spells
 Ancestral Vision,237576
 Cleanse Spirit,236288
-Purify Spirit,236288
 Water Shield,132315
 
 -- Spell aliases
@@ -55,6 +54,5 @@ Totemic Projection,538574
 Totemic Recall,538570
 Tremor Totem,136108
 Unleash Life,462328
-Wellspring,893778
 Wind Rush Totem,538576
 Wind Shear,136018

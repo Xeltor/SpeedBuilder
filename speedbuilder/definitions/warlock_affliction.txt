@@ -52,4 +52,3 @@ Soulburn,463286
 Summon Darkglare,1416161
 Unstable Affliction,136228
 Vile Taint,1391774
-Wither,5927632

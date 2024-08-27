@@ -6,7 +6,6 @@ Fel Rush,1247261
 Glide,1305157
 Immolation Aura,1344649
 Metamorphosis,1247262
-Soul Carver,1309072
 Spectral Sight,1247266
 Throw Glaive,1305159
 Torment,1344654
@@ -18,7 +17,6 @@ Metamorphosis Vengeance,1247263
 Shear,1344648
 Sigil Of Flame,1344652
 Soul Cleave,1344653
-Throw Glaive,1305159
 
 -- Spell aliases
 

@@ -4,7 +4,6 @@ Arcane Intellect,135932
 Blink,135736
 Cone of Cold,135852
 Counterspell,135856
-Fire Blast,135807
 Frost Nova,135848
 Frostbolt,135846
 Invisibility,132220

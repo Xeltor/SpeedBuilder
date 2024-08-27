@@ -22,7 +22,6 @@ Impending Victory,589768,@Victory Rush
 -- Talents
 Avatar,613534
 Battle Stance,132349
-Berserker Shout,136009
 Bitter Immunity,136088
 Bladestorm,236303
 Champion's Spear,3565453

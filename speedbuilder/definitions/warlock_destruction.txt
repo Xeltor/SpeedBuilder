@@ -49,4 +49,3 @@ Shadowfury,607865
 Soul Fire,135809
 Soulburn,463286
 Summon Infernal,136219
-Wither,5927632

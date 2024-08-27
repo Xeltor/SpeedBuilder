@@ -23,14 +23,11 @@ Thunder Blast,460957,@Thunder Clap
 -- Talents
 Avatar,613534
 Battle Stance,132349
-Berserker Shout,136009
 Bitter Immunity,136088
 Challenging Shout,132091
 Champion's Spear,3565453
 Defensive Stance,132341
 Demoralizing Shout,132366
-Devastator,135291
-Disrupting Shout,132091
 Heroic Leap,236171
 Ignore Pain,1377132
 Intervene,132365

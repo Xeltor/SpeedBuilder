@@ -21,7 +21,6 @@ Thunder Blast,460957,@Thunder Clap
 
 -- Talents
 Avatar,613534
-Berserker Shout,136009
 Berserker Stance,132275
 Bitter Immunity,136088
 Bladestorm,236303

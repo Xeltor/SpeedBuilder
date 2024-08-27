@@ -30,7 +30,6 @@ Diffuse Magic,775460
 Disable,132316
 Exploding Keg,644378
 Fortifying Brew,615341
-Fortifying Brew: Determination,615341
 Invoke Niuzao the Black Ox,608951
 Keg Smash,594274
 Paralysis,629534

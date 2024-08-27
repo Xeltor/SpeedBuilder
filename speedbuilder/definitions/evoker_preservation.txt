@@ -12,7 +12,6 @@ Return,4622472
 
 -- Specialization
 Mass Return,4622473
-Naturalize,4630445
 
 -- Spell aliases
 
