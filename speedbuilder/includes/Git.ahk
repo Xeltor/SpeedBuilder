@@ -28,6 +28,10 @@ checkForGitUpdateAndRestartIfNeeded() {
                 return
             }
 
+            ; Reset local changes.
+            gitStatusCmd := "git -C `"" scriptDir "`" reset --hard"
+            gitStatus := StdoutToVar(gitStatusCmd)
+
             ; Pull the latest changes from the remote repository
             showPopup("Updating HACK.")
             gitPullCmd := "git -C `"" scriptDir "`" pull"
