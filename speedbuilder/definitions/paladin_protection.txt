@@ -18,6 +18,7 @@ Word of Glory,133192
 -- Spell aliases
 Blessed Hammer,535595,@Crusader Strike
 Hammer of Light,5342121,@Eye of Tyr
+Hammer of the Righteous,236253,@Crusader Strike
 Sentinel,135922,@Avenging Wrath
 
 -- Talents
@@ -37,7 +38,6 @@ Divine Toll,3565448
 Eternal Flame,135433
 Eye of Tyr,1272527
 Guardian of Ancient Kings,135919
-Hammer of the Righteous,236253
 Hammer of Wrath,613533
 Holy Bulwark,5927636
 Lay on Hands,135928
