@@ -26,6 +26,7 @@ Wrath,535045
 
 -- Spell aliases
 Incarnation: Guardian of Ursoc,571586,@Berserk
+Ravage,5927623,@Maul
 Tiger Dash,1817485,@Dash
 Wild Charge Bear,132183,@Wild Charge
 Wild Charge Cat,304501,@Wild Charge

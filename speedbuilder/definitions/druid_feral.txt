@@ -26,6 +26,7 @@ Wrath,535045
 
 -- Spell aliases
 Incarnation: Avatar of Ashamane,571586,@Berserk
+Ravage,5927623,@Ferocious Bite
 
 -- Talents
 Adaptive Swarm,3578197
