@@ -20,6 +20,12 @@ Purify,135894
 Purify Disease,135935
 
 -- Spell aliases
+Dark Reprimand,1394892,@Penance
+Mindbender,136214,@Shadowfiend
+Shadow Divine Star,631519,@Divine Star
+Shadow Halo,632353,@Halo
+Void Blast,4914668,@Smite
+Voidwraith,615099,@Shadowfiend
 
 -- Talents
 Angelic Feather,642580
@@ -33,7 +39,6 @@ Leap of Faith,463835
 Luminous Barrier,537078
 Mass Dispel,135739
 Mind Control,136206
-Mindbender,136214
 Pain Suppression,135936
 Power Infusion,135939
 Power Word: Barrier,253400
@@ -49,6 +54,5 @@ Shadow Word: Death,136149
 Shadowfiend,136199
 Ultimate Penitence,1060982
 Vampiric Embrace,136230
-Void Blast,4914668
 Void Shift,537079
 Void Tendrils,537022
