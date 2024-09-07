@@ -19,6 +19,7 @@ Word of Glory,133192
 Blessed Hammer,535595,@Crusader Strike
 Hammer of Light,5342121,@Eye of Tyr
 Hammer of the Righteous,236253,@Crusader Strike
+Sacred Weapon,5927637,@Holy Bulwark
 Sentinel,135922,@Avenging Wrath
 
 -- Talents

@@ -21,6 +21,7 @@ Templar's Verdict,461860
 Crusade,236262,@Avenging Wrath
 Hammer of Light,5342121,@Wake of Ashes
 Justicar's Vengeance,135957,@Templar's Verdict
+Sacred Weapon,5927637,@Holy Bulwark
 Templar Slash,1112940,@Crusader Strike
 Templar Strike,1109508,@Crusader Strike
 
