@@ -4,6 +4,9 @@ Healthstone,538745
 -- Macro
 Trinket Macro,136243
 
+-- Weapons 11.0
+Dreambinder Loom of the Great Cycle,5263786
+
 -- Trinkets (11.0) (https://www.wowhead.com/items/slot:12/group-by:level?filter=82:195:62;2:1:1;110000:0:0)
 Abyssal Trap,893778,@Trinket Macro
 Algari Alchemist Stone,4497562,@Trinket Macro
