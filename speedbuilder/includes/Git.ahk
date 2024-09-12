@@ -6,7 +6,7 @@ GitCheckStatus(state := "status") {
 
     if InStr(gitStatus.Output, "Your branch is behind") and state = "status" {
         return true
-    } else if InStr(gitStatus.Output, "Your branch is behind") and state = "changes" {
+    } else if InStr(gitStatus.Output, "Merge bullshit fix this") and state = "changes" {
         return true
     }
 
