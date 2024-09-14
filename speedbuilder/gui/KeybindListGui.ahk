@@ -21,9 +21,18 @@ KeybindList() {
     KeybindListView.OnEvent("Click", KeyBindList_Click)
 
     ; Add all actions and their respective keybinds
+    AliasText := ""
     for _, val in LoadedSpec.Actions {
         if !val.IsAlias
             KeybindListView.Add("", val.Name, val.Keybind)
+        if val.IsAlias and !InStr(val.Keybind, "@Trinket Macro")
+            AliasText .= val.Name " -> " StrReplace(val.Keybind, "@") "`n"
+    }
+
+    ; Make an editbox that has the list of aliases.
+    if AliasText {
+        KeybindListGui.AddText("ys", "List of aliased spells.")
+        KeybindListGui.AddEdit("r26 Disabled", Sort(AliasText))
     }
 
     ; Auto scale the list
@@ -31,7 +40,7 @@ KeybindList() {
     KeybindListView.ModifyCol(2, "AutoHdr")
 
     ; Add save button
-    SaveButton := KeybindListGui.AddButton(,"Save")
+    SaveButton := KeybindListGui.AddButton("xs" ,"Save")
     SaveButton.OnEvent("Click", KeybindListSave_Click)
 
     ; Add clear all button
