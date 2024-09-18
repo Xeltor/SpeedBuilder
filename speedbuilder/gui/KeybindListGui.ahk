@@ -32,11 +32,11 @@ KeybindList() {
     ; Make an editbox that has the list of aliases.
     if AliasText {
         KeybindListGui.AddText("ys", "List of aliased spells.")
-        KeybindListGui.AddEdit("r26 Disabled", Sort(AliasText))
+        KeybindListGui.AddEdit("r26 ReadOnly -VScroll", Sort(AliasText))
     }
 
     ; Auto scale the list
-    KeybindListView.ModifyCol(1, "AutoHdr")
+    KeybindListView.ModifyCol(1, "200")
     KeybindListView.ModifyCol(2, "AutoHdr")
 
     ; Add save button

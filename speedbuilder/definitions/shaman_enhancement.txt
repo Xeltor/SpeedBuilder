@@ -6,9 +6,12 @@ Healing Surge,136044
 Lightning Bolt,136048
 Lightning Shield,136051
 Primal Strike,460956
+Skyfury,4630367
 
 -- Spell aliases
 Earthgrab Totem,136100,@Earthbind Totem
+Elemental Blast,651244,@Lava Burst
+Greater Purge,451166,@Purge
 Stormstrike,132314,@Primal Strike
 Surging Totem,5927655,@Windfury Totem
 Tempest,5927653,@Lightning Bolt
@@ -31,7 +34,6 @@ Elemental Blast,651244
 Feral Spirit,237577
 Fire Nova,459027
 Frost Shock,135849
-Greater Purge,451166
 Gust of Wind,463565
 Healing Stream Totem,135127
 Hex,237579
