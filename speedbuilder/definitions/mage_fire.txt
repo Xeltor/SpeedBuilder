@@ -16,6 +16,7 @@ Fireball,135812
 Flamestrike,135826
 
 -- Spell aliases
+Greater Invisibility,575584,@Invisibility
 Polymorph Black Cat,236547,@Polymorph
 Polymorph Bumblebee,2027853,@Polymorph
 Polymorph Direhorn,877480,@Polymorph
@@ -31,6 +32,7 @@ Polymorph Porcupine,644001,@Polymorph
 Polymorph Rabbit,319458,@Polymorph
 Polymorph Turkey,236708,@Polymorph
 Polymorph Turtle,132199,@Polymorph
+Shimmer,135739,@Blink
 
 -- Talents
 Alter Time,609811
@@ -41,7 +43,6 @@ Displacement,132171
 Dragon's Breath,134153
 Fire Blast,135807
 Frostfire Bolt,5927630
-Greater Invisibility,575584
 Ice Block,135841
 Ice Floes,610877
 Ice Nova,1033909
@@ -56,7 +57,6 @@ Remove Curse,136082
 Ring of Frost,464484
 Scorch,135827
 Shifting Power,3636841
-Shimmer,135739
 Slow,136091
 Spellsteal,135729
 Supernova,1033912

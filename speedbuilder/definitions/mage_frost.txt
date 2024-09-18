@@ -17,6 +17,7 @@ Blizzard,135857
 Cold Snap,135865
 
 -- Spell aliases
+Greater Invisibility,575584,@Invisibility
 Polymorph Black Cat,236547,@Polymorph
 Polymorph Bumblebee,2027853,@Polymorph
 Polymorph Direhorn,877480,@Polymorph
@@ -32,6 +33,7 @@ Polymorph Porcupine,644001,@Polymorph
 Polymorph Rabbit,319458,@Polymorph
 Polymorph Turkey,236708,@Polymorph
 Polymorph Turtle,132199,@Polymorph
+Shimmer,135739,@Blink
 
 -- Talents
 Alter Time,609811
@@ -43,7 +45,6 @@ Flurry,1506795
 Frostfire Bolt,5927630
 Frozen Orb,629077
 Glacial Spike,1698699
-Greater Invisibility,575584
 Ice Barrier,135988
 Ice Block,135841
 Ice Floes,610877
@@ -58,7 +59,6 @@ Ray of Frost,1698700
 Remove Curse,136082
 Ring of Frost,464484
 Shifting Power,3636841
-Shimmer,135739
 Slow,136091
 Spellsteal,135729
 Supernova,1033912
