@@ -18,6 +18,7 @@ Arcane Barrage,236205
 Arcane Blast,135735
 
 -- Spell aliases
+Gravity Lapse,4914671,@Supernova
 Greater Invisibility,575584,@Invisibility
 Ice Cold,135777,@Ice Block
 Polymorph Black Cat,236547,@Polymorph

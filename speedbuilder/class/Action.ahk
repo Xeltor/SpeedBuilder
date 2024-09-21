@@ -34,9 +34,27 @@ class Action {
         this.Name := definition.Name
         this.IsUpdated := (this.IconID != definition.IconID) or !this.Colors
         this.IconID := definition.IconID
-        this.Colors := this.Colors ? this.Colors : ""
+        this.Colors := this.Colors ? this.Colors : this.GetCache()
         this.Keybind := definition.Alias ? definition.Alias : this.Keybind
 
         return this
+    }
+
+    GetCache() {
+        try {
+            return IniRead("Cache/cache.ini", "ColorCache", this.IconID, "")
+        }
+        return false
+    }
+
+    WriteCache() {
+        CacheDir := "Cache"
+        if !DirExist(CacheDir) {
+            DirCreate(CacheDir)
+        }
+
+        try {
+            IniWrite(this.Colors, "Cache/cache.ini", "ColorCache", this.IconID)
+        }
     }
 }

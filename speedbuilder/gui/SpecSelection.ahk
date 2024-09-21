@@ -1,7 +1,7 @@
 #Include ../class/Battlenet.ahk
 
 SpecSelectionGui() {
-    ClassSpecs := GetClassSpecs()
+    ClassSpecs := GetClassSpecNames()
     keybindLabels := Map(
         "\#", "WindowsKey + ", 
         "\!", "Alt + ", 
@@ -66,11 +66,15 @@ SpecSelectionGui() {
     SpecGui.AddGroupBox("r4 YS", "Setup")
     
     ; (Re)create spec
-    CreateSpecButton := SpecGui.AddButton("XP+10 YP+25", "(Re)create spec")
+    CreateSpecButton := SpecGui.AddButton("XP+10 YP+15", "(Re)create spec")
     CreateSpecButton.OnEvent("Click", CreateSpecButton_Click)
 
+    ; Generate cache
+    GenerateCacheButton := SpecGui.AddButton("YP+35", "Generate cache")
+    GenerateCacheButton.OnEvent("Click", GenerateCacheButton_Click)
+
     ; Config setup
-    ConfigSetupButton := SpecGui.AddButton("YP+50", "Config setup")
+    ConfigSetupButton := SpecGui.AddButton("YP+35", "Config setup")
     ConfigSetupButton.OnEvent("Click", ConfigSetupButton_Click)
 
     SpecGui.Show()
@@ -150,6 +154,26 @@ CreateSpecButton_Click(GuiCtrlObj, Info) {
 
     ; Run class spec setup.
     SpecSetupSelectionGui()
+}
+
+GenerateCacheButton_Click(GuiCtrlObj, Info) {
+    if MsgBox("Generating cache can take a few seconds to minutes depending on how many specs you have setup`n`ncontinue?", AppName, "0x1034") = "No" {
+        return
+    }
+
+    ; Destroy gui.
+    GuiCtrlObj.Gui.Destroy()
+
+    ; Get specs.
+    Specializations := GetClassSpecs()
+
+    ; Generate icon color cache.
+    for spec in Specializations {
+        spec.GenerateCache()
+    }
+
+    ; Open spec selection again.
+    SpecSelectionGui()
 }
 
 ConfigSetupButton_Click(GuiCtrlObj, Info) {

@@ -7,11 +7,13 @@ class Specialization {
     Actions := Map()
     HasUpdates := false
 
-    __New(FileName, Setup := false) {
+    __New(FileName, Setup := false, LoadActions := true) {
         this.FileName := StrLower(StrReplace(FileName, " ", "_"))
         this.Name := StrTitle(StrReplace(FileName, "_", " "))
-        this.LoadActions()
-        this.GetChanges(Setup)
+        if LoadActions {
+            this.LoadActions()
+            this.GetChanges(Setup)
+        }
     }
 
     GetDefinitions() {
@@ -86,6 +88,15 @@ class Specialization {
             this.Actions := Map()
             for act in ActionList {
                 this.Actions[act.Name] := act
+            }
+        }
+    }
+
+    GenerateCache() {
+        showPopup("Generating icon color cache from " this.Name " specialization.")
+        for _, act in this.Actions {
+            if act.Colors != "" {
+                act.WriteCache()
             }
         }
     }

@@ -1,7 +1,7 @@
 #Include IconReplacementSetup.ahk
 
 SpecSetupSelectionGui(ClassSpecChoice := "") {
-    ClassSpecs := GetClassSpecs(true)
+    ClassSpecs := GetClassSpecNames(true)
 
     SpecGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
     SpecGui.SetFont("s11")

@@ -28,7 +28,7 @@ if !cfg.ConfigFileExists() {
 }
 
 ; Check if class specs are setup
-classSpecs := GetClassSpecs()
+classSpecs := GetClassSpecNames()
 if !classSpecs.Length {
     if MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34") = "Yes" {
         SpecSetupSelectionGui()

@@ -8,10 +8,11 @@ AutomaticClassSetup(xCoord, yCoord, RedoAllIcons) {
     TotalItems := LoadedSpec.Actions.Count
     i := 1
     for _, Act in LoadedSpec.Actions {
-        if Act.IsUpdated or RedoAllIcons {
+        if (Act.IsUpdated and Act.GetCache() = "") or RedoAllIcons {
             showPopup("Progress: " i "/" TotalItems)
             SetIconReplacement(Act.IconID, xCoord, yCoord)
             Act.Colors := GetPixelColors(true)
+            Act.WriteCache()
         }
         i++
     }
