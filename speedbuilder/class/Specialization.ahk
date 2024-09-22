@@ -6,6 +6,7 @@ class Specialization {
     FileName := ""
     Actions := Map()
     HasUpdates := false
+    UpdateCount := 0
 
     __New(FileName, Setup := false, LoadActions := true) {
         this.FileName := StrLower(StrReplace(FileName, " ", "_"))
@@ -77,8 +78,10 @@ class Specialization {
             UpdatedAction := result.Found ? result.Action.FromDefinition(Definition) : Action().FromDefinition(Definition)
 
             ; This spec has updates.
-            if UpdatedAction.IsUpdated
+            if UpdatedAction.IsUpdated {
                 this.HasUpdates := true
+                this.UpdateCount += 1
+            }
 
             ActionList.Push(UpdatedAction)
         }

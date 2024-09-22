@@ -100,7 +100,7 @@ LoadButton_Click(GuiCtrlObj, Info) {
 
     LoadedSpec := Specialization(ClassSpecChoice)
 
-    if LoadedSpec.HasUpdates and MsgBox(LoadedSpec.Name " has updates. Would you like to run (re)create spec now to update it?", AppName, "0x124") = "Yes" {
+    if LoadedSpec.HasUpdates and MsgBox(LoadedSpec.Name " has " LoadedSpec.UpdateCount " updates. Would you like to run (re)create spec now to update it?", AppName, "0x124") = "Yes" {
         ; Return if warcraft isnt running.
         if !WinExist(cfg.Warcraft) {
             MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")

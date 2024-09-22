@@ -1,10 +1,11 @@
-GetPixelColors(Setup:=false) {
+GetPixelColors(Setup:=false, Wait:=1000) {
     colors := ""
 
     ; Give WoW some time to respond
     if Setup {
-        Sleep(1000)
-        WinActivate(cfg.Warcraft)
+        Sleep(Wait)
+        if !WinActive(cfg.Warcraft)
+            WinActivate(cfg.Warcraft)
     }
 
     for p in cfg.HekiliPixels() {

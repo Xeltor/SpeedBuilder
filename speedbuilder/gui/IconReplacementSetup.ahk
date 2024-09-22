@@ -16,15 +16,9 @@ CTRL & LButton:: {
         IconReplacementGui.Destroy()
         IconReplacementGui := ""
 
-        RedoAllIcons := false
-        if MsgBox("Would you like to redo all icon colors?", AppName, "0x124") = "Yes" {
-            RedoAllIcons := true
-        }
-
-        MsgBox("The manual part of the setup is completed. After pressing OK please don't use the keyboard and mouse while automatic setup works.`n`nYou will be notified when the process has completed.", AppName, "0x20")
-
-        AutomaticClassSetup(xCoord, yCoord, RedoAllIcons)
+        AutomaticClassSetup(xCoord, yCoord)
     } else {
+        ResetIconReplacement(xCoord, yCoord)
         MsgBox("Could not find the Icon Replacement box, please try again or escape to cancel.", AppName, "0x30")
     }
 }
