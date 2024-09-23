@@ -3,7 +3,7 @@
 global AppName := "HACK: Hekili Automation and Control Kit"
 #Include speedbuilder\class\Config.ahk
 #Include speedbuilder\class\Profile.ahk
-#Include speedbuilder\includes\Git.ahk
+#Include speedbuilder\class\Git.ahk
 #Include speedbuilder\includes\ColorPicker.ahk
 #Include speedbuilder\includes\Helpers.ahk
 #Include speedbuilder\gui\Main.ahk
@@ -16,7 +16,9 @@ global cfg := Config()
 global ActiveProfile := ""
 
 ; Check for updates before anything
-checkForGitUpdateAndRestartIfNeeded()
+Updater := Git()
+if Updater.Ready
+    Updater.Update()
 
 if !cfg.ConfigFileExists() {
     if MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34") = "Yes" {

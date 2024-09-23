@@ -13,7 +13,9 @@ OpenTray(*) {
 }
 
 UpdatesTray(*) {
-    checkForGitUpdateAndRestartIfNeeded()
+    Updater := Git()
+    if Updater.Ready
+        Updater.Update()
 }
 
 RestartTray(*) {
