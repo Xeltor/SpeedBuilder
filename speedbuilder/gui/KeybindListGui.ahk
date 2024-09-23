@@ -22,7 +22,7 @@ KeybindList() {
 
     ; Add all actions and their respective keybinds
     AliasText := ""
-    for _, val in LoadedSpec.Actions {
+    for _, val in ActiveProfile.Actions {
         if !val.IsAlias
             KeybindListView.Add("", val.Name, val.Keybind)
         if val.IsAlias and !InStr(val.Keybind, "@Trinket Macro")
@@ -145,7 +145,7 @@ KeybindSet_Click(GuiCtrlObj, Info) {
     ; Set new keybind.
     NewKeybind := AddBracesToKeybind(KeybindValues.ChosenHotkey)
     KeybindSelectedRow.Modify(KeybindRowNumber, "Col2", NewKeybind)
-    LoadedSpec.ChangeActionKeybind(KeybindSelectedRow.GetText(KeybindRowNumber), NewKeybind)
+    ActiveProfile.ChangeActionKeybind(KeybindSelectedRow.GetText(KeybindRowNumber), NewKeybind)
 
     ; Destroy and unlock parent.
     GuiCtrlObj.Gui.Destroy()
@@ -156,7 +156,7 @@ KeybindSet_Click(GuiCtrlObj, Info) {
 KeybindClear_Click(GuiCtrlObj, Info) {
     ; Clear keybind.
     KeybindSelectedRow.Modify(KeybindRowNumber, "Col2", "")
-    LoadedSpec.ChangeActionKeybind(KeybindSelectedRow.GetText(KeybindRowNumber), "")
+    ActiveProfile.ChangeActionKeybind(KeybindSelectedRow.GetText(KeybindRowNumber), "")
 
     ; Destroy and unlock parent.
     GuiCtrlObj.Gui.Destroy()
@@ -166,20 +166,20 @@ KeybindClear_Click(GuiCtrlObj, Info) {
 
 KeybindList_Close(GuiCtrlObj) {
     ; Save to file.
-    LoadedSpec.SaveActions()
+    ActiveProfile.SaveActions()
 
-    ; Return to spec selection gui.
-    SpecSelectionGui()
+    ; Return to main menu.
+    MainWindow()
 }
 
 KeybindListSave_Click(GuiCtrlObj, Info) {
     GuiCtrlObj.Gui.Destroy()
 
     ; Save to file.
-    LoadedSpec.SaveActions()
+    ActiveProfile.SaveActions()
 
-    ; Return to spec selection gui.
-    SpecSelectionGui()
+    ; Return to main menu.
+    MainWindow()
 }
 
 KeybindListClearAll_Click(GuiCtrlObj, Info) {
@@ -199,7 +199,7 @@ KeybindListClearAll_Click(GuiCtrlObj, Info) {
         KeybindListView.Modify(A_Index, "Col2", "")  ; Clear the keybind in the second column
 
         ActionName := KeybindListView.GetText(A_Index, 1)  ; Get the action name from Column 1
-        LoadedSpec.ChangeActionKeybind(ActionName, "")  ; Clear the keybind in the data model
+        ActiveProfile.ChangeActionKeybind(ActionName, "")  ; Clear the keybind in the data model
     }
 }
 

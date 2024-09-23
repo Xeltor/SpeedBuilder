@@ -1,7 +1,7 @@
 #Include Action.ahk
 #Include Definition.ahk
 
-class Specialization {
+class Profile {
     Name := ""
     FileName := ""
     Actions := Map()
@@ -61,6 +61,17 @@ class Specialization {
 
             act := Action(line)
             this.Actions[act.Colors] := act
+        }
+    }
+
+    Delete() {
+        KeybindFile := "Keybinds\" this.FileName ".txt"
+
+        if !FileExist(KeybindFile)
+            return
+
+        try {
+            FileDelete(KeybindFile)
         }
     }
 

@@ -1,19 +1,19 @@
 #SingleInstance Force
 #Requires AutoHotkey v2
+global AppName := "HACK: Hekili Automation and Control Kit"
 #Include speedbuilder\class\Config.ahk
-#Include speedbuilder\class\Specialization.ahk
+#Include speedbuilder\class\Profile.ahk
 #Include speedbuilder\includes\Git.ahk
 #Include speedbuilder\includes\ColorPicker.ahk
 #Include speedbuilder\includes\Helpers.ahk
-#Include speedbuilder\gui\SpecSelection.ahk
+#Include speedbuilder\gui\Main.ahk
 #Include speedbuilder\gui\TrayMenu.ahk
-#Include speedbuilder\gui\SpecSelectSetup.ahk
+#Include speedbuilder\gui\ProfileSetup.ahk
 #Include speedbuilder\gui\KeybindListGui.ahk
 CoordMode('ToolTip', 'Screen')
 TraySetIcon("speedbuilder\resources\hack.ico")
-global AppName := "HACK: Hekili Automation and Control Kit"
 global cfg := Config()
-global LoadedSpec := ""
+global ActiveProfile := ""
 
 ; Check for updates before anything
 checkForGitUpdateAndRestartIfNeeded()
@@ -27,36 +27,36 @@ if !cfg.ConfigFileExists() {
     cfg := cfg.LoadConfigFile()
 }
 
-; Check if class specs are setup
-classSpecs := GetClassSpecNames()
-if !classSpecs.Length {
-    if MsgBox("No class specs have been setup.`n`nWould you like to setup a class spec now?", AppName, "0x34") = "Yes" {
-        SpecSetupSelectionGui()
+; Check if profiles are setup
+Profiles := GetProfileNames()
+if !Profiles.Length {
+    if MsgBox("No profiles have been setup.`n`nWould you like to setup a profile now?", AppName, "0x34") = "Yes" {
+        ProfileSetupGui()
     } else {
         ExitApp()
     }
 } else {
-    ; Select spec GUI on startup
-    SpecSelectionGui()
+    ; Open main window on startup
+    MainWindow()
 }
 
 ; Set hotkeys.
-Hotkey(cfg.SpecSelectionKeyBind, SpecSelectionHotkey)
+Hotkey(cfg.MainWindowKeybind, MainWindowHotkey)
 HotIfWinActive(cfg.Warcraft)
 Hotkey(cfg.ToggleOnOffKeyBind, ToggleSpeedBuilder)
 HotIfWinActive()
 
 ToggleSpeedBuilder(PressedHotKey) {
-    if !LoadedSpec
+    if !ActiveProfile
         return
 
     cfg.ToggleState := !cfg.ToggleState
     SetTimer Rotation, cfg.ToggleState ? cfg.TickRate : 0
 
-    showPopup(LoadedSpec.Name " rotation " (cfg.ToggleState ? "activated." : "deactivated."))
+    showPopup(ActiveProfile.Name " rotation " (cfg.ToggleState ? "activated." : "deactivated."))
 }
 
-SpecSelectionHotkey(PressedHotKey) => SpecSelectionGui()
+MainWindowHotkey(PressedHotKey) => MainGui.Show()
 
 Rotation() {
     if !WinActive(cfg.Warcraft) {
@@ -65,10 +65,10 @@ Rotation() {
 
     try {
         colors := GetPixelColors()
-        action := LoadedSpec.Actions[colors]
+        action := ActiveProfile.Actions[colors]
         
         if action {
-            keybind := action.IsAlias ? LoadedSpec.GetKeybindByAlias(action.Keybind) : action.Keybind
+            keybind := action.IsAlias ? ActiveProfile.GetKeybindByAlias(action.Keybind) : action.Keybind
             if keybind != "" {
                 Send(keybind)
             }

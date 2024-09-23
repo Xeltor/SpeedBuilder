@@ -7,32 +7,32 @@ showPopup(Message) {
     SetTimer(() => ToolTip(""), -5000)
 }
 
-GetClassSpecNames(Setup := false) {
-    ClassSpecs := []
+GetProfileNames(Setup := false) {
+    Profiles := []
     DirLocation := Setup ? "speedbuilder\definitions\*.txt" : "Keybinds\*.txt"
 
     loop files DirLocation {
         if not InStr(A_LoopFileName, "common_") {
             FileWithoutExt := StrReplace(A_LoopFileName, "." A_LoopFileExt)
-            Spec := Specialization(FileWithoutExt,, false)
+            Spec := Profile(FileWithoutExt,,false)
 
-            ClassSpecs.Push(Spec.Name)
+            Profiles.Push(Spec.Name)
         }
     }
 
-    return ClassSpecs
+    return Profiles
 }
 
-GetClassSpecs() {
-    ClassSpecs := []
+GetProfiles() {
+    Profiles := []
     DirLocation := "Keybinds\*.txt"
 
     loop files DirLocation {
         FileWithoutExt := StrReplace(A_LoopFileName, "." A_LoopFileExt)
-        Spec := Specialization(FileWithoutExt)
+        Spec := Profile(FileWithoutExt)
 
-        ClassSpecs.Push(Spec)
+        Profiles.Push(Spec)
     }
 
-    return ClassSpecs
+    return Profiles
 }

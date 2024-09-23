@@ -9,7 +9,7 @@ Tray.Add("Exit", ExitTray)
 
 OpenTray(*) {
     if !WinExist(AppName)
-        SpecSelectionGui()
+        MainGui.Show()
 }
 
 UpdatesTray(*) {

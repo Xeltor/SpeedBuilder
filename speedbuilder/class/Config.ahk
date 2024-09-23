@@ -4,14 +4,14 @@ class Config {
     ToggleState := false
     TickRate := 1000 / 60
     ToggleKeybind := "``"
-    SpecSelectionKeybind := "#F12"
+    MainWindowKeybind := "#F12"
     HekiliXCoord := 0
     HekiliYCoord := 0
     HekiliBoxWidth := 50
 
-    __New(ToggleKeybind := "``", SpecSelectionKeybind := "#F12", HekiliXCoord := 0, HekiliYCoord := 0, HekiliBoxWidth := 50) {
+    __New(ToggleKeybind := "``", MainWindowKeybind := "#F12", HekiliXCoord := 0, HekiliYCoord := 0, HekiliBoxWidth := 50) {
         this.ToggleOnOffKeyBind := ToggleKeybind
-        this.SpecSelectionKeyBind := SpecSelectionKeybind
+        this.MainWindowKeybind := MainWindowKeybind
         this.HekiliXCoord := HekiliXCoord
         this.HekiliYCoord := HekiliYCoord
         this.HekiliBoxWidth := HekiliBoxWidth
@@ -35,7 +35,7 @@ class Config {
         configFile := dirOffset "config.ini"
     
         IniWrite(this.ToggleOnOffKeyBind, configFile, "SpeedBuilder", "ToggleOnOffKeyBind")
-        IniWrite(this.SpecSelectionKeyBind, configFile, "SpeedBuilder", "SpecSelectionKeyBind")
+        IniWrite(this.MainWindowKeybind, configFile, "SpeedBuilder", "SpecSelectionKeyBind")
         IniWrite(this.HekiliXCoord, configFile, "Hekili", "xCoord")
         IniWrite(this.HekiliYCoord, configFile, "Hekili", "yCoord")
         IniWrite(this.HekiliBoxWidth, configFile, "Hekili", "BoxWidth")
@@ -47,7 +47,7 @@ class Config {
         configFile := dirOffset "config.ini"
     
         this.ToggleOnOffKeyBind := IniRead(configFile, "SpeedBuilder", "ToggleOnOffKeyBind")
-        this.SpecSelectionKeyBind := IniRead(configFile, "SpeedBuilder", "SpecSelectionKeyBind")
+        this.MainWindowKeybind := IniRead(configFile, "SpeedBuilder", "SpecSelectionKeyBind")
         this.HekiliXCoord := IniRead(configFile, "Hekili", "xCoord")
         this.HekiliYCoord := IniRead(configFile, "Hekili", "yCoord")
         this.HekiliBoxWidth := IniRead(configFile, "Hekili", "BoxWidth")
