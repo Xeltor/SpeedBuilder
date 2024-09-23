@@ -34,7 +34,7 @@ class Action {
         this.Name := definition.Name
         this.IsUpdated := (this.IconID != definition.IconID) or !this.Colors
         this.IconID := definition.IconID
-        this.Colors := this.Colors ? this.Colors : this.GetCache()
+        this.Colors := this.Colors ? this.Colors : ""
         this.Keybind := definition.Alias ? definition.Alias : this.Keybind
 
         return this

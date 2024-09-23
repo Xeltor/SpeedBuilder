@@ -1,11 +1,12 @@
 #Include Action.ahk
 #Include Definition.ahk
 
-class Specialization {
+class Profile {
     Name := ""
     FileName := ""
     Actions := Map()
     HasUpdates := false
+    HasDuplicates := false
     UpdateCount := 0
 
     __New(FileName, Setup := false, LoadActions := true) {
@@ -60,7 +61,24 @@ class Specialization {
                 continue
 
             act := Action(line)
+
+            try {
+                if (this.Actions[act.Colors])
+                    this.HasDuplicates := true
+            }
+
             this.Actions[act.Colors] := act
+        }
+    }
+
+    Delete() {
+        KeybindFile := "Keybinds\" this.FileName ".txt"
+
+        if !FileExist(KeybindFile)
+            return
+
+        try {
+            FileDelete(KeybindFile)
         }
     }
 
@@ -89,7 +107,7 @@ class Specialization {
         ; Save actions by name for setup purposes.
         if Setup {
             this.Actions := Map()
-            for act in ActionList {
+            for _, act in ActionList {
                 this.Actions[act.Name] := act
             }
         }

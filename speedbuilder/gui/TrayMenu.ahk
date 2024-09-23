@@ -9,11 +9,13 @@ Tray.Add("Exit", ExitTray)
 
 OpenTray(*) {
     if !WinExist(AppName)
-        SpecSelectionGui()
+        MainGui.Show()
 }
 
 UpdatesTray(*) {
-    checkForGitUpdateAndRestartIfNeeded()
+    Updater := Git()
+    if Updater.Ready
+        Updater.Update()
 }
 
 RestartTray(*) {
