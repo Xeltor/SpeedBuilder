@@ -36,3 +36,12 @@ GetProfiles() {
 
     return Profiles
 }
+
+ClearCache() {
+    try {
+        if FileExist("Cache/cache.ini")
+            FileDelete("Cache/cache.ini")
+        return true
+    }
+    return false
+}

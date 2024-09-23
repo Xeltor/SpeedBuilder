@@ -1,5 +1,4 @@
 #Include ColorPicker.ahk
-#Include Helpers.ahk
 
 AutomaticClassSetup(xCoord, yCoord) {
     global ActiveProfile
@@ -18,6 +17,12 @@ AutomaticClassSetup(xCoord, yCoord) {
             break
         }
     }
+    if ActiveProfile.HasDuplicates and !RedoAllIcons {
+        if MsgBox("Duplicate colors detected.`n`nIt is highly recommended to redo all icons, proceed?", AppName, "0x34") = "Yes" {
+            RedoAllIcons := true
+            ClearCache()
+        }
+    }
     ResetIconReplacement(xCoord, yCoord)
 
     MsgBox("The manual part of the setup is completed. After pressing OK please don't use the keyboard and mouse while automatic setup works.`n`nYou will be notified when the process has completed.", AppName, "0x20")
@@ -26,11 +31,16 @@ AutomaticClassSetup(xCoord, yCoord) {
     TotalItems := ActiveProfile.Actions.Count
     i := 1
     for _, Act in ActiveProfile.Actions {
-        if (Act.IsUpdated and Act.GetCache() = "") or RedoAllIcons {
+        if Act.IsUpdated or RedoAllIcons {
+            ActCache := Act.GetCache()
             showPopup("Progress: " i "/" TotalItems)
-            SetIconReplacement(Act.IconID, xCoord, yCoord)
-            Act.Colors := GetPixelColors(true)
-            Act.WriteCache()
+
+            if (ActCache = "") or RedoAllIcons {
+                SetIconReplacement(Act.IconID, xCoord, yCoord)
+                Act.Colors := GetPixelColors(true)
+                Act.WriteCache()
+            } else
+                Act.Colors := ActCache
         }
         i++
     }

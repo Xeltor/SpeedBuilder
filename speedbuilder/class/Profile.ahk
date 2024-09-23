@@ -6,6 +6,7 @@ class Profile {
     FileName := ""
     Actions := Map()
     HasUpdates := false
+    HasDuplicates := false
     UpdateCount := 0
 
     __New(FileName, Setup := false, LoadActions := true) {
@@ -60,6 +61,12 @@ class Profile {
                 continue
 
             act := Action(line)
+
+            try {
+                if (this.Actions[act.Colors])
+                    this.HasDuplicates := true
+            }
+
             this.Actions[act.Colors] := act
         }
     }
@@ -100,7 +107,7 @@ class Profile {
         ; Save actions by name for setup purposes.
         if Setup {
             this.Actions := Map()
-            for act in ActionList {
+            for _, act in ActionList {
                 this.Actions[act.Name] := act
             }
         }

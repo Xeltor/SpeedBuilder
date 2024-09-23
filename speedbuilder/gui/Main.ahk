@@ -45,8 +45,10 @@ MainGui_Tab.UseTab(2)
 ; Generate cache
 MainGui.AddGroupBox("r4 Section", "Cache")
 MainGui.AddText("XP+10 YP+20 W175 R3", "Generate icon cache from existing profiles to speed up profile creation.")
-MainGui_GenerateCacheButton := MainGui.AddButton("XP", "Generate cache")
+MainGui_GenerateCacheButton := MainGui.AddButton("xp", "Generate")
 MainGui_GenerateCacheButton.OnEvent("Click", GenerateCacheButton_Click)
+MainGui_GenerateCacheButton := MainGui.AddButton("yp", "Clear")
+MainGui_GenerateCacheButton.OnEvent("Click", ClearCacheButton_Click)
 
 ; Config setup
 MainGui.AddGroupBox("r4 YS", "Hekili")
@@ -155,15 +157,18 @@ ProfileSetupSelectGui_Close(GuiCtrlObj) {
 }
 
 CreateProfileButton_Click(GuiCtrlObj, Info) {
-    ; Destroy gui.
-    GuiCtrlObj.Gui.Hide()
+    ; Hide parent.
+    ProfileSelectorValues := GuiCtrlObj.Gui.Submit(true)
+
+    ; Store choices.
+    ProfileChoice := ProfileSelectorValues.ProfileChoice
 
     ; Stop the rotation, if the user didnt already.
     if cfg.ToggleState
         ToggleSpeedBuilder("")
 
     ; Run profile setup.
-    ProfileSetupGui((ActiveProfile) ? ActiveProfile.Name : "")
+    ProfileSetupGui((ProfileChoice) ? ProfileChoice : "")
 }
 
 UpdateProfileButton_Click(GuiCtrlObj, Info) {
@@ -178,11 +183,17 @@ UpdateProfileButton_Click(GuiCtrlObj, Info) {
     ; Load profile setup.
     ActiveProfile := Profile(ProfileChoice, true)
 
+    ; Stop the rotation, if the user didnt already.
+    if cfg.ToggleState
+        ToggleSpeedBuilder("")
+
     ; Icon replacement GUI.
     IconReplacementSelectionGui("Main")
 }
 
 DeleteProfileButton_Click(GuiCtrlObj, Info) {
+    global ActiveProfile
+
     ; Hide parent.
     ProfileSelectorValues := GuiCtrlObj.Gui.Submit(true)
 
@@ -194,8 +205,13 @@ DeleteProfileButton_Click(GuiCtrlObj, Info) {
         return
     }
 
+    ; Stop the rotation, if the user didnt already.
+    if cfg.ToggleState
+        ToggleSpeedBuilder("")
+
     Profile(ProfileChoice).Delete()
     MainGui_ProfileChoice.Delete(MainGui_ProfileChoice.Value)
+    ActiveProfile := ""
 
     Toggle_Buttons("")
 
@@ -218,8 +234,15 @@ GenerateCacheButton_Click(GuiCtrlObj, Info) {
         p.GenerateCache()
     }
 
+    showPopup("Icon color cache generation complete.")
+
     ; Open profile selection again.
     MainWindow()
+}
+
+ClearCacheButton_Click(GuiCtrlObj, Info) {
+    ClearCache()
+    showPopup("Icon color cache cleared.")
 }
 
 ConfigSetupButton_Click(GuiCtrlObj, Info) {
