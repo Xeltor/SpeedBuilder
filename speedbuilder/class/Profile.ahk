@@ -6,8 +6,9 @@ class Profile {
     FileName := ""
     Actions := Map()
     HasUpdates := false
-    HasDuplicates := false
     UpdateCount := 0
+    HasDuplicates := false
+    Force := false
 
     __New(FileName, Setup := false, LoadActions := true) {
         this.FileName := StrLower(StrReplace(FileName, " ", "_"))

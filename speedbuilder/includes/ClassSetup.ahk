@@ -4,17 +4,19 @@ AutomaticClassSetup(xCoord, yCoord) {
     global ActiveProfile
 
     ; Find an existing icon color that doesnt need updating and check if its different.
-    RedoAllIcons := false
-    for _, Act in ActiveProfile.Actions {
-        if Act.Colors != "" and !Act.IsUpdated {
-            showPopup("Checking if redo is needed.")
-            SetIconReplacement(Act.IconID, xCoord, yCoord)
-            if Act.Colors != GetPixelColors(true) {
-                if MsgBox("Action color mismatch detected on an existing action.`n`nIt is recommended to redo all icons, proceed?", AppName, "0x34") = "Yes" {
-                    RedoAllIcons := true
+    RedoAllIcons := ActiveProfile.Force
+    if !RedoAllIcons {
+        for _, Act in ActiveProfile.Actions {
+            if Act.Colors != "" and !Act.IsUpdated {
+                showPopup("Checking if redo is needed.")
+                SetIconReplacement(Act.IconID, xCoord, yCoord)
+                if Act.Colors != GetPixelColors(true) {
+                    if MsgBox("Action color mismatch detected on an existing action.`n`nIt is recommended to redo all icons, proceed?", AppName, "0x34") = "Yes" {
+                        RedoAllIcons := true
+                    }
                 }
+                break
             }
-            break
         }
     }
     if ActiveProfile.HasDuplicates and !RedoAllIcons {
@@ -57,7 +59,7 @@ AutomaticClassSetup(xCoord, yCoord) {
             return
         }
     }
-    
+
     ; Return to main window on completion.
     MainWindow()
 }

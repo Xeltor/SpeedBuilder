@@ -5,17 +5,9 @@ class Config {
     TickRate := 1000 / 60
     ToggleKeybind := "``"
     MainWindowKeybind := "#F12"
-    HekiliXCoord := 0
-    HekiliYCoord := 0
+    HekiliXCoord := A_ScreenWidth / 2
+    HekiliYCoord := A_ScreenHeight / 2
     HekiliBoxWidth := 50
-
-    __New(ToggleKeybind := "``", MainWindowKeybind := "#F12", HekiliXCoord := 0, HekiliYCoord := 0, HekiliBoxWidth := 50) {
-        this.ToggleOnOffKeyBind := ToggleKeybind
-        this.MainWindowKeybind := MainWindowKeybind
-        this.HekiliXCoord := HekiliXCoord
-        this.HekiliYCoord := HekiliYCoord
-        this.HekiliBoxWidth := HekiliBoxWidth
-    }
 
     ; Return calculated pixel locations array
     HekiliPixels() {
@@ -30,11 +22,10 @@ class Config {
     }
 
     ; Write config to file.
-    SaveConfigFile(Setup := false) {
-        dirOffset := Setup ? "..\..\" : ""
-        configFile := dirOffset "config.ini"
+    Save() {
+        configFile := "config.ini"
     
-        IniWrite(this.ToggleOnOffKeyBind, configFile, "SpeedBuilder", "ToggleOnOffKeyBind")
+        IniWrite(this.ToggleKeyBind, configFile, "SpeedBuilder", "ToggleOnOffKeyBind")
         IniWrite(this.MainWindowKeybind, configFile, "SpeedBuilder", "SpecSelectionKeyBind")
         IniWrite(this.HekiliXCoord, configFile, "Hekili", "xCoord")
         IniWrite(this.HekiliYCoord, configFile, "Hekili", "yCoord")
@@ -42,11 +33,10 @@ class Config {
     }
 
     ; Load config from file.
-    LoadConfigFile(Setup := false) {
-        dirOffset := Setup ? "..\..\" : ""
-        configFile := dirOffset "config.ini"
+    Load() {
+        configFile := "config.ini"
     
-        this.ToggleOnOffKeyBind := IniRead(configFile, "SpeedBuilder", "ToggleOnOffKeyBind")
+        this.ToggleKeyBind := IniRead(configFile, "SpeedBuilder", "ToggleOnOffKeyBind")
         this.MainWindowKeybind := IniRead(configFile, "SpeedBuilder", "SpecSelectionKeyBind")
         this.HekiliXCoord := IniRead(configFile, "Hekili", "xCoord")
         this.HekiliYCoord := IniRead(configFile, "Hekili", "yCoord")
@@ -56,9 +46,7 @@ class Config {
     }
 
     ; Does config exist?
-    ConfigFileExists(Setup := false) {
-        dirOffset := Setup ? "..\..\" : ""
-    
-        return FileExist(dirOffset "config.ini")
+    Exists() {
+        return FileExist("config.ini")
     }
 }

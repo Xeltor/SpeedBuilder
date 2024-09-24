@@ -5,9 +5,9 @@ global IconReplacementGui_Callback := ""
 
 IconReplacementGui := Gui("+AlwaysOnTop +ToolWindow", "HACK: Icon replacement setup")
 IconReplacementGui.SetFont("s11")
+IconReplacementGui.OnEvent("Close", IconReplacementGui_Close)
 IconReplacementGui.AddText("Section", "Icon replacement setup. (Don't close this window)")
 IconReplacementGui.AddText("", "1. Open Hekili. ( /hek )`n2. Make the primary box visible. (Displays -> Primary -> Visibility)`n3. Go to Abilities in the left side row.`n4. In the top right select the ability Hekili is showing.`n5. CTRL + Click inside the Icon Replacement box.")
-IconReplacementGui.OnEvent("Close", IconReplacementGui_Close)
 
 #HotIf WinExist("HACK: Icon replacement setup")
 CTRL & LButton:: {

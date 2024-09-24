@@ -6,10 +6,11 @@ global AppName := "HACK: Hekili Automation and Control Kit"
 #Include speedbuilder\class\Git.ahk
 #Include speedbuilder\includes\ColorPicker.ahk
 #Include speedbuilder\includes\Helpers.ahk
-#Include speedbuilder\gui\Main.ahk
 #Include speedbuilder\gui\TrayMenu.ahk
+#Include speedbuilder\gui\Main.ahk
 #Include speedbuilder\gui\ProfileSetup.ahk
-#Include speedbuilder\gui\KeybindListGui.ahk
+#Include speedbuilder\gui\HekiliSetup.ahk
+#Include speedbuilder\gui\KeybindList.ahk
 CoordMode('ToolTip', 'Screen')
 TraySetIcon("speedbuilder\resources\hack.ico")
 global cfg := Config()
@@ -20,32 +21,33 @@ Updater := Git()
 if Updater.Ready
     Updater.Update()
 
-if !cfg.ConfigFileExists() {
+if !cfg.Exists() {
     if MsgBox("Config file not yet created.`n`nWould you like to run first time setup now?", AppName, "0x34") = "Yes" {
-        Run("speedbuilder\setup\ConfigSetup.ahk")
-    }
-    ExitApp()
-} else {
-    cfg := cfg.LoadConfigFile()
-}
-
-; Check if profiles are setup
-Profiles := GetProfileNames()
-if !Profiles.Length {
-    if MsgBox("No profiles have been setup.`n`nWould you like to setup a profile now?", AppName, "0x34") = "Yes" {
-        ProfileSetupGui()
-    } else {
+        cfg.Save()
+        HekiliSetupGui()
+    } else
         ExitApp()
-    }
 } else {
-    ; Open main window on startup
-    MainWindow()
+    cfg := cfg.Load()
+
+    ; Check if profiles are setup
+    Profiles := GetProfileNames()
+    if !Profiles.Length {
+        if MsgBox("No profiles have been setup.`n`nWould you like to setup a profile now?", AppName, "0x34") = "Yes" {
+            ProfileSetupGui()
+        } else {
+            ExitApp()
+        }
+    } else {
+        ; Open main window on startup
+        MainWindow()
+    }
 }
 
 ; Set hotkeys.
 Hotkey(cfg.MainWindowKeybind, MainWindowHotkey)
 HotIfWinActive(cfg.Warcraft)
-Hotkey(cfg.ToggleOnOffKeyBind, ToggleSpeedBuilder)
+Hotkey(cfg.ToggleKeyBind, ToggleSpeedBuilder)
 HotIfWinActive()
 
 ToggleSpeedBuilder(PressedHotKey) {

@@ -3,6 +3,7 @@
 ; Create GUI
 MainGui := Gui("+AlwaysOnTop +ToolWindow", AppName)
 MainGui.SetFont("s11")
+MainGui.OnEvent("Close", MainGui_Close)
 
 ; Add tabs
 MainGui_Tab := MainGui.Add("Tab3",, ["Profile", "Config"])
@@ -37,23 +38,22 @@ MainGui_DeleteProfileButton.OnEvent("Click", DeleteProfileButton_Click)
 
 ; Re-open text
 MainGui_ReopenText := MainGui.AddText("XS w400", "")
-MainGui.OnEvent("Close", ProfileSetupSelectGui_Close)
 
 ; Continue in Tab 2 Config
 MainGui_Tab.UseTab(2)
 
-; Generate cache
+; Cache
 MainGui.AddGroupBox("r4 Section", "Cache")
 MainGui.AddText("XP+10 YP+20 W175 R3", "Generate icon cache from existing profiles to speed up profile creation.")
 MainGui_GenerateCacheButton := MainGui.AddButton("xp", "Generate")
 MainGui_GenerateCacheButton.OnEvent("Click", GenerateCacheButton_Click)
-MainGui_GenerateCacheButton := MainGui.AddButton("yp", "Clear")
-MainGui_GenerateCacheButton.OnEvent("Click", ClearCacheButton_Click)
+MainGui_ClearCacheButton := MainGui.AddButton("yp", "Clear")
+MainGui_ClearCacheButton.OnEvent("Click", ClearCacheButton_Click)
 
 ; Config setup
 MainGui.AddGroupBox("r4 YS", "Hekili")
 MainGui.AddText("XP+10 YP+20 W175 R3", "Update Hekili related config settings.")
-MainGui_ConfigSetupButton := MainGui.AddButton("xp yp+56", "Hekili setup")
+MainGui_ConfigSetupButton := MainGui.AddButton("xp yp+56", "Setup")
 MainGui_ConfigSetupButton.OnEvent("Click", ConfigSetupButton_Click)
 
 MainWindow() {
@@ -150,7 +150,7 @@ LoadButton_Click(GuiCtrlObj, Info) {
     }
 }
 
-ProfileSetupSelectGui_Close(GuiCtrlObj) {
+MainGui_Close(GuiCtrlObj) {
     ; Inform user.
     showPopup("Minimized HACK to tray.")
     return
@@ -200,7 +200,7 @@ DeleteProfileButton_Click(GuiCtrlObj, Info) {
     ; Store choices.
     ProfileChoice := ProfileSelectorValues.ProfileChoice
 
-    if MsgBox("Deleting a profile can not be reversed!`n`nAre you sure you wish to delete " ProfileChoice "?", AppName, "0x134") = "No" {
+    if MsgBox("Deleting a profile can not be reversed!`n`nAre you sure you wish to delete " ProfileChoice "?", AppName, "0x40034") = "No" {
         MainGui.Show()
         return
     }
@@ -219,11 +219,11 @@ DeleteProfileButton_Click(GuiCtrlObj, Info) {
 }
 
 GenerateCacheButton_Click(GuiCtrlObj, Info) {
-    if MsgBox("Generating cache can take a few seconds to minutes depending on how many profiles you have setup`n`ncontinue?", AppName, "0x1034") = "No" {
+    if MsgBox("Generating cache can take a few seconds to minutes depending on how many profiles you have setup`n`ncontinue?", AppName, "0x40034") = "No" {
         return
     }
 
-    ; Destroy gui.
+    ; Hide gui.
     GuiCtrlObj.Gui.Hide()
 
     ; Get profiles.
@@ -246,27 +246,21 @@ ClearCacheButton_Click(GuiCtrlObj, Info) {
 }
 
 ConfigSetupButton_Click(GuiCtrlObj, Info) {
-    ; Destroy gui.
+    ; Hide gui.
     GuiCtrlObj.Gui.Hide()
 
     ; Run config setup.
-    Run("speedbuilder\setup\ConfigSetup.ahk")
-
-    ; Close, we need to restart to reload config.
-    ExitApp()
+    HekiliSetupGui()
 }
 
 OpenKeybindsButton_Click(GuiCtrlObj, Info) {
     global ActiveProfile
 
-    ; Hide parent.
+    ; Hide gui.
     ProfileSelectorValues := GuiCtrlObj.Gui.Submit(true)
 
     ; Store choices.
-    ProfileChoice := ProfileSelectorValues.ProfileChoice,
-
-    ; Destroy gui.
-    GuiCtrlObj.Gui.Hide()
+    ProfileChoice := ProfileSelectorValues.ProfileChoice
 
     if !ProfileChoice {
         MsgBox("No profile selected, please select a profile", AppName, "0x30")
