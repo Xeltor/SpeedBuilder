@@ -24,6 +24,7 @@ Demonbolt,2032588
 Axe Toss,236316,@Command Demon
 Burning Rush Green Flame,840191,@Burning Rush
 Infernal Bolt,841220,@Shadow Bolt
+Ruination,135800,@Hand of Gul'dan
 Seduction,1717715,@Command Demon
 Shadow Bulwark,136121,@Command Demon
 Singe Magic,135791,@Command Demon
