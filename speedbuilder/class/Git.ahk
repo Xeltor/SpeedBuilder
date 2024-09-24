@@ -24,7 +24,8 @@ class Git {
                 return
             }
         }
-        else if !this.Restore() 
+        
+        if !this.Restore() 
             return
 
         this.Pull()
@@ -65,6 +66,8 @@ class Git {
             MsgBox("Unable to overwrite local changes.`n`nGo pester Xeltor or run 'git restore .' manually in the folder.", AppName, "0x10")
             return false
         }
+
+        return true
     }
 
     Pull() {
