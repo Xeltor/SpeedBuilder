@@ -22,6 +22,7 @@ Incinerate,135789
 
 -- Spell aliases
 Curse of the Satyr,132888,@Curse of Weakness
+Demonic Healthstone,538744,@Healthstone
 Wither,5927632,@Immolate
 
 -- Talents

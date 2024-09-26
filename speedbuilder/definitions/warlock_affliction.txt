@@ -21,6 +21,7 @@ Malefic Rapture,236296
 
 -- Spell aliases
 Curse of the Satyr,132888,@Curse of Weakness
+Demonic Healthstone,538744,@Healthstone
 Drain Soul,136163,@Shadow Bolt
 Seduction,1717715,@Command Demon
 Shadow Bulwark,136121,@Command Demon

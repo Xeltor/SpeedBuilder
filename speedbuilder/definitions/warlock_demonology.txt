@@ -23,6 +23,7 @@ Demonbolt,2032588
 -- Spell aliases
 Axe Toss,236316,@Command Demon
 Burning Rush Green Flame,840191,@Burning Rush
+Demonic Healthstone,538744,@Healthstone
 Infernal Bolt,841220,@Shadow Bolt
 Ruination,135800,@Hand of Gul'dan
 Seduction,1717715,@Command Demon
