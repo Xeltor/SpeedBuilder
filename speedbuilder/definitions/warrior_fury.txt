@@ -16,6 +16,8 @@ Whirlwind,132369
 -- Specialization Spells
 
 -- Spell aliases
+Bloodbath,236304,@Bloodthirst
+Crushing Blow,132215,@Raging Blow
 Impending Victory,589768,@Victory Rush
 Thunder Blast,460957,@Thunder Clap
 
