@@ -18,6 +18,7 @@ Sweeping Strikes,132306
 
 -- Spell aliases
 Impending Victory,589768,@Victory Rush
+Cleave,132338,@Whirlwind
 
 -- Talents
 Avatar,613534
@@ -25,7 +26,6 @@ Battle Stance,132349
 Bitter Immunity,136088
 Bladestorm,236303
 Champion's Spear,3565453
-Cleave,132338
 Colossus Smash,464973
 Defensive Stance,132341
 Die by the Sword,132336
