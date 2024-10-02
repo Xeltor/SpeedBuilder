@@ -1,7 +1,7 @@
 #Include ..\includes\StdOutToVar.ahk
 
 class Git {
-    Ready := unset
+    Ready := false
 
     __New() {
         this.Ready := InStr(StdoutToVar("git -v", A_ScriptDir).Output, "git version") and this.IsRepo()
@@ -25,8 +25,10 @@ class Git {
             }
         }
         
-        if !this.Restore() 
+        if !this.Restore() {
+            MsgBox("Unable to overwrite local changes.`n`nGo pester Xeltor or run 'git restore .' manually in the folder.", AppName, "0x10")
             return
+        }
 
         this.Pull()
         
@@ -62,12 +64,7 @@ class Git {
     Restore() {
         StdoutToVar("git restore .", A_ScriptDir)
 
-        if this.HasLocalChanges() {
-            MsgBox("Unable to overwrite local changes.`n`nGo pester Xeltor or run 'git restore .' manually in the folder.", AppName, "0x10")
-            return false
-        }
-
-        return true
+        return !this.HasLocalChanges()
     }
 
     Pull() {
