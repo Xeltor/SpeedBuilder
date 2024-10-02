@@ -202,4 +202,16 @@ class Profile {
         }
         return result
     }
+
+    RemoveActionByName(ActionName) {
+        result := Map()
+
+        for k, action in this.Actions {
+            if (StrLower(action.Name) != StrLower(ActionName)) {
+                result[k] := action
+            }
+        }
+
+        this.Actions := result
+    }
 }

@@ -57,4 +57,12 @@ class Action {
             IniWrite(this.Colors, "Cache/cache.ini", "ColorCache", this.IconID)
         }
     }
+
+    ClearCache() {
+        try {
+            IniDelete("Cache/cache.ini", "ColorCache", this.IconID)
+            return true
+        }
+        return false
+    }
 }

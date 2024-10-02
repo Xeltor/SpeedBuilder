@@ -78,6 +78,9 @@ KeyBindList_Click(KBLV, RowNumber) {
     KeybindClear := KeybindGui.AddButton("yp", "Clear")
     KeybindClear.OnEvent("Click", KeybindClear_Click)
 
+    KeybindForget := KeybindGui.AddButton("xp+95", "Forget")
+    KeybindForget.OnEvent("Click", KeybindForget_Click)
+
     KeybindGui.OnEvent("Close", Keybind_Close)
 
     KeybindGui.Show("AutoSize")
@@ -212,6 +215,36 @@ KeybindListClearAll_Click(GuiCtrlObj, Info) {
 
 ; Cancel opteration.
 Keybind_Close(GuiCtrlObj) {
+    KeybindListGui.Opt("-Disabled")
+    KeybindListGui.Show()
+}
+
+KeybindForget_Click(GuiCtrlObj, Info) {
+    if MsgBox("This will make HACK forget the ability entirely!`n`nContinue?", AppName, "0x1124") = "No" {
+        return
+    }
+    global ActiveProfile
+    
+    ; Destroy the keybind ui
+    GuiCtrlObj.gui.Destroy()
+
+    ; Get the ability name
+    ActionName := KeybindSelectedRow.GetText(KeybindRowNumber)
+
+    ; Get the ability
+    result := ActiveProfile.GetActionByName(ActionName)
+
+    ; Remote the icon from cache
+    result.Action.ClearCache()
+    ActiveProfile.RemoveActionByName(ActionName)
+
+    ; Remove ability from the list
+    KeybindListView.Delete(KeybindRowNumber)
+
+    ; Save to file.
+    ActiveProfile.SaveActions()
+
+    ; Open Keybbind list gui
     KeybindListGui.Opt("-Disabled")
     KeybindListGui.Show()
 }
