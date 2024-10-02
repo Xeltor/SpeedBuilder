@@ -4,7 +4,7 @@ class Git {
     Ready := false
 
     __New() {
-        this.Ready := InStr(StdoutToVar("git -v", A_ScriptDir).Output, "git version") and this.IsRepo()
+        this.Ready := InStr(StdoutToVar("git version", A_ScriptDir).Output, "git version") and this.IsRepo()
     }
 
     Update() {
