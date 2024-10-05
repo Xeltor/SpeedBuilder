@@ -18,6 +18,7 @@ Cold Snap,135865
 
 -- Spell aliases
 Greater Invisibility,575584,@Invisibility
+Ice Cold,135777,@Ice Block
 Polymorph Black Cat,236547,@Polymorph
 Polymorph Bumblebee,2027853,@Polymorph
 Polymorph Direhorn,877480,@Polymorph
