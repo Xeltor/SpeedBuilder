@@ -44,7 +44,7 @@ Sikran's Endless Arsenal,5948249,@Trinket Macro
 Silken Chain Weaver,4549275,@Trinket Macro
 Skarmorak Shard,5948038,@Trinket Macro
 Skyterror's Corrosive Organ,5948243,@Trinket Macro
-Spymaster's Web,5545567,@Trinket Macro
+Spymaster's Web,6035288,@Trinket Macro
 Swarmlord's Authority,5948252,@Trinket Macro
 Tome of Light's Devotion,1495827,@Trinket Macro
 Treacherous Transmitter,5948071,@Trinket Macro
