@@ -1,13 +1,17 @@
 -- Spells
+Bloodlust,136012
 Earthbind Totem,136102
 Flame Shock,135813
+Flametongue Weapon,135814
 Healing Surge,136044
 Lightning Bolt,136048
 Lightning Shield,136051
 Primal Strike,460956
+Skyfury,4630367
 
 -- Spell aliases
 Elemental Blast,651244,@Earth Shock
+Heroism,132313,@Bloodlust
 Icefury,135855,@Frost Shock
 Lava Beam,236216,@Chain Lightning
 Tempest,5927653,@Lightning Bolt

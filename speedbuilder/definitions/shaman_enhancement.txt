@@ -1,4 +1,5 @@
 -- Spells
+Bloodlust,136012
 Earthbind Totem,136102
 Flame Shock,135813
 Flametongue Weapon,135814
@@ -12,6 +13,7 @@ Skyfury,4630367
 Earthgrab Totem,136100,@Earthbind Totem
 Elemental Blast,651244,@Lava Burst
 Greater Purge,451166,@Purge
+Heroism,132313,@Bloodlust
 Stormstrike,132314,@Primal Strike
 Surging Totem,5927655,@Windfury Totem
 Tempest,5927653,@Lightning Bolt
