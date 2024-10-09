@@ -15,6 +15,7 @@ Elemental Blast,651244,@Earth Shock
 Heroism,132313,@Bloodlust
 Icefury,135855,@Frost Shock
 Lava Beam,236216,@Chain Lightning
+Storm Elemental,2065626,@Fire Elemental
 Tempest,5927653,@Lightning Bolt
 
 -- Talents
@@ -46,7 +47,6 @@ Purge,136075
 Spirit Walk,132328
 Spiritwalker's Grace,451170
 Stone Bulwark Totem,538572
-Storm Elemental,2065626
 Stormkeeper,839977
 Surging Totem,5927655
 Thunderstorm,237589
