@@ -10,6 +10,7 @@ Primal Strike,460956
 Skyfury,4630367
 
 -- Spell aliases
+Ancestral Swiftness,5927625,@Nature's Swiftness
 Elemental Blast,651244,@Earth Shock
 Heroism,132313,@Bloodlust
 Icefury,135855,@Frost Shock
@@ -18,7 +19,6 @@ Tempest,5927653,@Lightning Bolt
 
 -- Talents
 Ancestral Guidance,538564
-Ancestral Swiftness,5927625
 Ascendance,135791
 Astral Shift,538565
 Capacitor Totem,136013
