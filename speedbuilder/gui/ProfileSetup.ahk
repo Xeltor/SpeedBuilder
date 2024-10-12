@@ -80,6 +80,9 @@ ProfileGui_ForceButton_Click(GuiCtrlObj, Info) {
     ; Load profile setup.
     ActiveProfile := Profile(ProfileChoice, true)
 
+    ; Set force redo
+    ActiveProfile.Force := true
+
     ; Icon replacement GUI.
     IconReplacementSelectionGui("Setup")
 }
