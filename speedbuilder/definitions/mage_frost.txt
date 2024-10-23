@@ -59,7 +59,7 @@ Mirror Image,135994
 Ray of Frost,1698700
 Remove Curse,136082
 Ring of Frost,464484
-Shifting Power,3636841
+Shifting Power,6035312
 Slow,136091
 Spellsteal,135729
 Supernova,1033912

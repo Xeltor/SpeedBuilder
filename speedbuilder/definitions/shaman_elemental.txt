@@ -42,7 +42,7 @@ Lightning Lasso,1385911
 Liquid Magma Totem,971079
 Nature's Swiftness,136076
 Poison Cleansing Totem,136070
-Primordial Wave,3578231
+Primordial Wave,6035320
 Purge,136075
 Spirit Walk,132328
 Spiritwalker's Grace,451170

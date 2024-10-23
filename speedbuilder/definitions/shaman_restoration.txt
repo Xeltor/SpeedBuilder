@@ -42,7 +42,7 @@ Lightning Lasso,1385911
 Mana Tide Totem,4667424
 Nature's Swiftness,136076
 Poison Cleansing Totem,136070
-Primordial Wave,3578231
+Primordial Wave,6035320
 Purge,136075
 Riptide,252995
 Spirit Link Totem,237586
