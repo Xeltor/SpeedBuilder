@@ -7,6 +7,10 @@ Trinket Macro,136243
 -- Weapons 11.0
 Dreambinder Loom of the Great Cycle,5263786
 
+-- Trinkets (11.0.5) (https://www.wowhead.com/items/slot:12/group-by:level?filter=82:195:62;2:1:1;110005:0:0)
+Burst of Knowledge,133282,@Trinket Macro
+Second Wind,133439,@Trinket Macro
+
 -- Trinkets (11.0) (https://www.wowhead.com/items/slot:12/group-by:level?filter=82:195:62;2:1:1;110000:0:0)
 Aberrant Spellforge,5948197,@Trinket Macro
 Abyssal Trap,893778,@Trinket Macro
@@ -50,13 +54,3 @@ Tome of Light's Devotion,1495827,@Trinket Macro
 Treacherous Transmitter,5948071,@Trinket Macro
 Twin Fang Instruments,1786422,@Trinket Macro
 Viscous Coaglam,5948203,@Trinket Macro
-
--- Trinkets (10.x)
-Ashes of the Embersoul,1357807,@Trinket Macro
-Blazebinder's Hoof,4638646,@Trinket Macro
-Dragonfire Bomb Dispenser,4624639,@Trinket Macro
-Elementium Pocket Anvil,2356069,@Trinket Macro
-Irideus Fragment,4638427,@Trinket Macro
-Manic Grieftorch,650636,@Trinket Macro
-Mirror of Fractured Tomorrows,254116,@Trinket Macro
-Smoldering Seedling,3731812,@Trinket Macro
