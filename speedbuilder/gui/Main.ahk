@@ -6,7 +6,7 @@ MainGui.SetFont("s11")
 MainGui.OnEvent("Close", MainGui_Close)
 
 ; Add tabs
-MainGui_Tab := MainGui.Add("Tab3",, ["Profile", "Config"])
+MainGui_Tab := MainGui.Add("Tab3",, ["Profile", "Config", "Debug"])
 MainGui_Tab.UseTab(1)
 
 ; Generate tabs
@@ -55,6 +55,18 @@ MainGui.AddGroupBox("r4 YS", "Hekili")
 MainGui.AddText("XP+10 YP+20 W175 R3", "Update Hekili related config settings.")
 MainGui_ConfigSetupButton := MainGui.AddButton("xp yp+56", "Setup")
 MainGui_ConfigSetupButton.OnEvent("Click", ConfigSetupButton_Click)
+
+; Debug options
+MainGui_Tab.UseTab(3)
+
+; Get current color
+MainGui_GetPixelColors := MainGui.AddButton("Section", "Get pixel colors")
+MainGui_GetPixelColors.OnEvent("Click", MainGui_GetPixelColors_Click)
+
+MainGui_PixelColorsClear := MainGui.AddButton("xp", "Clear")
+MainGui_PixelColorsClear.OnEvent("Click", MainGui_PixelColorsClear_Click)
+
+MainGui_PixelColorsBox := MainGui.AddEdit("ys r7 w280 ReadOnly")
 
 MainWindow() {
     ; Add profiles.
@@ -271,4 +283,20 @@ OpenKeybindsButton_Click(GuiCtrlObj, Info) {
     ActiveProfile := Profile(ProfileChoice)
 
     KeybindList()
+}
+
+MainGui_GetPixelColors_Click(GuiCtrlObj, Info) {
+    MainGui_GetPixelColors.Enabled := false
+    WinActivate(cfg.Warcraft)
+    if !WinWaitActive(cfg.Warcraft,,3) {
+        MainGui_GetPixelColors.Enabled := true
+        return
+    }
+
+    MainGui_PixelColorsBox.Value .= GetPixelColors() "`n"
+    MainGui_GetPixelColors.Enabled := true
+}
+
+MainGui_PixelColorsClear_Click(GuiCtrlObj, Info) {
+    MainGui_PixelColorsBox.Value := ""
 }
