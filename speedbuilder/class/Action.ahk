@@ -33,13 +33,14 @@ class Action {
 
     Use() {
         act := this.IsAlias ? ActiveProfile.GetActionByAlias(this.Keybind) : this
-        if act
-            if act.keybind != "" {
-                if act.Definition
-                    if act.Definition.Delay
-                        Sleep(act.Definition.Delay)
-                Send(act.Keybind)
-            }
+
+        if !act or act.Keybind = ""
+            return
+    
+        if act.Definition and act.Definition.Delay
+            Sleep(act.Definition.Delay)
+    
+        Send(act.Keybind)
     }
 
     FromDefinition(definition) {
