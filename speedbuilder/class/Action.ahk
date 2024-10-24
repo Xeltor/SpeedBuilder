@@ -6,6 +6,7 @@ class Action {
     Colors := ""
     __keybind := ""
     IsAlias := false
+    Definition := false
 
     ; For setup
     IsUpdated := false
@@ -28,6 +29,17 @@ class Action {
                 this.Keybind := Trim(split[4])
             }
         }
+    }
+
+    Use() {
+        act := this.IsAlias ? ActiveProfile.GetActionByAlias(action.Keybind) : this
+        if act
+            if act.keybind != "" {
+                if act.Definition
+                    if act.Definition.Delay
+                        Sleep(act.Definition.Delay)
+                Send(act.Keybind)
+            }
     }
 
     FromDefinition(definition) {

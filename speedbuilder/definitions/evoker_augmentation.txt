@@ -1,10 +1,11 @@
 -- Spells
+-- Spell Name, Icon ID, @Alias, Keypress Delay in miliseconds
 Azure Strike,4622447
 Blessing of the Bronze,4622448
 Deep Breath,4622450
 Disintegrate,4622451
 Emerald Blossom,4622457
-Fire Breath,4622458
+Fire Breath,4622458,,300
 Fury of the Aspects,4723908
 Hover,4622463
 Living Flame,4622464

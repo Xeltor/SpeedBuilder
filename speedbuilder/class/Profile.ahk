@@ -55,6 +55,19 @@ class Profile {
         ; Clear actions.
         this.Actions := Map()
 
+        ; Get definitions
+        definitions := this.GetDefinitions()
+        GetDefinitionByAction(ActionName, Definitions) {
+            name := StrLower(ActionName)
+        
+            for def in Definitions {
+                if (StrLower(def.Name) = name) {
+                    return def
+                }
+            }
+            return false
+        }
+
         ; Add actions from keybind file
         loop read, keybindFile {
             line := Trim(A_LoopReadLine)
@@ -62,6 +75,11 @@ class Profile {
                 continue
 
             act := Action(line)
+
+            ; Get definition
+            def := GetDefinitionByAction(act.Name, definitions)
+            if def
+                act.Definition := def
 
             try {
                 if (this.Actions[act.Colors])
@@ -176,12 +194,12 @@ class Profile {
         return
     }
 
-    GetKeybindByAlias(ActionName) {
+    GetActionByAlias(ActionName) {
         name := StrLower(Trim(StrReplace(ActionName, "@", "")))
     
         for _, action in this.Actions {
             if (StrLower(action.Name) = name) {
-                return action.Keybind
+                return action
             }
         }
         return false

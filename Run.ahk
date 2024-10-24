@@ -71,11 +71,7 @@ Rotation() {
         colors := GetPixelColors()
         action := ActiveProfile.Actions[colors]
         
-        if action {
-            keybind := action.IsAlias ? ActiveProfile.GetKeybindByAlias(action.Keybind) : action.Keybind
-            if keybind != "" {
-                Send(keybind)
-            }
-        }
+        if action
+            action.Use()
     }
 }
