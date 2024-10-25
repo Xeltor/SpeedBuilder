@@ -60,7 +60,7 @@ KeyBindList_Click(KBLV, RowNumber) {
     KeybindGui.SetFont("s11")
 
     Result := ActiveProfile.GetActionByName(KBLV.GetText(RowNumber))
-    if Result.Found
+    if Result.Found and IconImage(Result.Action.IconID).Cached()
         KeybindGui.AddPicture("Section w50 h50", IconImage(Result.Action.IconID).File)
     else
         KeybindGui.AddPicture("Section w50 h50", IconImage(0).File)
