@@ -34,7 +34,7 @@ Wild Charge Cat,304501,@Wild Charge
 -- Talents
 Berserk,236149
 Bristling Fur,1033476
-Convoke the Spirits,3636839
+Convoke the Spirits,6035309
 Cyclone,136022
 Frenzied Regeneration,132091
 Heart of the Wild,135879

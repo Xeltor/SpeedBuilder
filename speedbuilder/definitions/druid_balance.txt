@@ -32,7 +32,7 @@ Incarnation: Chosen of Elune,571586,@Celestial Alignment
 
 -- Talents
 Celestial Alignment,136060
-Convoke the Spirits,3636839
+Convoke the Spirits,6035309
 Cyclone,136022
 Force of Nature,132129
 Frenzied Regeneration,132091

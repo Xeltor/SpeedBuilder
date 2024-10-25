@@ -32,7 +32,7 @@ Ravage,5927623,@Ferocious Bite
 Adaptive Swarm,3578197
 Berserk,236149
 Brutal Slash,132141
-Convoke the Spirits,3636839
+Convoke the Spirits,6035309
 Cyclone,136022
 Feral Frenzy,132140
 Frenzied Regeneration,132091
