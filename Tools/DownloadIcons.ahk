@@ -1,11 +1,12 @@
 #SingleInstance Force
 #Requires AutoHotkey v2
 global AppName := "HACK: Hekili Automation and Control Kit"
-#Include speedbuilder\class\Config.ahk
-#Include speedbuilder\class\Profile.ahk
-#Include speedbuilder\class\IconImage.ahk
-#Include speedbuilder\includes\ColorPicker.ahk
-#Include speedbuilder\includes\Helpers.ahk
+#Include ..\speedbuilder\class\Config.ahk
+#Include ..\speedbuilder\class\Profile.ahk
+#Include ..\speedbuilder\class\IconImage.ahk
+#Include ..\speedbuilder\includes\ColorPicker.ahk
+#Include ..\speedbuilder\includes\Helpers.ahk
+SetWorkingDir("..\")
 CoordMode('ToolTip', 'Screen')
 global cfg := Config()
 global ActiveProfile := ""
@@ -34,7 +35,6 @@ GetAllActionIcons() {
 }
 
 iconlist := GetAllActionIcons()
-MsgBox(iconlist.Length)
 
 for icon in iconlist {
     Img := IconImage(icon)
@@ -42,3 +42,5 @@ for icon in iconlist {
     if !Img.Cached()
         Img.Download(icon)
 }
+
+MsgBox("Done: " iconlist.Length)

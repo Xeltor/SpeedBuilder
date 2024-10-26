@@ -12,7 +12,13 @@ Burst of Knowledge,133282,@Trinket Macro
 Second Wind,133439,@Trinket Macro
 
 -- Season 1 old content Trinkets
+Bottled Flayedwing Toxin,1385268,@Trinket Macro
+Corrupted Egg Shell,443378,@Trinket Macro
 Mark of Khardros,133041,@Trinket Macro
+Mistcaller Ocarina,1716865,@Trinket Macro
+Siphoning Phylactery Shard,1379176,@Trinket Macro
+Skardyn's Grace,133791,@Trinket Macro
+Spare Meat Hook,1379246,@Trinket Macro
 
 -- Trinkets (11.0) (https://www.wowhead.com/items/slot:12/group-by:level?filter=82:195:62;2:1:1;110000:0:0)
 Aberrant Spellforge,5948197,@Trinket Macro
