@@ -7,6 +7,7 @@ class Profile {
     Actions := Map()
     HasUpdates := false
     UpdateCount := 0
+    UpdateNeedsLearning := false
     HasDuplicates := false
     Force := false
 
@@ -80,6 +81,11 @@ class Profile {
             def := GetDefinitionByAction(act.Name, definitions)
             if def
                 act.Definition := def
+            ; Spell was removed.
+            else {
+                this.UpdateCount += 1
+                this.HasUpdates := true
+            }
 
             try {
                 if (this.Actions[act.Colors])
@@ -116,6 +122,9 @@ class Profile {
 
             ; This spec has updates.
             if UpdatedAction.IsUpdated {
+                ; Learned from cache, dont make the user do unneeded work.
+                if !UpdatedAction.GetCache()
+                    this.UpdateNeedsLearning := true
                 this.HasUpdates := true
                 this.UpdateCount += 1
             }
@@ -130,6 +139,19 @@ class Profile {
                 this.Actions[act.Name] := act
             }
         }
+    }
+
+    ; Only update changes from cache if no new icons need to be learned.
+    UpdateChangesFromCache() {
+        for _, Act in this.Actions {
+            if Act.IsUpdated {
+                ActCache := Act.GetCache()
+
+                if ActCache
+                    Act.Colors := ActCache
+            }
+        }
+        this.SaveActions()
     }
 
     GenerateCache() {

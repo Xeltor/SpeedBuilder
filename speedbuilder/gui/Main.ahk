@@ -143,7 +143,7 @@ LoadButton_Click(GuiCtrlObj, Info) {
 
     if ActiveProfile.HasUpdates and MsgBox(ActiveProfile.Name " has " ActiveProfile.UpdateCount " updates. Would you like to update the profile now?", AppName, "0x124") = "Yes" {
         ; Return if warcraft isnt running.
-        if !WinExist(cfg.Warcraft) {
+        if !WinExist(cfg.Warcraft) and ActiveProfile.UpdateNeedsLearning {
             MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")
             MainWindow()
             return
@@ -153,13 +153,29 @@ LoadButton_Click(GuiCtrlObj, Info) {
         ActiveProfile := Profile(ProfileChoice, true)
 
         ; Icon replacement GUI.
-        IconReplacementSelectionGui("Main")
-    } else {
-        showPopup("Loaded " ActiveProfile.Actions.Count " actions for " ActiveProfile.Name)
-    
-        if not WinActive(cfg.Warcraft) and WinExist(cfg.Warcraft)
-            WinActivate(cfg.Warcraft)
+        if ActiveProfile.UpdateNeedsLearning {
+            IconReplacementSelectionGui("Main")
+            return
+        }
+        else {
+            ; Update from cache.
+            ActiveProfile.UpdateChangesFromCache()
+
+            ; Reload to non setup profile.
+            ActiveProfile := Profile(ProfileChoice)
+
+            if MsgBox("Profile update completed.`n`nDo you want to open the keybind menu to setup/update your keybinds?", AppName, "0x44") = "Yes" {
+                ; Open keybinds tool.
+                KeybindList()
+                return
+            }
+        }
     }
+
+    showPopup("Loaded " ActiveProfile.Actions.Count " actions for " ActiveProfile.Name)
+
+    if not WinActive(cfg.Warcraft) and WinExist(cfg.Warcraft)
+        WinActivate(cfg.Warcraft)
 }
 
 MainGui_Close(GuiCtrlObj) {
