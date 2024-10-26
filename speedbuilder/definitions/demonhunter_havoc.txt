@@ -31,5 +31,5 @@ Imprison,1380368
 Netherwalk,463284
 Sigil of Misery,1418287
 Sigil of Spite,3565443
-The Hunt,3636838
+The Hunt,6035307
 Vengeful Retreat,1348401

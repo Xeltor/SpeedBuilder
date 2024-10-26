@@ -37,7 +37,7 @@ Blessing of Summer,3636845
 Blinding Light,571553
 Crusader Aura,135890
 Divine Steed,1360759
-Divine Toll,3565448
+Divine Toll,6035315
 Eternal Flame,135433
 Hammer of Wrath,613533
 Hand of Divinity,135985

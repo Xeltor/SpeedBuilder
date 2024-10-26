@@ -37,7 +37,7 @@ Crusader Aura,135890
 Divine Hammer,626003
 Divine Steed,1360759
 Divine Storm,236250
-Divine Toll,3565448
+Divine Toll,6035315
 Eternal Flame,135433
 Execution Sentence,613954
 Final Reckoning,135878
