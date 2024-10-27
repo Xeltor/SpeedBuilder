@@ -38,7 +38,6 @@ Cold Blood,135988
 Crimson Tempest,464079
 Deadly Poison,132290
 Deathmark,4667421
-Echoing Reprimand,3565450
 Evasion,136205
 Gouge,132155
 Kingsbane,1259291

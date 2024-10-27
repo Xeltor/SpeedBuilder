@@ -36,7 +36,6 @@ Atrophic Poison,132300
 Blind,136175
 Cloak of Shadows,136177
 Cold Blood,135988
-Echoing Reprimand,3565450
 Evasion,136205
 Flagellation,3565724
 Gloomblade,1035040

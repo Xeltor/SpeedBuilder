@@ -36,7 +36,6 @@ Blade Rush,1016243
 Blind,136175
 Cloak of Shadows,136177
 Cold Blood,135988
-Echoing Reprimand,3565450
 Evasion,136205
 Ghostly Strike,132094
 Gouge,132155
