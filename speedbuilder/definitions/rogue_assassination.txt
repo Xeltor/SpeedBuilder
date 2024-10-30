@@ -26,12 +26,12 @@ Poisoned Knife,1373909
 Rupture,132302
 
 -- Spell aliases
-Mutilate,132304,@Sinister Strike
+Atrophic Poison,132300,@Numbing Poison
 Envenom,132287,@Eviscerate
+Mutilate,132304,@Sinister Strike
 
 -- Talents
 Amplifying Poison,134207
-Atrophic Poison,132300
 Blind,136175
 Cloak of Shadows,136177
 Cold Blood,135988

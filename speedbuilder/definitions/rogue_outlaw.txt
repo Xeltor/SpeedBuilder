@@ -27,11 +27,11 @@ Pistol Shot,1373908
 Roll the Bones,1373910
 
 -- Spell aliases
+Atrophic Poison,132300,@Numbing Poison
 Dispatch,236286,@Eviscerate
 
 -- Talents
 Adrenaline Rush,136206
-Atrophic Poison,132300
 Blade Rush,1016243
 Blind,136175
 Cloak of Shadows,136177
