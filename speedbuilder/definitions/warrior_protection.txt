@@ -25,7 +25,7 @@ Avatar,613534
 Battle Stance,132349
 Bitter Immunity,136088
 Challenging Shout,132091
-Champion's Spear,3565453
+Champion's Spear,6035322
 Defensive Stance,132341
 Demoralizing Shout,132366
 Heroic Leap,236171

@@ -27,7 +27,7 @@ Berserker Stance,132275
 Bitter Immunity,136088
 Bladestorm,236303
 Bloodthirst,136012
-Champion's Spear,3565453
+Champion's Spear,6035322
 Defensive Stance,132341
 Enraged Regeneration,132345
 Heroic Leap,236171
