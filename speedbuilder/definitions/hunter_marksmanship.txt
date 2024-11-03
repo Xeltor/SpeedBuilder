@@ -5,6 +5,7 @@ Exhilaration,461117
 Freezing Trap,135834
 Hunter's Mark,236188
 Mend Pet,132179
+Revive Pet,132163
 Steady Shot,132213
 Wailing Arrow,132323
 
@@ -12,7 +13,6 @@ Wailing Arrow,132323
 
 -- Spell aliases
 Chimaera Shot,236176,@Arcane Shot
-Revive Pet,132163,@Mend Pet
 
 -- Talents
 Aimed Shot,135130
