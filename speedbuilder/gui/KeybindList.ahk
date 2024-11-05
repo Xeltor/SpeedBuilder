@@ -175,8 +175,10 @@ KeybindClear_Click(GuiCtrlObj, Info) {
 }
 
 KeybindList_Close(GuiCtrlObj) {
-    ; Save to file.
-    ActiveProfile.SaveActions()
+    ; Make sure the user wants this.
+    if MsgBox("Are you sure you wish to close the keybind list without saving?", AppName, "0x40124") = "No" {
+        return
+    }
 
     ; Return to main menu.
     MainWindow()
