@@ -7,16 +7,16 @@ class Profile {
     Actions := Map()
     HasUpdates := false
     UpdateCount := 0
-    UpdateNeedsLearning := false
+    RequiresLearning := false
     HasDuplicates := false
     Force := false
+    ChangeLog := ""
 
     __New(FileName, Setup := false, LoadActions := true) {
         this.FileName := StrLower(StrReplace(FileName, " ", "_"))
         this.Name := StrTitle(StrReplace(FileName, "_", " "))
         if LoadActions {
-            this.LoadActions()
-            this.GetChanges(Setup)
+            this.LoadActions(Setup)
         }
     }
 
@@ -47,11 +47,10 @@ class Profile {
         return Definitions
     }
 
-    LoadActions() {
+    LoadActions(Setup := false) {
+        this.ChangeLog := ""
+        this.UpdateCount := 0
         KeybindFile := "Keybinds\" this.FileName ".txt"
-
-        if !FileExist(KeybindFile)
-            return
 
         ; Clear actions.
         this.Actions := Map()
@@ -70,29 +69,63 @@ class Profile {
         }
 
         ; Add actions from keybind file
-        loop read, keybindFile {
-            line := Trim(A_LoopReadLine)
-            if (InStr(line, "--") or line = "")
-                continue
+        if FileExist(KeybindFile) {
+            loop read, keybindFile {
+                line := Trim(A_LoopReadLine)
+                if (InStr(line, "--") or line = "")
+                    continue
 
-            act := Action(line)
+                act := Action(line)
 
-            ; Get definition
-            def := GetDefinitionByAction(act.Name, definitions)
-            if def
-                act.Definition := def
-            ; Spell was removed.
-            else {
-                this.UpdateCount += 1
+                ; Get definition
+                def := GetDefinitionByAction(act.Name, definitions)
+                if def
+                    act := act.FromDefinition(def)
+
+                ; Action is gone.
+                if !act.Definition {
+                    this.GenerateChangeLog(Act)
+                    this.HasUpdates := true
+                }
+
+                try {
+                    if (this.Actions[act.Colors])
+                        this.HasDuplicates := true
+                }
+
+                this.Actions[act.Colors] := act
+            }
+        }
+        
+
+        ; Check if definitions and actions are not the same.
+        if Setup
+            ActionList := []
+        for Definition in definitions {
+            result := this.GetActionByName(Definition.Name)
+
+            ; Update existing or generate from definition.
+            UpdatedAction := result.Found ? result.Action.FromDefinition(Definition) : Action().FromDefinition(Definition)
+
+            ; This spec has updates.
+            if UpdatedAction.HasUpdates() {
+                ; Learned from cache, dont make the user do unneeded work.
+                if UpdatedAction.RequiresLearning
+                    this.RequiresLearning := UpdatedAction.RequiresLearning
                 this.HasUpdates := true
+                this.GenerateChangeLog(UpdatedAction)
             }
 
-            try {
-                if (this.Actions[act.Colors])
-                    this.HasDuplicates := true
-            }
+            if Setup
+                ActionList.Push(UpdatedAction)
+        }
 
-            this.Actions[act.Colors] := act
+        ; Save actions by name for setup purposes.
+        if Setup {
+            this.Actions := Map()
+            for _, act in ActionList {
+                this.Actions[act.Name] := act
+            }
         }
     }
 
@@ -107,51 +140,25 @@ class Profile {
         }
     }
 
-    ; Checks for updates
-    GetChanges(Setup := false) {
-        ; Get definitions.
-        Definitions := this.GetDefinitions()
-
-        ; Update actions from definitions.
-        ActionList := []
-        for Definition in Definitions {
-            result := this.GetActionByName(Definition.Name)
-
-            ; Update existing or generate from definition.
-            UpdatedAction := result.Found ? result.Action.FromDefinition(Definition) : Action().FromDefinition(Definition)
-
-            ; This spec has updates.
-            if UpdatedAction.IsUpdated {
-                ; Learned from cache, dont make the user do unneeded work.
-                if !UpdatedAction.GetCache()
-                    this.UpdateNeedsLearning := true
-                this.HasUpdates := true
-                this.UpdateCount += 1
-            }
-
-            ActionList.Push(UpdatedAction)
-        }
-
-        ; Save actions by name for setup purposes.
-        if Setup {
-            this.Actions := Map()
-            for _, act in ActionList {
-                this.Actions[act.Name] := act
-            }
+    ; Only update changes from cache if no new icons need to be learned.
+    UpdateActions() {
+        for _, Act in this.Actions {
+            if Act.HasUpdates() 
+                Act.Update()
         }
     }
 
-    ; Only update changes from cache if no new icons need to be learned.
-    UpdateChangesFromCache() {
-        for _, Act in this.Actions {
-            if Act.IsUpdated {
-                ActCache := Act.GetCache()
-
-                if ActCache
-                    Act.Colors := ActCache
+    GenerateChangeLog(Act) {
+        if Act.HasUpdates() {
+            if Act.Status.New {
+                this.ChangeLog .= Format("New: {}, Requires Learning: {}`n", Act.Name, Act.RequiresLearning)
+            } else if Act.Status.Removed {
+                this.ChangeLog .= Format("Removed: {}, Requires Learning: {}`n", Act.Name, Act.RequiresLearning)
+            } else {
+                this.ChangeLog .= Format("Updated: {}, Alias changed: {}, Icon changed: {}, Requires Learning: {}`n", Act.Name, Act.Status.Alias, Act.Status.Icon, Act.RequiresLearning)
             }
+            this.UpdateCount += 1
         }
-        this.SaveActions()
     }
 
     GenerateCache() {

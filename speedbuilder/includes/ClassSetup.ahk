@@ -7,7 +7,7 @@ AutomaticClassSetup(xCoord, yCoord) {
     RedoAllIcons := ActiveProfile.Force
     if !RedoAllIcons {
         for _, Act in ActiveProfile.Actions {
-            if Act.Colors != "" and !Act.IsUpdated {
+            if Act.Colors != "" and !Act.HasUpdates() {
                 showPopup("Checking if redo is needed.")
                 SetIconReplacement(Act.IconID, xCoord, yCoord)
                 if Act.Colors != GetPixelColors(true) {
@@ -33,16 +33,19 @@ AutomaticClassSetup(xCoord, yCoord) {
     TotalItems := ActiveProfile.Actions.Count
     i := 1
     for _, Act in ActiveProfile.Actions {
-        if Act.IsUpdated or RedoAllIcons {
-            ActCache := Act.GetCache()
+        if Act.HasUpdates() or RedoAllIcons {
             showPopup("Progress: " i "/" TotalItems)
+            
+            ; Update from definition.
+            Act.Update()
 
-            if (ActCache = "") or RedoAllIcons {
+            ; update color from icon.
+            if Act.RequiresLearning or RedoAllIcons {
                 SetIconReplacement(Act.IconID, xCoord, yCoord)
                 Act.Colors := GetPixelColors(true)
                 Act.WriteCache()
-            } else
-                Act.Colors := ActCache
+                Act.Status.Icon := false
+            }
         }
         i++
     }

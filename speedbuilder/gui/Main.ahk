@@ -143,7 +143,7 @@ LoadButton_Click(GuiCtrlObj, Info) {
 
     if ActiveProfile.HasUpdates and MsgBox(ActiveProfile.Name " has " ActiveProfile.UpdateCount " updates. Would you like to update the profile now?", AppName, "0x124") = "Yes" {
         ; Return if warcraft isnt running.
-        if !WinExist(cfg.Warcraft) and ActiveProfile.UpdateNeedsLearning {
+        if !WinExist(cfg.Warcraft) and ActiveProfile.RequiresLearning {
             MsgBox("Please make sure World of Warcraft is running.", AppName, "0x30")
             MainWindow()
             return
@@ -152,14 +152,24 @@ LoadButton_Click(GuiCtrlObj, Info) {
         ; Load profile setup.
         ActiveProfile := Profile(ProfileChoice, true)
 
+        ; For debugging purposes.
+        ; MsgBox(ActiveProfile.ChangeLog, AppName)
+
         ; Icon replacement GUI.
-        if ActiveProfile.UpdateNeedsLearning {
+        if ActiveProfile.RequiresLearning {
+            ; Stop the rotation, if the user didnt already.
+            if cfg.ToggleState
+                ToggleSpeedBuilder("")
+
             IconReplacementSelectionGui("Main")
             return
         }
         else {
-            ; Update from cache.
-            ActiveProfile.UpdateChangesFromCache()
+            ; Update actions.
+            ActiveProfile.UpdateActions()
+
+            ; Save updated profile.
+            ActiveProfile.SaveActions()
 
             ; Reload to non setup profile.
             ActiveProfile := Profile(ProfileChoice)
