@@ -9,12 +9,14 @@ Mend Pet,132179
 Revive Pet,132163
 Steady Shot,132213
 Wailing Arrow,132323
+Wing Clip,132309
 
 -- Specialization Spells
 Aspect of the Eagle,612363
 Harpoon,1376040
 
 -- Spell aliases
+Concussive Shot,135860,@Wing Clip
 High Explosive Trap,135826,@Implosive Trap
 Mongoose Bite,1376044,@Raptor Strike
 Pheromone Bomb,2065635,@Wildfire Bomb
@@ -26,7 +28,6 @@ Binding Shot,462650
 Bursting Shot,1376038
 Butchery,999948
 Camouflage,461113
-Concussive Shot,135860
 Coordinated Assault,2032587
 Explosive Shot,236178
 Flanking Strike,236184
