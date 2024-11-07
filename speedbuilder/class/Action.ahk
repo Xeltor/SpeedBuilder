@@ -59,6 +59,9 @@ class Action {
     }
 
     FromDefinition(definition) {
+        ; Save definition in action
+        this.Definition := definition
+
         ; Name
         this.Name := definition.Name
 
@@ -66,8 +69,6 @@ class Action {
         this.Status.Icon := (this.IconID != definition.IconID)
         this.RequiresLearning := (this.Status.Icon and !this.GetCache(true))
         this.Status.Alias := ((definition.Alias or this.IsAlias) and (this.Keybind != definition.Alias))
-
-        this.Definition := definition
 
         return this
     }
