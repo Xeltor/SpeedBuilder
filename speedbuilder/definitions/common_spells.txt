@@ -8,7 +8,6 @@ Berserking,135727
 Blood Fury,135726
 Bull Rush,1723987
 Combat Analysis,3192685
-Escape Artist,132309
 Fireblood,1786406
 Gift of the Naaru,135923
 Haymaker,2447782
