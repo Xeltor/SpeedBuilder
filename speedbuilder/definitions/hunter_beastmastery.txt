@@ -1,5 +1,6 @@
 -- Spells
 Arcane Shot,132218
+Aspect of the Turtle,132199
 Call Pet,132161
 Exhilaration,461117
 Freezing Trap,135834
